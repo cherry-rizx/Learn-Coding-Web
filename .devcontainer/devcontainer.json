@@ -1,0 +1,8 @@
+{
+  "name": "Belajar Coding CI4",
+  "dockerComposeFile": "docker-compose.yml", // jalankan app + database
+  "service": "app", // container tempat kita ngoding
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [8080], // port php spark serve
+  "postCreateCommand": "composer install && bash .devcontainer/setup.sh" // setup otomatis sekali
+}

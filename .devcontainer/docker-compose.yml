@@ -1,0 +1,21 @@
+services:
+  app:
+    build: . # pakai Dockerfile di folder ini
+    volumes:
+      - ../..:/workspaces:cached # kode repo masuk ke container
+    command: sleep infinity # biarkan container tetap hidup
+    depends_on:
+      - db
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpass
+      MARIADB_DATABASE: belajar_coding # dibuat otomatis
+      MARIADB_USER: ci
+      MARIADB_PASSWORD: cipass
+    volumes:
+      - mariadb-data:/var/lib/mysql # data tetap ada saat di-stop
+
+volumes:
+  mariadb-data:
