@@ -1,0 +1,1408 @@
+{
+  "chapter": "css",
+  "levels": [
+    {
+      "level_no": 1,
+      "title": "Kenalan dengan CSS",
+      "cards": [
+        {
+          "title": "Apa itu CSS?",
+          "body": [
+            "**CSS** (Cascading Style Sheets) mengatur **tampilan** halaman: warna, ukuran huruf, jarak, sampai tata letak.",
+            "",
+            "Kalau HTML adalah kerangka rumah, CSS adalah cat, perabot, dan dekorasinya. Satu file HTML yang sama bisa terlihat sangat berbeda dengan CSS yang berbeda."
+          ]
+        },
+        {
+          "title": "Bentuk aturan CSS",
+          "body": [
+            "Satu aturan CSS terdiri dari **selector** (elemen mana yang diatur) dan blok deklarasi di dalam kurung kurawal `{ }`.",
+            "",
+            "Setiap deklarasi berbentuk `property: value;`. Titik dua memisahkan property dan value, titik koma mengakhiri deklarasi."
+          ],
+          "code": ["h1 {", "  color: blue;", "  font-size: 32px;", "}", "/* h1 = selector, color = property, blue = value */"]
+        },
+        {
+          "title": "Tiga cara memasang CSS",
+          "body": [
+            "1. **Inline**: atribut `style` langsung di tag. 2. **Internal**: di dalam `<style>` pada `<head>`. 3. **Eksternal**: file `.css` terpisah yang dihubungkan dengan `<link>`.",
+            "",
+            "Cara eksternal paling dianjurkan karena satu file CSS bisa dipakai banyak halaman. Di sandbox, kita akan memakai `<style>` supaya semuanya ada di satu tempat."
+          ],
+          "code": ["<p style=\"color: red;\">Inline</p>", "", "<style>", "  p { color: green; }", "</style>", "", "<link rel=\"stylesheet\" href=\"style.css\">"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "CSS adalah singkatan dari...",
+          "options": ["Cascading Style Sheets", "Creative Style System", "Computer Style Sheets", "Colorful Style Syntax"],
+          "answer": 0,
+          "clue": "Kata pertamanya berarti \"bertingkat/mengalir\".",
+          "explanation": "CSS = Cascading Style Sheets."
+        },
+        {
+          "type": "mcq",
+          "prompt": "CSS digunakan untuk...",
+          "options": ["Mengatur tampilan halaman", "Menyusun kerangka halaman", "Menyimpan data pengguna", "Membuat logika perhitungan"],
+          "answer": 0,
+          "clue": "Kerangka sudah diurus HTML.",
+          "explanation": "CSS mengatur tampilan: warna, ukuran, jarak, dan tata letak."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada aturan `h1 { color: red; }`, bagian `h1` disebut...",
+          "options": ["Selector", "Property", "Value", "Komentar"],
+          "answer": 0,
+          "clue": "Bagian ini \"memilih\" elemen mana yang diatur.",
+          "explanation": "`h1` adalah selector."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada aturan `h1 { color: red; }`, bagian `color` disebut...",
+          "options": ["Property", "Selector", "Value", "Tag"],
+          "answer": 0,
+          "clue": "Bagian ini adalah \"apa\" yang diatur.",
+          "explanation": "`color` adalah property, yaitu aspek tampilan yang diubah."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada aturan `h1 { color: red; }`, bagian `red` disebut...",
+          "options": ["Value", "Property", "Selector", "Atribut"],
+          "answer": 0,
+          "clue": "Nilai yang diberikan pada property.",
+          "explanation": "`red` adalah value (nilai) untuk property `color`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tanda yang mengakhiri setiap deklarasi CSS adalah...",
+          "options": [";", ",", ".", ":"],
+          "answer": 0,
+          "clue": "Tanda yang sama dipakai di akhir baris banyak bahasa pemrograman.",
+          "explanation": "Setiap deklarasi diakhiri titik koma `;`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tanda pemisah antara property dan value adalah...",
+          "options": [":", "=", ";", "->"],
+          "answer": 0,
+          "clue": "Bukan sama dengan.",
+          "explanation": "Property dan value dipisah titik dua: `color: red;`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tag untuk menulis CSS internal di dalam dokumen HTML adalah...",
+          "options": ["<style>", "<css>", "<script>", "<design>"],
+          "answer": 0,
+          "clue": "Artinya \"gaya\".",
+          "explanation": "CSS internal ditulis di dalam `<style>...</style>`, biasanya di `<head>`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara menghubungkan file CSS eksternal yang benar adalah...",
+          "options": ["<link rel=\"stylesheet\" href=\"style.css\">", "<style src=\"style.css\">", "<css href=\"style.css\">", "<script src=\"style.css\">"],
+          "answer": 0,
+          "clue": "Tag kosong yang namanya berarti \"tautan\".",
+          "explanation": "`<link rel=\"stylesheet\" href=\"style.css\">` dipasang di `<head>`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Atribut untuk menulis CSS inline langsung di sebuah tag adalah...",
+          "options": ["style", "css", "class", "design"],
+          "answer": 0,
+          "clue": "Namanya sama dengan tag CSS internal.",
+          "explanation": "Contoh: `<p style=\"color: red;\">`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Komentar di dalam CSS ditulis dengan...",
+          "options": ["/* komentar */", "<!-- komentar -->", "// komentar", "# komentar"],
+          "answer": 0,
+          "clue": "Diawali garis miring dan bintang.",
+          "explanation": "Komentar CSS: `/* ... */`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan CSS: semua paragraf berwarna merah.",
+          "answer": ["p", "{", "color: red;", "}"],
+          "distractors": ["="],
+          "clue": "Selector, kurung buka, deklarasi, kurung tutup.",
+          "explanation": "`p { color: red; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun CSS internal yang membuat body berlatar kuning.",
+          "answer": ["<style>", "body {", "background-color: yellow;", "}", "</style>"],
+          "distractors": ["<script>"],
+          "clue": "Aturan CSS berada di dalam tag style.",
+          "explanation": "`<style> body { background-color: yellow; } </style>`."
+        }
+      ]
+    },
+    {
+      "level_no": 2,
+      "title": "Selector",
+      "cards": [
+        {
+          "title": "Selector tag, class, dan id",
+          "body": [
+            "Selector **tag** memilih semua elemen sejenis: `p { }`. Selector **class** diawali titik: `.penting { }` dan memilih semua elemen dengan `class=\"penting\"`. Selector **id** diawali pagar: `#judul { }` dan memilih elemen dengan `id=\"judul\"`.",
+            "",
+            "Satu class boleh dipakai banyak elemen, sedangkan satu id hanya untuk **satu** elemen. Satu elemen juga boleh punya beberapa class: `class=\"kartu besar\"`."
+          ],
+          "code": ["<p class=\"penting\">Bayar sebelum tanggal 5</p>", "<h1 id=\"judul\">Tagihan</h1>", "", ".penting { color: red; }", "#judul { font-size: 40px; }"]
+        },
+        {
+          "title": "Gabungan dan turunan",
+          "body": [
+            "Pisahkan dengan koma untuk memberi gaya yang sama ke beberapa selector: `h1, h2 { }`. Pakai spasi untuk memilih elemen **di dalam** elemen lain: `nav a { }` memilih semua `<a>` yang ada di dalam `<nav>`.",
+            "",
+            "Selector `*` memilih semua elemen."
+          ],
+          "code": ["h1, h2 { font-family: sans-serif; }", "nav a { color: white; }", "* { box-sizing: border-box; }"]
+        },
+        {
+          "title": "Siapa yang menang?",
+          "body": "Kalau dua aturan bertabrakan, yang lebih **spesifik** menang: id lebih kuat dari class, class lebih kuat dari tag. Kalau kekuatannya sama, aturan yang ditulis **paling akhir** yang menang. Inilah makna \"cascading\".",
+          "code": ["p { color: black; }", ".info { color: blue; }  /* lebih kuat dari p */", "p { color: gray; }      /* menimpa p pertama */"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Selector untuk elemen dengan class bernama `kartu` adalah...",
+          "options": [".kartu", "#kartu", "kartu", "*kartu"],
+          "answer": 0,
+          "clue": "Class diawali titik.",
+          "explanation": "`.kartu` memilih semua elemen dengan `class=\"kartu\"`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Selector untuk elemen dengan id `header` adalah...",
+          "options": ["#header", ".header", "header", "@header"],
+          "answer": 0,
+          "clue": "Id diawali tanda pagar.",
+          "explanation": "`#header` memilih elemen dengan `id=\"header\"`. Tanpa tanda apa pun, `header` adalah selector tag."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Bagaimana memberi class `kartu` pada sebuah div di HTML?",
+          "options": ["<div class=\"kartu\">", "<div .kartu>", "<div id=\".kartu\">", "<div style=\"kartu\">"],
+          "answer": 0,
+          "clue": "Pakai atribut bernama class, tanpa titik.",
+          "explanation": "Di HTML ditulis `class=\"kartu\"`, di CSS ditulis `.kartu`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Satu nilai id boleh dipakai oleh berapa elemen dalam satu halaman?",
+          "options": ["Hanya satu", "Banyak", "Maksimal tiga", "Tidak ada batas, asal beda tag"],
+          "answer": 0,
+          "clue": "Id seperti nomor KTP.",
+          "explanation": "Id harus unik. Kalau perlu dipakai banyak elemen, gunakan class."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`h1, h2 { color: red; }` artinya...",
+          "options": ["h1 dan h2 sama-sama berwarna merah", "Hanya h2 yang ada di dalam h1", "h1 yang punya class h2", "Penulisan error"],
+          "answer": 0,
+          "clue": "Koma berarti \"dan juga\".",
+          "explanation": "Koma mengelompokkan beberapa selector dengan gaya yang sama."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`nav a { }` memilih...",
+          "options": ["Semua <a> yang berada di dalam <nav>", "Semua <nav> dan semua <a>", "<a> yang posisinya setelah <nav>", "<nav> yang ada di dalam <a>"],
+          "answer": 0,
+          "clue": "Spasi berarti \"di dalam\".",
+          "explanation": "Selector turunan: elemen kanan yang berada di dalam elemen kiri."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Selector `*` memilih...",
+          "options": ["Semua elemen", "Tidak ada elemen", "Elemen pertama saja", "Hanya body"],
+          "answer": 0,
+          "clue": "Bintang = semuanya.",
+          "explanation": "`*` adalah selector universal."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Selector mana yang paling kuat (spesifik)?",
+          "options": ["#menu", ".menu", "nav", "*"],
+          "answer": 0,
+          "clue": "Urutannya: id > class > tag.",
+          "explanation": "Selector id paling spesifik di antara pilihan ini."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Dua aturan sama kuat dan saling bertentangan. Mana yang menang?",
+          "options": ["Yang ditulis paling akhir", "Yang ditulis paling awal", "Dipilih acak oleh browser", "Keduanya error"],
+          "answer": 0,
+          "clue": "Ingat makna \"cascading\": mengalir dari atas ke bawah.",
+          "explanation": "Pada kekuatan yang sama, aturan terakhir menimpa aturan sebelumnya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Bolehkah satu elemen punya dua class?",
+          "options": ["Boleh, dipisah spasi: class=\"kartu besar\"", "Tidak boleh", "Boleh, dipisah koma", "Boleh, dengan dua atribut class"],
+          "answer": 0,
+          "clue": "Cukup satu atribut class.",
+          "explanation": "`class=\"kartu besar\"` memberi dua class sekaligus."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: semua elemen ber-class tombol berlatar hijau.",
+          "answer": [".tombol", "{", "background-color: green;", "}"],
+          "distractors": ["#tombol"],
+          "clue": "Class diawali titik.",
+          "explanation": "`.tombol { background-color: green; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: link di dalam footer berwarna abu-abu.",
+          "answer": ["footer a", "{", "color: gray;", "}"],
+          "distractors": ["footer, a"],
+          "clue": "Pakai spasi (di dalam), bukan koma (dan juga).",
+          "explanation": "`footer a { color: gray; }` hanya memilih link di dalam footer."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen dengan id logo lebarnya 120px.",
+          "answer": ["#logo", "{", "width: 120px;", "}"],
+          "distractors": [".logo"],
+          "clue": "Id diawali pagar.",
+          "explanation": "`#logo { width: 120px; }`."
+        }
+      ]
+    },
+    {
+      "level_no": 3,
+      "title": "Warna & Teks",
+      "cards": [
+        {
+          "title": "Warna",
+          "body": [
+            "`color` mengatur warna teks, `background-color` mengatur warna latar.",
+            "",
+            "Warna bisa ditulis dengan nama (`red`), **hex** (`#ff0000`), atau **rgb** (`rgb(255, 0, 0)`). Hex dan rgb sama-sama mencampur merah, hijau, biru. `rgba(0, 0, 0, 0.5)` menambahkan transparansi (0 = tembus, 1 = penuh)."
+          ],
+          "code": ["body { background-color: #f1f5f9; }", "h1 { color: rgb(29, 78, 216); }", ".bayangan { background-color: rgba(0, 0, 0, 0.5); }"]
+        },
+        {
+          "title": "Huruf",
+          "body": [
+            "`font-size` mengatur ukuran (misal `18px` atau `1.2rem`). `font-family` memilih jenis huruf, ditulis beberapa nama sebagai **cadangan**. `font-weight` mengatur ketebalan (`bold` atau `700`). `font-style: italic` membuat miring."
+          ],
+          "code": ["p {", "  font-family: Arial, Helvetica, sans-serif;", "  font-size: 18px;", "}", "strong { font-weight: 700; }"]
+        },
+        {
+          "title": "Pengaturan teks",
+          "body": "`text-align` meratakan teks (`left`, `center`, `right`, `justify`). `text-decoration: none` menghilangkan garis bawah link. `line-height` mengatur jarak antar baris. `text-transform: uppercase` mengubah semua huruf menjadi kapital.",
+          "code": ["h1 { text-align: center; text-transform: uppercase; }", "a { text-decoration: none; }", "p { line-height: 1.6; }"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Property untuk mengubah warna TEKS adalah...",
+          "options": ["color", "font-color", "text-color", "background-color"],
+          "answer": 0,
+          "clue": "Namanya cuma satu kata.",
+          "explanation": "`color` mengatur warna teks."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Property untuk mengubah warna LATAR adalah...",
+          "options": ["background-color", "color", "bg", "fill"],
+          "answer": 0,
+          "clue": "background = latar belakang.",
+          "explanation": "`background-color` mengatur warna latar elemen."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Warna `#ff0000` adalah...",
+          "options": ["Merah", "Hijau", "Biru", "Hitam"],
+          "answer": 0,
+          "clue": "Urutan hex: merah, hijau, biru. Hanya dua digit pertama yang penuh.",
+          "explanation": "`#ff0000` = merah penuh, hijau 0, biru 0."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Warna `rgb(0, 0, 0)` adalah...",
+          "options": ["Hitam", "Putih", "Merah", "Abu-abu"],
+          "answer": 0,
+          "clue": "Tidak ada cahaya sama sekali.",
+          "explanation": "Semua komponen 0 = hitam. `rgb(255, 255, 255)` = putih."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Format warna yang bisa dibuat transparan sebagian adalah...",
+          "options": ["rgba(0, 0, 0, 0.5)", "rgb(0, 0, 0, 50)", "#000-50", "transparent(50)"],
+          "answer": 0,
+          "clue": "Huruf a = alpha (tingkat kejelasan).",
+          "explanation": "`rgba` punya nilai keempat 0-1 untuk transparansi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Property untuk ukuran huruf adalah...",
+          "options": ["font-size", "text-size", "font-height", "size"],
+          "answer": 0,
+          "clue": "Gabungan kata font dan ukuran.",
+          "explanation": "`font-size: 18px;` misalnya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara membuat teks tebal dengan CSS adalah...",
+          "options": ["font-weight: bold;", "font-style: bold;", "text-weight: bold;", "font: thick;"],
+          "answer": 0,
+          "clue": "weight = berat/ketebalan.",
+          "explanation": "`font-weight: bold;` atau `font-weight: 700;`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara meratakan teks ke tengah adalah...",
+          "options": ["text-align: center;", "align: center;", "text-align: middle;", "center: text;"],
+          "answer": 0,
+          "clue": "Nilainya center, bukan middle.",
+          "explanation": "`text-align: center;` meratakan teks di tengah elemennya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara menghilangkan garis bawah pada link adalah...",
+          "options": ["text-decoration: none;", "text-line: none;", "underline: off;", "link-style: none;"],
+          "answer": 0,
+          "clue": "Garis bawah termasuk \"dekorasi teks\".",
+          "explanation": "`a { text-decoration: none; }`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Mengapa `font-family` ditulis dengan beberapa nama huruf?",
+          "options": ["Sebagai cadangan kalau huruf pertama tidak tersedia", "Untuk menggabungkan semua huruf", "Supaya huruf dipilih acak", "Wajib minimal tiga nama"],
+          "answer": 0,
+          "clue": "Tidak semua komputer punya huruf yang sama.",
+          "explanation": "Browser memakai huruf pertama yang tersedia dari kiri ke kanan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`text-transform: uppercase;` membuat teks...",
+          "options": ["Semua huruf kapital", "Huruf pertama saja kapital", "Semua huruf kecil", "Miring"],
+          "answer": 0,
+          "clue": "upper = atas (huruf besar).",
+          "explanation": "uppercase mengubah semua huruf jadi kapital."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: h1 berwarna putih (pakai hex).",
+          "answer": ["h1", "{", "color: #ffffff;", "}"],
+          "distractors": ["background-color: #ffffff;"],
+          "clue": "Warna teks memakai property color.",
+          "explanation": "`h1 { color: #ffffff; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen ber-class catatan bercetak miring.",
+          "answer": [".catatan", "{", "font-style: italic;", "}"],
+          "distractors": ["font-weight: italic;"],
+          "clue": "Miring diatur oleh font-style.",
+          "explanation": "`.catatan { font-style: italic; }`."
+        }
+      ]
+    },
+    {
+      "level_no": 4,
+      "title": "Box Model",
+      "cards": [
+        {
+          "title": "Setiap elemen adalah kotak",
+          "body": [
+            "Browser menggambar setiap elemen sebagai kotak berlapis, dari dalam ke luar: **content** (isi), **padding** (jarak isi ke garis tepi), **border** (garis tepi), dan **margin** (jarak ke elemen lain).",
+            "",
+            "Padding ikut berwarna latar elemen, margin selalu transparan."
+          ],
+          "code": [".kotak {", "  padding: 16px;", "  border: 2px solid black;", "  margin: 24px;", "}"]
+        },
+        {
+          "title": "Singkatan padding dan margin",
+          "body": [
+            "Satu nilai = semua sisi. Dua nilai `padding: 10px 20px;` = atas-bawah 10px, kiri-kanan 20px. Empat nilai mengikuti arah jarum jam: **atas, kanan, bawah, kiri**.",
+            "",
+            "`margin: 0 auto;` menengahkan elemen blok yang punya lebar tertentu. `border-radius` membuat sudut membulat."
+          ],
+          "code": [".kartu {", "  width: 300px;", "  margin: 0 auto;", "  padding: 8px 16px 8px 16px;", "  border-radius: 12px;", "}"]
+        },
+        {
+          "title": "width, height, dan box-sizing",
+          "body": "Secara default (`content-box`), `width` hanya lebar isi. Lebar total = width + padding + border. Dengan `box-sizing: border-box`, `width` sudah termasuk padding dan border, jadi lebih mudah dihitung.",
+          "code": ["/* content-box: total = 200 + 20 + 20 = 240px */", ".a { width: 200px; padding: 20px; }", "", "/* border-box: total tetap 200px */", ".b { width: 200px; padding: 20px; box-sizing: border-box; }"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Urutan lapisan box model dari DALAM ke LUAR adalah...",
+          "options": ["content, padding, border, margin", "margin, border, padding, content", "content, border, padding, margin", "padding, content, margin, border"],
+          "answer": 0,
+          "clue": "Garis tepi (border) berada di antara dua jenis jarak.",
+          "explanation": "Isi, padding, border, lalu margin paling luar."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jarak antara ISI elemen dan border-nya disebut...",
+          "options": ["padding", "margin", "gap", "spacing"],
+          "answer": 0,
+          "clue": "Seperti bantalan di dalam kotak.",
+          "explanation": "Padding = jarak di dalam border."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jarak di LUAR border, antara elemen dan elemen lain, disebut...",
+          "options": ["margin", "padding", "border", "content"],
+          "answer": 0,
+          "clue": "Seperti jarak antar rumah.",
+          "explanation": "Margin = jarak di luar border."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`padding: 10px 20px;` artinya...",
+          "options": ["Atas-bawah 10px, kiri-kanan 20px", "Atas 10px, kiri 20px, sisanya 0", "Kiri-kanan 10px, atas-bawah 20px", "Semua sisi 30px"],
+          "answer": 0,
+          "clue": "Dua nilai: vertikal dulu, baru horizontal.",
+          "explanation": "Nilai pertama untuk atas-bawah, nilai kedua untuk kiri-kanan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Urutan sisi pada `margin: 5px 10px 15px 20px;` adalah...",
+          "options": ["atas, kanan, bawah, kiri", "kiri, atas, kanan, bawah", "atas, bawah, kiri, kanan", "kanan, kiri, atas, bawah"],
+          "answer": 0,
+          "clue": "Mulai dari atas lalu searah jarum jam.",
+          "explanation": "Empat nilai: top, right, bottom, left (searah jarum jam)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Penulisan border yang benar adalah...",
+          "options": ["border: 2px solid black;", "border: 2px, solid, black;", "border-style: 2px black;", "border = 2px solid black;"],
+          "answer": 0,
+          "clue": "Nilai dipisah spasi, bukan koma.",
+          "explanation": "Singkatan border: tebal, jenis garis, warna, dipisah spasi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Property untuk membuat sudut kotak membulat adalah...",
+          "options": ["border-radius", "corner", "border-round", "radius"],
+          "answer": 0,
+          "clue": "radius = jari-jari lingkaran.",
+          "explanation": "`border-radius: 12px;` membulatkan sudut."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara menengahkan sebuah blok selebar 300px secara horizontal adalah...",
+          "options": ["margin: 0 auto;", "text-align: center;", "align: center;", "padding: auto;"],
+          "answer": 0,
+          "clue": "Biarkan browser membagi rata margin kiri dan kanan.",
+          "explanation": "`margin: 0 auto;` membagi sisa ruang kiri-kanan sama besar. `text-align` hanya menengahkan teks di dalamnya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Dengan box-sizing default (content-box), `width: 200px; padding: 20px;` tanpa border menghasilkan lebar total...",
+          "options": ["240px", "200px", "220px", "180px"],
+          "answer": 0,
+          "clue": "Padding kiri DAN kanan ikut ditambahkan.",
+          "explanation": "200 + 20 (kiri) + 20 (kanan) = 240px."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`box-sizing: border-box;` membuat...",
+          "options": ["width sudah termasuk padding dan border", "width tidak termasuk isi", "border menghilang", "kotak berbentuk bulat"],
+          "answer": 0,
+          "clue": "Ukurannya dihitung sampai border.",
+          "explanation": "Dengan border-box, lebar total tetap sama dengan nilai width."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen ber-class kotak punya padding 16px.",
+          "answer": [".kotak", "{", "padding: 16px;", "}"],
+          "distractors": ["margin: 16px;"],
+          "clue": "Jarak di dalam border = padding.",
+          "explanation": "`.kotak { padding: 16px; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun deklarasi border: tebal 1px, garis solid, warna abu-abu.",
+          "answer": ["border:", "1px", "solid", "gray;"],
+          "distractors": ["dotted"],
+          "clue": "Urutan yang umum: tebal, jenis garis, warna.",
+          "explanation": "`border: 1px solid gray;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen ber-class kartu bersudut membulat 8px.",
+          "answer": [".kartu", "{", "border-radius: 8px;", "}"],
+          "distractors": ["border-round: 8px;"],
+          "clue": "Property sudut membulat diawali border.",
+          "explanation": "`.kartu { border-radius: 8px; }`."
+        }
+      ]
+    },
+    {
+      "level_no": 5,
+      "title": "Kartu Bergaya",
+      "cards": [
+        {
+          "title": "Ringkasan: selector dan warna",
+          "body": "Aturan: `selector { property: value; }`. Class `.nama`, id `#nama`, turunan `nav a`. Warna teks `color`, latar `background-color`, bisa hex `#1d4ed8` atau `rgb()`. Huruf: `font-size`, `font-weight`, `text-align`, `text-decoration`.",
+          "code": [".judul {", "  color: #1d4ed8;", "  text-align: center;", "  font-weight: bold;", "}"]
+        },
+        {
+          "title": "Ringkasan: box model",
+          "body": "`padding` jarak di dalam, `margin` jarak di luar, `border: 2px solid gray;` garis tepi, `border-radius` sudut membulat, `width` lebar, `margin: 0 auto;` menengahkan blok.",
+          "code": [".kartu {", "  width: 240px;", "  padding: 20px;", "  border: 2px solid #e5e7eb;", "  border-radius: 12px;", "  margin: 0 auto;", "}"]
+        }
+      ],
+      "challenges": [
+        {
+          "instruction": [
+            "HTML kartu profil sudah ada. Tugasmu menulis **CSS** di dalam `<style>` supaya:",
+            "",
+            "1. `.kartu` berlatar putih `#ffffff`.",
+            "2. `.kartu` punya padding **20px** di semua sisi.",
+            "3. `.kartu` bersudut membulat **12px**.",
+            "4. `.nama` berwarna teks `#1d4ed8`.",
+            "5. `.nama` rata tengah.",
+            "6. Link `.tombol` tidak bergaris bawah."
+          ],
+          "starter": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body {",
+            "      background-color: #e2e8f0;",
+            "      font-family: sans-serif;",
+            "    }",
+            "    .kartu {",
+            "      /* tulis gaya kartu di sini */",
+            "    }",
+            "    /* tambah aturan untuk .nama dan .tombol */",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <div class=\"kartu\">",
+            "    <h1 class=\"nama\">Sinta Dewi</h1>",
+            "    <p class=\"bio\">Mahasiswi yang sedang belajar CSS.</p>",
+            "    <a class=\"tombol\" href=\"#\">Hubungi saya</a>",
+            "  </div>",
+            "</body>",
+            "</html>"
+          ],
+          "tests": [
+            { "desc": ".kartu berlatar putih #ffffff", "check": "getComputedStyle(document.querySelector('.kartu')).backgroundColor === 'rgb(255, 255, 255)'" },
+            { "desc": ".kartu padding 20px di semua sisi", "check": "(() => { const s = getComputedStyle(document.querySelector('.kartu')); return ['Top', 'Right', 'Bottom', 'Left'].every(k => s['padding' + k] === '20px'); })()" },
+            { "desc": ".kartu border-radius 12px", "check": "getComputedStyle(document.querySelector('.kartu')).borderTopLeftRadius === '12px'" },
+            { "desc": ".nama berwarna #1d4ed8", "check": "getComputedStyle(document.querySelector('.nama')).color === 'rgb(29, 78, 216)'" },
+            { "desc": ".nama rata tengah", "check": "getComputedStyle(document.querySelector('.nama')).textAlign === 'center'" },
+            { "desc": ".tombol tanpa garis bawah", "check": "getComputedStyle(document.querySelector('.tombol')).textDecorationLine === 'none'" }
+          ],
+          "solution": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { background-color: #e2e8f0; font-family: sans-serif; }",
+            "    .kartu {",
+            "      background-color: #ffffff;",
+            "      padding: 20px;",
+            "      border-radius: 12px;",
+            "    }",
+            "    .nama { color: #1d4ed8; text-align: center; }",
+            "    .tombol { text-decoration: none; }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <div class=\"kartu\">",
+            "    <h1 class=\"nama\">Sinta Dewi</h1>",
+            "    <p class=\"bio\">Mahasiswi yang sedang belajar CSS.</p>",
+            "    <a class=\"tombol\" href=\"#\">Hubungi saya</a>",
+            "  </div>",
+            "</body>",
+            "</html>"
+          ]
+        },
+        {
+          "instruction": [
+            "HTML kartu produk sudah ada. Tulis **CSS** di dalam `<style>` supaya:",
+            "",
+            "1. `.produk` berlatar `#fef3c7`.",
+            "2. `.produk` punya border **2px solid** (warna bebas).",
+            "3. `.produk` lebarnya **240px**.",
+            "4. `.produk` berada di **tengah** halaman secara horizontal (pakai margin).",
+            "5. `.harga` bercetak **tebal**.",
+            "6. `.harga` berukuran **24px**."
+          ],
+          "starter": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { font-family: sans-serif; }",
+            "    .produk {",
+            "      padding: 16px;",
+            "      /* lanjutkan di sini */",
+            "    }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <div class=\"produk\">",
+            "    <h2>Tumbler 500ml</h2>",
+            "    <p>Tahan panas dan dingin sampai 12 jam.</p>",
+            "    <p class=\"harga\">Rp89.000</p>",
+            "  </div>",
+            "</body>",
+            "</html>"
+          ],
+          "tests": [
+            { "desc": ".produk berlatar #fef3c7", "check": "getComputedStyle(document.querySelector('.produk')).backgroundColor === 'rgb(254, 243, 199)'" },
+            { "desc": ".produk border 2px solid", "check": "(() => { const s = getComputedStyle(document.querySelector('.produk')); return s.borderTopWidth === '2px' && s.borderTopStyle === 'solid'; })()" },
+            { "desc": ".produk lebar 240px", "check": "getComputedStyle(document.querySelector('.produk')).width === '240px'" },
+            { "desc": ".produk berada di tengah halaman", "check": "(() => { const r = document.querySelector('.produk').getBoundingClientRect(); const body = document.body.getBoundingClientRect(); return Math.abs((r.left + r.right) / 2 - (body.left + body.right) / 2) < 2 && r.left > body.left + 1; })()" },
+            { "desc": ".harga bercetak tebal", "check": "parseInt(getComputedStyle(document.querySelector('.harga')).fontWeight, 10) >= 700" },
+            { "desc": ".harga berukuran 24px", "check": "getComputedStyle(document.querySelector('.harga')).fontSize === '24px'" }
+          ],
+          "solution": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { font-family: sans-serif; }",
+            "    .produk {",
+            "      padding: 16px;",
+            "      background-color: #fef3c7;",
+            "      border: 2px solid #f59e0b;",
+            "      width: 240px;",
+            "      margin: 0 auto;",
+            "    }",
+            "    .harga { font-weight: bold; font-size: 24px; }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <div class=\"produk\">",
+            "    <h2>Tumbler 500ml</h2>",
+            "    <p>Tahan panas dan dingin sampai 12 jam.</p>",
+            "    <p class=\"harga\">Rp89.000</p>",
+            "  </div>",
+            "</body>",
+            "</html>"
+          ]
+        }
+      ]
+    },
+    {
+      "level_no": 6,
+      "title": "Display & Satuan",
+      "cards": [
+        {
+          "title": "Block, inline, dan inline-block",
+          "body": [
+            "Elemen **block** (`div`, `p`, `h1`) mengambil lebar penuh dan mulai di baris baru. Elemen **inline** (`span`, `a`, `strong`) sebaris dengan teks, dan `width`/`height`-nya diabaikan.",
+            "",
+            "`display: inline-block` = sebaris seperti inline, tapi bisa diberi width, height, dan padding atas-bawah seperti block."
+          ],
+          "code": ["a.tombol {", "  display: inline-block;", "  width: 120px;", "  padding: 8px;", "}"]
+        },
+        {
+          "title": "Menyembunyikan elemen",
+          "body": "`display: none` menghilangkan elemen sepenuhnya, ruangnya ikut hilang. `visibility: hidden` hanya membuatnya tidak terlihat, ruangnya **tetap** ada.",
+          "code": [".iklan { display: none; }", ".rahasia { visibility: hidden; }"]
+        },
+        {
+          "title": "Satuan ukuran",
+          "body": "`px` ukuran tetap. `%` relatif terhadap elemen induk. `em` relatif terhadap ukuran huruf induk, `rem` relatif terhadap ukuran huruf root (default **16px**). `vw`/`vh` relatif terhadap lebar/tinggi layar (100vw = selebar layar).",
+          "code": ["html { font-size: 16px; }", "h1 { font-size: 2rem; }   /* 32px */", ".setengah { width: 50%; }", ".hero { height: 100vh; }"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Ciri elemen block adalah...",
+          "options": ["Mengambil lebar penuh dan mulai di baris baru", "Selalu sebaris dengan teks", "Tidak bisa diberi warna", "Tidak terlihat"],
+          "answer": 0,
+          "clue": "Seperti `<div>` dan `<p>`.",
+          "explanation": "Elemen block menumpuk ke bawah dan selebar induknya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Contoh elemen inline bawaan adalah...",
+          "options": ["<span>", "<div>", "<p>", "<h1>"],
+          "answer": 0,
+          "clue": "Elemen yang biasa dipakai di tengah kalimat.",
+          "explanation": "`<span>` bersifat inline, sisanya block."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`display: none;` membuat elemen...",
+          "options": ["Hilang dan tidak memakan ruang", "Tersembunyi tapi ruangnya tetap", "Menjadi transparan setengah", "Pindah ke bawah halaman"],
+          "answer": 0,
+          "clue": "Seolah-olah elemennya tidak pernah ada.",
+          "explanation": "`display: none` menghapus elemen dari tata letak."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`visibility: hidden;` membuat elemen...",
+          "options": ["Tidak terlihat, tapi ruangnya tetap ada", "Hilang total beserta ruangnya", "Terhapus dari kode HTML", "Berubah menjadi inline"],
+          "answer": 0,
+          "clue": "Bedanya dengan display none ada pada ruang kosong.",
+          "explanation": "Elemen tak terlihat, tapi tempatnya tetap terisi ruang kosong."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`display: inline-block;` artinya...",
+          "options": ["Sebaris, tapi bisa diberi width dan height", "Sama persis dengan block", "Tidak bisa diberi padding", "Elemen disembunyikan"],
+          "answer": 0,
+          "clue": "Gabungan sifat inline dan block.",
+          "explanation": "Cocok untuk tombol atau badge yang berjajar tapi punya ukuran."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa yang terjadi jika `<span>` (inline) diberi `width: 200px;`?",
+          "options": ["Diabaikan", "Lebarnya jadi 200px", "Muncul error", "Otomatis berubah menjadi block"],
+          "answer": 0,
+          "clue": "Elemen inline mengikuti lebar isinya.",
+          "explanation": "width dan height tidak berlaku untuk elemen inline biasa."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Secara default, `1rem` sama dengan...",
+          "options": ["16px", "10px", "1px", "100%"],
+          "answer": 0,
+          "clue": "Ukuran huruf default browser.",
+          "explanation": "Ukuran huruf root default adalah 16px, jadi 1rem = 16px."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`width: 50%;` artinya lebar elemen...",
+          "options": ["Setengah lebar elemen induknya", "Selalu setengah layar", "50px", "Setengah tinggi elemen"],
+          "answer": 0,
+          "clue": "Persen dihitung dari induk.",
+          "explanation": "Persentase width relatif terhadap lebar elemen induk."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`100vw` artinya...",
+          "options": ["Selebar layar (viewport)", "100px", "Setinggi layar", "100 kali lebar induk"],
+          "answer": 0,
+          "clue": "vw = viewport width.",
+          "explanation": "1vw = 1% lebar viewport, jadi 100vw = lebar layar."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Satuan `em` pada font-size relatif terhadap...",
+          "options": ["Ukuran huruf elemen induk", "Lebar layar", "Tinggi elemen", "Selalu 16px"],
+          "answer": 0,
+          "clue": "Berbeda dengan rem yang selalu mengacu ke root.",
+          "explanation": "`2em` = dua kali ukuran huruf induk."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan untuk menyembunyikan elemen ber-class iklan sepenuhnya.",
+          "answer": [".iklan", "{", "display: none;", "}"],
+          "distractors": ["display: hidden;"],
+          "clue": "Nilai yang benar adalah none.",
+          "explanation": "`.iklan { display: none; }`. Tidak ada nilai `display: hidden`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen ber-class badge sebaris tapi bisa diberi lebar.",
+          "answer": [".badge", "{", "display: inline-block;", "}"],
+          "distractors": ["display: inline;"],
+          "clue": "Gabungan inline dan block.",
+          "explanation": "`.badge { display: inline-block; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: h1 berukuran 2rem.",
+          "answer": ["h1", "{", "font-size: 2rem;", "}"],
+          "distractors": ["font-size: 2;"],
+          "clue": "Angka harus diikuti satuan.",
+          "explanation": "`h1 { font-size: 2rem; }` = 32px dengan ukuran root default."
+        }
+      ]
+    },
+    {
+      "level_no": 7,
+      "title": "Flexbox",
+      "cards": [
+        {
+          "title": "Flex container",
+          "body": [
+            "`display: flex` pada elemen **induk** membuat anak-anaknya (flex item) tersusun dalam satu baris.",
+            "",
+            "`flex-direction` mengatur arah: `row` (default, ke samping) atau `column` (ke bawah). `gap` memberi jarak antar item."
+          ],
+          "code": [".menu {", "  display: flex;", "  gap: 16px;", "}", "", "<nav class=\"menu\">", "  <a href=\"#\">Beranda</a>", "  <a href=\"#\">Kelas</a>", "</nav>"]
+        },
+        {
+          "title": "Meratakan item",
+          "body": [
+            "`justify-content` meratakan item di **sumbu utama** (horizontal untuk row): `flex-start`, `center`, `flex-end`, `space-between` (ujung-ujung menempel tepi), `space-around`.",
+            "",
+            "`align-items` meratakan di **sumbu silang** (vertikal untuk row): `stretch` (default), `center`, `flex-start`, `flex-end`."
+          ],
+          "code": ["header {", "  display: flex;", "  justify-content: space-between;", "  align-items: center;", "}"]
+        },
+        {
+          "title": "Wrap dan flex: 1",
+          "body": "`flex-wrap: wrap` membuat item turun ke baris berikutnya kalau tidak muat. `flex: 1` pada item membuatnya mengisi sisa ruang. Kombinasi `justify-content: center` + `align-items: center` menengahkan item secara sempurna.",
+          "code": [".galeri { display: flex; flex-wrap: wrap; gap: 8px; }", ".isi { flex: 1; }"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Cara mengaktifkan flexbox adalah...",
+          "options": ["display: flex; pada elemen induk", "display: flex; pada setiap anak", "flex: on; pada body", "display: flexbox;"],
+          "answer": 0,
+          "clue": "Yang diatur adalah wadahnya.",
+          "explanation": "`display: flex` dipasang pada container, anak-anaknya otomatis menjadi flex item."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nilai default `flex-direction` adalah...",
+          "options": ["row", "column", "row-reverse", "none"],
+          "answer": 0,
+          "clue": "Item flex awalnya berjajar ke samping.",
+          "explanation": "Defaultnya `row`: item tersusun mendatar."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Untuk menyusun item flex dari atas ke bawah, gunakan...",
+          "options": ["flex-direction: column;", "flex-direction: vertical;", "align: column;", "display: column;"],
+          "answer": 0,
+          "clue": "Kolom = tersusun ke bawah.",
+          "explanation": "`flex-direction: column;`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada container flex row, cara menengahkan item secara HORIZONTAL adalah...",
+          "options": ["justify-content: center;", "align-items: center;", "text-align: center;", "vertical-align: middle;"],
+          "answer": 0,
+          "clue": "Horizontal adalah sumbu utama pada row.",
+          "explanation": "`justify-content` mengatur sumbu utama."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada container flex row, cara menengahkan item secara VERTIKAL adalah...",
+          "options": ["align-items: center;", "justify-content: center;", "vertical-align: center;", "align-content: top;"],
+          "answer": 0,
+          "clue": "Vertikal adalah sumbu silang pada row.",
+          "explanation": "`align-items` mengatur sumbu silang."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`justify-content: space-between;` artinya...",
+          "options": ["Item pertama dan terakhir menempel tepi, sisa jarak dibagi rata", "Semua item menumpuk di tengah", "Jarak di semua sisi item sama", "Tidak ada jarak sama sekali"],
+          "answer": 0,
+          "clue": "Jaraknya hanya \"di antara\" item.",
+          "explanation": "Cocok untuk header: logo di kiri, menu di kanan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Property untuk memberi jarak antar item flex adalah...",
+          "options": ["gap", "space", "margin-between", "padding-items"],
+          "answer": 0,
+          "clue": "Artinya \"celah\".",
+          "explanation": "`gap: 16px;` memberi jarak di antara item tanpa menambah jarak di tepi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Agar item flex turun ke baris berikutnya saat tidak muat, gunakan...",
+          "options": ["flex-wrap: wrap;", "flex-wrap: nowrap;", "overflow: wrap;", "wrap: true;"],
+          "answer": 0,
+          "clue": "wrap = membungkus/melipat.",
+          "explanation": "Defaultnya `nowrap` (memaksa satu baris)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`flex: 1;` pada sebuah item artinya...",
+          "options": ["Item mengisi sisa ruang yang tersedia", "Lebar item 1px", "Item menjadi yang pertama", "Item disembunyikan"],
+          "answer": 0,
+          "clue": "Item ini \"tumbuh\".",
+          "explanation": "`flex: 1` membuat item membesar mengisi ruang kosong."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara menengahkan sebuah item tepat di tengah container flex (horizontal dan vertikal) adalah...",
+          "options": ["justify-content: center; dan align-items: center;", "text-align: center; saja", "margin: center;", "align: middle;"],
+          "answer": 0,
+          "clue": "Butuh pengaturan di dua sumbu.",
+          "explanation": "Sumbu utama dengan justify-content, sumbu silang dengan align-items."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen ber-class menu menjadi flex container.",
+          "answer": [".menu", "{", "display: flex;", "}"],
+          "distractors": ["display: block;"],
+          "clue": "Aktifkan flex di induknya.",
+          "explanation": "`.menu { display: flex; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: item di dalam .menu menempel di kedua ujung.",
+          "answer": [".menu", "{", "justify-content: space-between;", "}"],
+          "distractors": ["align-items: space-between;"],
+          "clue": "Sumbu utama diatur oleh justify-content.",
+          "explanation": "`.menu { justify-content: space-between; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: anak dari .kolom tersusun ke bawah.",
+          "answer": [".kolom", "{", "flex-direction: column;", "}"],
+          "distractors": ["flex-direction: vertical;"],
+          "clue": "Nilainya column.",
+          "explanation": "`.kolom { flex-direction: column; }`."
+        }
+      ]
+    },
+    {
+      "level_no": 8,
+      "title": "Grid",
+      "cards": [
+        {
+          "title": "Grid container",
+          "body": [
+            "`display: grid` membuat tata letak **baris dan kolom**. Kolom ditentukan dengan `grid-template-columns`.",
+            "",
+            "Satuan `fr` (fraction) membagi sisa ruang: `1fr 1fr` = dua kolom sama lebar, `1fr 2fr` = kolom kedua dua kali lebih lebar. `repeat(3, 1fr)` = tiga kolom sama lebar."
+          ],
+          "code": [".galeri {", "  display: grid;", "  grid-template-columns: repeat(3, 1fr);", "  gap: 16px;", "}"]
+        },
+        {
+          "title": "Ukuran campuran dan span",
+          "body": "Ukuran kolom boleh dicampur: `200px 1fr` = kolom pertama tetap 200px, kolom kedua mengisi sisanya (cocok untuk sidebar). `grid-column: span 2` membuat item melebar dua kolom.",
+          "code": [".halaman { display: grid; grid-template-columns: 200px 1fr; }", ".banner { grid-column: span 2; }"]
+        },
+        {
+          "title": "Flexbox atau grid?",
+          "body": "**Flexbox** cocok untuk menyusun item dalam **satu arah** (sebaris menu, deretan tombol). **Grid** cocok untuk tata letak **dua dimensi** (galeri, kerangka halaman). Keduanya sering dipakai bersama."
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Cara mengaktifkan CSS grid adalah...",
+          "options": ["display: grid;", "display: table;", "grid: on;", "layout: grid;"],
+          "answer": 0,
+          "clue": "Sama polanya dengan flexbox.",
+          "explanation": "`display: grid;` pada elemen induk."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara membuat 3 kolom sama lebar adalah...",
+          "options": ["grid-template-columns: repeat(3, 1fr);", "grid-columns: 3;", "columns: 3 equal;", "grid: 3;"],
+          "answer": 0,
+          "clue": "Ulangi 1fr sebanyak tiga kali.",
+          "explanation": "`repeat(3, 1fr)` sama dengan `1fr 1fr 1fr`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Satuan `fr` pada grid berarti...",
+          "options": ["Bagian dari sisa ruang yang tersedia", "Ukuran huruf", "Frame per detik", "Sama dengan pixel"],
+          "answer": 0,
+          "clue": "fr = fraction (pecahan).",
+          "explanation": "fr membagi ruang kosong secara proporsional."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`grid-template-columns: 200px 1fr;` menghasilkan...",
+          "options": ["Kolom 1 selebar 200px, kolom 2 mengisi sisa ruang", "Dua kolom masing-masing 200px", "200 kolom", "Satu kolom selebar 200px"],
+          "answer": 0,
+          "clue": "Ada dua nilai = dua kolom.",
+          "explanation": "Pola populer untuk sidebar tetap + isi fleksibel."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`gap` pada grid mengatur...",
+          "options": ["Jarak antar baris dan antar kolom", "Lebar border", "Padding di dalam setiap item", "Jumlah kolom"],
+          "answer": 0,
+          "clue": "Sama seperti di flexbox.",
+          "explanation": "`gap: 16px;` memberi celah di antara sel grid."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara membuat sebuah item melebar 2 kolom adalah...",
+          "options": ["grid-column: span 2;", "column-span: 2;", "grid-width: 2;", "colspan=\"2\""],
+          "answer": 0,
+          "clue": "span = merentang.",
+          "explanation": "`grid-column: span 2;` dipasang pada itemnya. `colspan` adalah atribut tabel HTML."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Grid paling cocok untuk...",
+          "options": ["Tata letak dua dimensi (baris dan kolom)", "Mengubah warna teks", "Animasi", "Satu baris tombol saja"],
+          "answer": 0,
+          "clue": "Grid = kisi-kisi.",
+          "explanation": "Grid unggul untuk tata letak dua dimensi seperti galeri dan kerangka halaman."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Flexbox paling cocok untuk...",
+          "options": ["Menyusun item dalam satu arah (baris atau kolom)", "Tabel data", "Menyimpan data", "Membuat gambar"],
+          "answer": 0,
+          "clue": "Pikirkan sebaris menu navigasi.",
+          "explanation": "Flexbox bersifat satu dimensi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada `grid-template-columns: 1fr 2fr;`, kolom kedua...",
+          "options": ["Dua kali lebih lebar dari kolom pertama", "Setengah lebar kolom pertama", "Sama lebar dengan kolom pertama", "Lebarnya 2px"],
+          "answer": 0,
+          "clue": "Ruang dibagi menjadi 3 bagian.",
+          "explanation": "Kolom pertama 1/3, kolom kedua 2/3 dari ruang."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`repeat(4, 100px)` menghasilkan...",
+          "options": ["4 kolom masing-masing 100px", "1 kolom selebar 400px", "100 kolom", "4 kolom masing-masing 4px"],
+          "answer": 0,
+          "clue": "Ulangi 100px empat kali.",
+          "explanation": "Sama dengan `100px 100px 100px 100px`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: elemen ber-class galeri menjadi grid.",
+          "answer": [".galeri", "{", "display: grid;", "}"],
+          "distractors": ["display: flex-grid;"],
+          "clue": "Nilainya cukup grid.",
+          "explanation": "`.galeri { display: grid; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: .galeri punya 3 kolom sama lebar.",
+          "answer": [".galeri", "{", "grid-template-columns: repeat(3, 1fr);", "}"],
+          "distractors": ["grid-columns: 3;"],
+          "clue": "Property-nya grid-template-columns.",
+          "explanation": "`.galeri { grid-template-columns: repeat(3, 1fr); }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: .banner melebar 2 kolom.",
+          "answer": [".banner", "{", "grid-column: span 2;", "}"],
+          "distractors": ["column-span: 2;"],
+          "clue": "Pakai kata span.",
+          "explanation": "`.banner { grid-column: span 2; }`."
+        }
+      ]
+    },
+    {
+      "level_no": 9,
+      "title": "Responsif & Interaksi",
+      "cards": [
+        {
+          "title": "Pseudo-class",
+          "body": [
+            "Pseudo-class memilih elemen dalam **keadaan** tertentu, ditulis dengan satu titik dua: `a:hover` (kursor di atasnya), `input:focus` (sedang diketik), `li:first-child` (anak pertama).",
+            "",
+            "`transition` membuat perubahan gaya berlangsung halus."
+          ],
+          "code": [".tombol {", "  background-color: #16a34a;", "  transition: background-color 0.3s;", "}", ".tombol:hover {", "  background-color: #15803d;", "}"]
+        },
+        {
+          "title": "Media query",
+          "body": [
+            "Halaman **responsif** menyesuaikan diri dengan ukuran layar. Media query menjalankan aturan CSS hanya jika syaratnya terpenuhi.",
+            "",
+            "`@media (max-width: 600px) { ... }` berlaku saat lebar layar **600px atau kurang** (umumnya HP). Jangan lupa `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">` di `<head>`."
+          ],
+          "code": [".galeri { display: grid; grid-template-columns: repeat(3, 1fr); }", "", "@media (max-width: 600px) {", "  .galeri { grid-template-columns: 1fr; }", "}"]
+        },
+        {
+          "title": "Gambar yang lentur",
+          "body": "`max-width: 100%` membuat gambar tidak pernah lebih lebar dari wadahnya, jadi tidak bocor keluar layar di HP. Tambahkan `height: auto` supaya proporsinya tetap.",
+          "code": ["img {", "  max-width: 100%;", "  height: auto;", "}"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Pseudo-class untuk gaya saat kursor berada di atas elemen adalah...",
+          "options": [":hover", ":active", ":focus", ":over"],
+          "answer": 0,
+          "clue": "hover = melayang di atas.",
+          "explanation": "`a:hover { }` berlaku saat kursor di atas link."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pseudo-class untuk input yang sedang aktif diketik adalah...",
+          "options": [":focus", ":hover", ":typing", ":selected"],
+          "answer": 0,
+          "clue": "Input sedang menjadi \"fokus\".",
+          "explanation": "`input:focus { }` cocok untuk menyorot isian yang aktif."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pseudo-class untuk memilih anak pertama dalam induknya adalah...",
+          "options": [":first-child", ":first", ":child(1)", ":top"],
+          "answer": 0,
+          "clue": "Anak pertama dalam bahasa Inggris.",
+          "explanation": "`li:first-child` memilih item pertama daftar."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Media query untuk layar dengan lebar maksimal 600px adalah...",
+          "options": ["@media (max-width: 600px) { }", "@screen 600px { }", "@media width < 600 { }", "if (width < 600) { }"],
+          "answer": 0,
+          "clue": "Diawali @media, syarat ditulis di dalam kurung.",
+          "explanation": "`@media (max-width: 600px) { ... }`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi `<meta name=\"viewport\" ...>` adalah...",
+          "options": ["Agar tampilan mengikuti lebar layar HP", "Menambah peringkat di Google", "Mengatur warna tema", "Memuat file CSS"],
+          "answer": 0,
+          "clue": "Tanpa ini, HP menampilkan halaman seperti layar desktop yang diperkecil.",
+          "explanation": "Meta viewport membuat media query bekerja dengan benar di HP."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`transition: background-color 0.3s;` membuat...",
+          "options": ["Perubahan warna latar berlangsung halus selama 0,3 detik", "Warna latar berkedip tiap 0,3 detik", "Warna latar muncul setelah 3 detik", "Warna latar tidak bisa berubah"],
+          "answer": 0,
+          "clue": "transition = peralihan.",
+          "explanation": "Perubahan warna (misalnya saat hover) dianimasikan secara halus."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Agar gambar tidak pernah melebihi lebar wadahnya, gunakan...",
+          "options": ["max-width: 100%;", "width: 100vw;", "image-fit: box;", "overflow: image;"],
+          "answer": 0,
+          "clue": "Batasi lebar maksimalnya.",
+          "explanation": "`max-width: 100%` mengecilkan gambar di layar sempit tanpa membesarkannya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Halaman yang responsif artinya...",
+          "options": ["Tampilannya menyesuaikan ukuran layar", "Halamannya dimuat sangat cepat", "Halamannya bisa membalas pesan", "Halaman tanpa gambar"],
+          "answer": 0,
+          "clue": "Pikirkan HP, tablet, dan laptop.",
+          "explanation": "Satu halaman tetap nyaman dilihat di berbagai ukuran layar."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Aturan di dalam `@media (max-width: 600px)` berlaku saat...",
+          "options": ["Lebar layar 600px atau kurang", "Lebar layar lebih dari 600px", "Tinggi layar 600px", "Selalu berlaku"],
+          "answer": 0,
+          "clue": "max = paling besar.",
+          "explanation": "max-width: 600px = lebar maksimal 600px."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pseudo-class ditulis dengan tanda...",
+          "options": ["Satu titik dua (:)", "Titik (.)", "Pagar (#)", "Tanda @"],
+          "answer": 0,
+          "clue": "Contohnya a:hover.",
+          "explanation": "Titik untuk class, pagar untuk id, titik dua untuk pseudo-class."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: link berwarna merah saat kursor di atasnya.",
+          "answer": ["a:hover", "{", "color: red;", "}"],
+          "distractors": ["a.hover"],
+          "clue": "Pseudo-class memakai titik dua.",
+          "explanation": "`a:hover { color: red; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun media query: sembunyikan .menu di layar 600px ke bawah.",
+          "answer": ["@media (max-width: 600px) {", ".menu {", "display: none;", "}", "}"],
+          "distractors": ["@media max 600px {"],
+          "clue": "Aturan biasa berada di dalam blok @media, jadi ada dua kurung tutup.",
+          "explanation": "`@media (max-width: 600px) { .menu { display: none; } }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun aturan: semua gambar tidak boleh lebih lebar dari wadahnya.",
+          "answer": ["img", "{", "max-width: 100%;", "}"],
+          "distractors": ["min-width: 100%;"],
+          "clue": "Yang dibatasi adalah lebar maksimal.",
+          "explanation": "`img { max-width: 100%; }`."
+        }
+      ]
+    },
+    {
+      "level_no": 10,
+      "title": "Layout Landing Page",
+      "cards": [
+        {
+          "title": "Ringkasan: flexbox dan grid",
+          "body": "Flexbox (`display: flex`) untuk satu arah: `justify-content` (sumbu utama), `align-items` (sumbu silang), `gap`. Grid (`display: grid`) untuk dua dimensi: `grid-template-columns: repeat(3, 1fr)`, `gap`, `grid-column: span 2`.",
+          "code": [".menu { display: flex; justify-content: space-between; align-items: center; }", ".fitur { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }"]
+        },
+        {
+          "title": "Ringkasan: responsif",
+          "body": "Media query `@media (max-width: 600px) { ... }` untuk layar kecil. `max-width: 100%` untuk gambar. Pseudo-class `:hover` dan `transition` untuk interaksi. `text-decoration: none` untuk link tanpa garis bawah.",
+          "code": ["@media (max-width: 600px) {", "  .fitur { grid-template-columns: 1fr; }", "}"]
+        }
+      ],
+      "challenges": [
+        {
+          "instruction": [
+            "HTML landing page sudah jadi. Tulis **CSS** supaya tata letaknya rapi:",
+            "",
+            "1. `.menu` menjadi **flex container**.",
+            "2. Item di `.menu` menempel di **kedua ujung** (`space-between`).",
+            "3. Link di dalam `.menu` **tidak bergaris bawah**.",
+            "4. `.fitur` menjadi **grid** dengan **3 kolom** sama lebar.",
+            "5. `.fitur` punya jarak antar kolom **16px**.",
+            "6. `.kartu` punya padding **16px** dan sudut membulat **8px**.",
+            "7. Ada **media query** `max-width` yang mengubah `.fitur` di layar kecil."
+          ],
+          "starter": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { font-family: sans-serif; margin: 0; }",
+            "    header { background-color: #0f172a; padding: 12px 20px; }",
+            "    .menu a { color: white; }",
+            "    .kartu { background-color: #f1f5f9; }",
+            "    /* tulis CSS kamu di bawah ini */",
+            "",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <header>",
+            "    <nav class=\"menu\">",
+            "      <a href=\"#\">KodeKu</a>",
+            "      <a href=\"#fitur\">Fitur</a>",
+            "      <a href=\"#daftar\">Daftar</a>",
+            "    </nav>",
+            "  </header>",
+            "  <section class=\"fitur\" id=\"fitur\">",
+            "    <div class=\"kartu\"><h3>Materi Singkat</h3><p>Belajar 10 menit sehari.</p></div>",
+            "    <div class=\"kartu\"><h3>Kuis Seru</h3><p>Uji pemahamanmu.</p></div>",
+            "    <div class=\"kartu\"><h3>Proyek Nyata</h3><p>Bangun portofolio.</p></div>",
+            "  </section>",
+            "</body>",
+            "</html>"
+          ],
+          "tests": [
+            { "desc": ".menu memakai display flex", "check": "getComputedStyle(document.querySelector('.menu')).display === 'flex'" },
+            { "desc": ".menu memakai justify-content space-between", "check": "getComputedStyle(document.querySelector('.menu')).justifyContent === 'space-between'" },
+            { "desc": "Link di .menu tanpa garis bawah", "check": "[...document.querySelectorAll('.menu a')].every(a => getComputedStyle(a).textDecorationLine === 'none')" },
+            { "desc": ".fitur grid dengan 3 kolom", "check": "(() => { const s = getComputedStyle(document.querySelector('.fitur')); return s.display === 'grid' && s.gridTemplateColumns.trim().split(/\\s+/).length === 3; })()" },
+            { "desc": ".fitur gap kolom 16px", "check": "getComputedStyle(document.querySelector('.fitur')).columnGap === '16px'" },
+            { "desc": ".kartu padding 16px dan border-radius 8px", "check": "(() => { const s = getComputedStyle(document.querySelector('.kartu')); return s.paddingTop === '16px' && s.paddingLeft === '16px' && s.borderTopLeftRadius === '8px'; })()" },
+            { "desc": "Ada media query max-width yang mengatur .fitur", "check": "[...document.styleSheets].some(sh => [...sh.cssRules].some(r => r instanceof CSSMediaRule && r.conditionText.includes('max-width') && [...r.cssRules].some(x => (x.selectorText || '').includes('.fitur'))))" }
+          ],
+          "solution": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { font-family: sans-serif; margin: 0; }",
+            "    header { background-color: #0f172a; padding: 12px 20px; }",
+            "    .menu a { color: white; }",
+            "    .kartu { background-color: #f1f5f9; }",
+            "    .menu { display: flex; justify-content: space-between; }",
+            "    .menu a { text-decoration: none; }",
+            "    .fitur { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 20px; }",
+            "    .kartu { padding: 16px; border-radius: 8px; }",
+            "    @media (max-width: 600px) {",
+            "      .fitur { grid-template-columns: 1fr; }",
+            "    }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <header>",
+            "    <nav class=\"menu\">",
+            "      <a href=\"#\">KodeKu</a>",
+            "      <a href=\"#fitur\">Fitur</a>",
+            "      <a href=\"#daftar\">Daftar</a>",
+            "    </nav>",
+            "  </header>",
+            "  <section class=\"fitur\" id=\"fitur\">",
+            "    <div class=\"kartu\"><h3>Materi Singkat</h3><p>Belajar 10 menit sehari.</p></div>",
+            "    <div class=\"kartu\"><h3>Kuis Seru</h3><p>Uji pemahamanmu.</p></div>",
+            "    <div class=\"kartu\"><h3>Proyek Nyata</h3><p>Bangun portofolio.</p></div>",
+            "  </section>",
+            "</body>",
+            "</html>"
+          ]
+        },
+        {
+          "instruction": [
+            "HTML galeri foto sudah jadi. Tulis **CSS** supaya:",
+            "",
+            "1. `header` menjadi **flex container** dengan item **rata tengah secara vertikal** (`align-items: center`).",
+            "2. `.judul` ditulis **huruf kapital semua** (`text-transform`).",
+            "3. `.galeri` menjadi **grid** dengan **2 kolom** sama lebar.",
+            "4. `.galeri` punya `gap` **12px**.",
+            "5. Gambar di `.galeri` punya `max-width` **100%**.",
+            "6. Ada **media query** `max-width` yang mengubah `.galeri` di layar kecil."
+          ],
+          "starter": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { font-family: sans-serif; margin: 0 16px; }",
+            "    .foto { background-color: #e2e8f0; padding: 8px; }",
+            "    /* tulis CSS kamu di bawah ini */",
+            "",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <header>",
+            "    <span class=\"logo\">📷</span>",
+            "    <h1 class=\"judul\">Galeri Liburan</h1>",
+            "  </header>",
+            "  <main class=\"galeri\">",
+            "    <figure class=\"foto\"><img src=\"pantai.jpg\" alt=\"Pantai\"><figcaption>Pantai</figcaption></figure>",
+            "    <figure class=\"foto\"><img src=\"gunung.jpg\" alt=\"Gunung\"><figcaption>Gunung</figcaption></figure>",
+            "    <figure class=\"foto\"><img src=\"kota.jpg\" alt=\"Kota\"><figcaption>Kota</figcaption></figure>",
+            "    <figure class=\"foto\"><img src=\"danau.jpg\" alt=\"Danau\"><figcaption>Danau</figcaption></figure>",
+            "  </main>",
+            "</body>",
+            "</html>"
+          ],
+          "tests": [
+            { "desc": "header memakai display flex", "check": "getComputedStyle(document.querySelector('header')).display === 'flex'" },
+            { "desc": "header memakai align-items center", "check": "getComputedStyle(document.querySelector('header')).alignItems === 'center'" },
+            { "desc": ".judul huruf kapital semua", "check": "getComputedStyle(document.querySelector('.judul')).textTransform === 'uppercase'" },
+            { "desc": ".galeri grid dengan 2 kolom", "check": "(() => { const s = getComputedStyle(document.querySelector('.galeri')); return s.display === 'grid' && s.gridTemplateColumns.trim().split(/\\s+/).length === 2; })()" },
+            { "desc": ".galeri gap 12px", "check": "getComputedStyle(document.querySelector('.galeri')).columnGap === '12px'" },
+            { "desc": "Gambar di .galeri punya max-width 100%", "check": "[...document.querySelectorAll('.galeri img')].every(i => getComputedStyle(i).maxWidth === '100%')" },
+            { "desc": "Ada media query max-width yang mengatur .galeri", "check": "[...document.styleSheets].some(sh => [...sh.cssRules].some(r => r instanceof CSSMediaRule && r.conditionText.includes('max-width') && [...r.cssRules].some(x => (x.selectorText || '').includes('.galeri'))))" }
+          ],
+          "solution": [
+            "<!DOCTYPE html>",
+            "<html>",
+            "<head>",
+            "  <style>",
+            "    body { font-family: sans-serif; margin: 0 16px; }",
+            "    .foto { background-color: #e2e8f0; padding: 8px; }",
+            "    header { display: flex; align-items: center; gap: 8px; }",
+            "    .judul { text-transform: uppercase; }",
+            "    .galeri { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }",
+            "    .galeri img { max-width: 100%; }",
+            "    @media (max-width: 600px) {",
+            "      .galeri { grid-template-columns: 1fr; }",
+            "    }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <header>",
+            "    <span class=\"logo\">📷</span>",
+            "    <h1 class=\"judul\">Galeri Liburan</h1>",
+            "  </header>",
+            "  <main class=\"galeri\">",
+            "    <figure class=\"foto\"><img src=\"pantai.jpg\" alt=\"Pantai\"><figcaption>Pantai</figcaption></figure>",
+            "    <figure class=\"foto\"><img src=\"gunung.jpg\" alt=\"Gunung\"><figcaption>Gunung</figcaption></figure>",
+            "    <figure class=\"foto\"><img src=\"kota.jpg\" alt=\"Kota\"><figcaption>Kota</figcaption></figure>",
+            "    <figure class=\"foto\"><img src=\"danau.jpg\" alt=\"Danau\"><figcaption>Danau</figcaption></figure>",
+            "  </main>",
+            "</body>",
+            "</html>"
+          ]
+        }
+      ]
+    }
+  ]
+}

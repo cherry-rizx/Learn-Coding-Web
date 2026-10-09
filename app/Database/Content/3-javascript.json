@@ -1,0 +1,658 @@
+{
+  "chapter": "javascript",
+  "levels": [
+    {
+      "level_no": 1,
+      "title": "Kenalan dengan JavaScript",
+      "cards": [
+        {
+          "title": "Apa itu JavaScript?",
+          "body": [
+            "**JavaScript** (JS) adalah bahasa pemrograman yang membuat halaman web **hidup**: merespons klik, menghitung, mengubah isi halaman tanpa reload, dan banyak lagi.",
+            "",
+            "HTML = kerangka, CSS = tampilan, JavaScript = perilaku. JS berjalan langsung di browser."
+          ],
+          "code": ["<button onclick=\"alert('Halo!')\">Klik aku</button>", "", "<script>", "  console.log('JavaScript sudah jalan');", "</script>"]
+        },
+        {
+          "title": "console.log",
+          "body": [
+            "`console.log()` menampilkan pesan ke **console**, yaitu tempat programmer melihat hasil dan error. Di sandbox, isi console tampil di panel hasil.",
+            "",
+            "Teks (string) ditulis di antara tanda kutip: `'...'` atau `\"...\"`. Angka ditulis tanpa kutip."
+          ],
+          "code": ["console.log('Halo Dunia!');", "console.log(2 + 3);      // 5", "console.log('2' + '3');  // 23 (teks digabung)"]
+        },
+        {
+          "title": "Pernyataan dan komentar",
+          "body": "Setiap perintah disebut **pernyataan** dan biasanya diakhiri titik koma `;`. Komentar satu baris diawali `//`, komentar banyak baris ditulis di antara `/*` dan `*/`. JavaScript **membedakan huruf besar dan kecil**: `console.log` benar, `Console.Log` salah.",
+          "code": ["// ini komentar satu baris", "/* ini komentar", "   banyak baris */", "console.log('Selesai');"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Peran utama JavaScript di halaman web adalah...",
+          "options": ["Mengatur perilaku dan interaksi halaman", "Menyusun kerangka halaman", "Mengatur warna dan font", "Menyimpan file di server"],
+          "answer": 0,
+          "clue": "HTML kerangka, CSS tampilan, JavaScript...?",
+          "explanation": "JavaScript membuat halaman interaktif: merespons klik, menghitung, mengubah isi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Perintah untuk menampilkan pesan ke console adalah...",
+          "options": ["console.log()", "print()", "echo", "System.out.println()"],
+          "answer": 0,
+          "clue": "Diawali kata console.",
+          "explanation": "`console.log('pesan')`. Pilihan lain adalah perintah di bahasa lain."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tag HTML untuk menulis kode JavaScript adalah...",
+          "options": ["<script>", "<js>", "<javascript>", "<code>"],
+          "answer": 0,
+          "clue": "Artinya \"naskah\".",
+          "explanation": "Kode JavaScript ditulis di dalam `<script>...</script>`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Komentar satu baris di JavaScript diawali dengan...",
+          "options": ["//", "#", "<!--", "--"],
+          "answer": 0,
+          "clue": "Dua garis miring.",
+          "explanation": "`// komentar`. Untuk banyak baris pakai `/* ... */`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa hasil `console.log(2 + 3);`?",
+          "options": ["5", "23", "2 + 3", "Error"],
+          "answer": 0,
+          "clue": "Keduanya angka, bukan teks.",
+          "explanation": "Angka dijumlahkan: 5."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa hasil `console.log('2' + '3');`?",
+          "options": ["23", "5", "'2' + '3'", "Error"],
+          "answer": 0,
+          "clue": "Keduanya berada di dalam tanda kutip.",
+          "explanation": "Tanda `+` pada dua teks menggabungkannya: \"23\"."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Penulisan teks (string) yang benar adalah...",
+          "options": ["'Halo'", "Halo", "(Halo)", "<Halo>"],
+          "answer": 0,
+          "clue": "Teks harus diapit tanda kutip.",
+          "explanation": "String ditulis di dalam kutip tunggal `'...'` atau ganda `\"...\"`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apakah JavaScript membedakan huruf besar dan kecil?",
+          "options": ["Ya, console.log berbeda dengan Console.Log", "Tidak, semua sama", "Hanya untuk angka", "Hanya di dalam komentar"],
+          "answer": 0,
+          "clue": "Istilahnya case-sensitive.",
+          "explanation": "JavaScript case-sensitive. `Console.Log` akan error."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tanda yang biasa dipakai untuk mengakhiri pernyataan JavaScript adalah...",
+          "options": [";", ".", ":", ","],
+          "answer": 0,
+          "clue": "Sama seperti di akhir deklarasi CSS.",
+          "explanation": "Titik koma `;` menandai akhir pernyataan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Di mana JavaScript pada halaman web dijalankan?",
+          "options": ["Di browser pengguna", "Di printer", "Hanya di database", "Di dalam file CSS"],
+          "answer": 0,
+          "clue": "Program yang kamu pakai untuk membuka situs.",
+          "explanation": "JavaScript untuk halaman web dijalankan oleh browser."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun perintah untuk menampilkan teks Halo ke console.",
+          "answer": ["console", ".log(", "'Halo'", ");"],
+          "distractors": ["print("],
+          "clue": "console, titik log, isi di dalam kurung, titik koma.",
+          "explanation": "`console.log('Halo');`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun tag script yang menampilkan angka 10 ke console.",
+          "answer": ["<script>", "console.log(10);", "</script>"],
+          "distractors": ["<js>"],
+          "clue": "Kode JavaScript berada di dalam tag script.",
+          "explanation": "`<script>console.log(10);</script>`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun komentar banyak baris berisi kata catatan.",
+          "answer": ["/*", "catatan", "*/"],
+          "distractors": ["//"],
+          "clue": "Garis miring bintang di awal, bintang garis miring di akhir.",
+          "explanation": "`/* catatan */`."
+        }
+      ]
+    },
+    {
+      "level_no": 2,
+      "title": "Variabel & Tipe Data",
+      "cards": [
+        {
+          "title": "Variabel",
+          "body": [
+            "**Variabel** adalah wadah bernama untuk menyimpan nilai. Buat dengan `let` (nilainya boleh diubah) atau `const` (tidak boleh diubah setelah diisi). Kamu mungkin melihat `var` di kode lama.",
+            "",
+            "Nama variabel tidak boleh diawali angka dan tidak boleh mengandung spasi. Biasanya ditulis camelCase: `namaDepan`, `totalHarga`."
+          ],
+          "code": ["let umur = 17;", "umur = 18;           // boleh, karena let", "const nama = 'Rina';", "// nama = 'Sari';   // error, karena const"]
+        },
+        {
+          "title": "Tipe data dasar",
+          "body": "**string** (teks, `'Halo'`), **number** (angka, `42` atau `3.14`), **boolean** (`true`/`false`), **undefined** (variabel belum diisi), dan **null** (sengaja kosong). Operator `typeof` memberi tahu tipe sebuah nilai.",
+          "code": ["typeof 'Halo'   // 'string'", "typeof 42       // 'number'", "typeof true     // 'boolean'", "let x;", "typeof x        // 'undefined'"]
+        },
+        {
+          "title": "Menggabungkan teks",
+          "body": "Teks bisa digabung dengan `+`. Cara yang lebih rapi adalah **template literal**: teks di antara backtick, lalu sisipkan nilai dengan `${...}`.",
+          "code": ["const nama = 'Rina';", "const umur = 17;", "console.log('Halo ' + nama);", "console.log(`${nama} berumur ${umur} tahun`);"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci untuk membuat variabel yang nilainya TIDAK boleh diubah adalah...",
+          "options": ["const", "let", "var", "fix"],
+          "answer": 0,
+          "clue": "Singkatan dari constant (tetap).",
+          "explanation": "`const` tidak bisa diisi ulang. Pakai `let` kalau nilainya akan berubah."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci untuk membuat variabel yang nilainya BOLEH diubah adalah...",
+          "options": ["let", "const", "final", "static"],
+          "answer": 0,
+          "clue": "Artinya \"biarkan\".",
+          "explanation": "`let skor = 0; skor = 10;` boleh dilakukan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nama variabel mana yang VALID?",
+          "options": ["totalHarga", "2harga", "total harga", "total-harga"],
+          "answer": 0,
+          "clue": "Tidak boleh diawali angka, tidak boleh spasi atau tanda minus.",
+          "explanation": "`totalHarga` memakai gaya camelCase yang umum di JavaScript."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`typeof 'Halo'` menghasilkan...",
+          "options": ["'string'", "'number'", "'text'", "'boolean'"],
+          "answer": 0,
+          "clue": "Teks dalam kutip.",
+          "explanation": "Teks bertipe string."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`typeof 3.14` menghasilkan...",
+          "options": ["'number'", "'float'", "'decimal'", "'string'"],
+          "answer": 0,
+          "clue": "JavaScript tidak membedakan bilangan bulat dan desimal.",
+          "explanation": "Semua angka bertipe number."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nilai boolean hanya ada dua, yaitu...",
+          "options": ["true dan false", "1 dan 2", "ya dan tidak", "on dan off"],
+          "answer": 0,
+          "clue": "Benar dan salah dalam bahasa Inggris.",
+          "explanation": "Boolean: `true` atau `false`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nilai variabel yang dibuat dengan `let x;` tanpa diisi adalah...",
+          "options": ["undefined", "0", "null", "''"],
+          "answer": 0,
+          "clue": "Belum didefinisikan.",
+          "explanation": "Variabel yang belum diisi bernilai `undefined`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `const nama = 'Rina';`, hasil template literal `Halo ${nama}!` (diapit backtick) adalah...",
+          "options": ["Halo Rina!", "Halo ${nama}!", "Halo nama!", "Error"],
+          "answer": 0,
+          "clue": "Di dalam backtick, ${...} diganti nilainya.",
+          "explanation": "Template literal menyisipkan nilai variabel."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa yang terjadi pada `const a = 5; a = 7;`?",
+          "options": ["Error, karena const tidak bisa diisi ulang", "a menjadi 7", "a menjadi 12", "a tetap 5 tanpa error"],
+          "answer": 0,
+          "clue": "Ingat arti const.",
+          "explanation": "Mengisi ulang const menghasilkan TypeError."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `let skor = 10;` lalu `skor = skor + 5;`, nilai skor sekarang...",
+          "options": ["15", "10", "105", "5"],
+          "answer": 0,
+          "clue": "Ambil nilai lama, tambah 5, simpan lagi.",
+          "explanation": "skor = 10 + 5 = 15."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: buat variabel umur bernilai 17 yang boleh diubah.",
+          "answer": ["let", "umur", "=", "17;"],
+          "distractors": ["const"],
+          "clue": "Nilainya boleh diubah.",
+          "explanation": "`let umur = 17;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: buat konstanta kota berisi teks Bandung.",
+          "answer": ["const", "kota", "=", "'Bandung';"],
+          "distractors": ["Bandung;"],
+          "clue": "Teks harus diapit kutip.",
+          "explanation": "`const kota = 'Bandung';`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan tipe data variabel x ke console.",
+          "answer": ["console.log(", "typeof", "x", ");"],
+          "distractors": ["type"],
+          "clue": "Operator tipe adalah typeof.",
+          "explanation": "`console.log(typeof x);`."
+        }
+      ]
+    },
+    {
+      "level_no": 3,
+      "title": "Operator & Kondisi",
+      "cards": [
+        {
+          "title": "Operator aritmetika dan perbandingan",
+          "body": [
+            "Aritmetika: `+`, `-`, `*` (kali), `/` (bagi), `%` (sisa bagi). Contoh `10 % 3` = 1.",
+            "",
+            "Perbandingan menghasilkan boolean: `===` (sama nilai dan tipe), `!==` (tidak sama), `>`, `<`, `>=`, `<=`. Hindari `==` karena mengubah tipe diam-diam (`'5' == 5` bernilai true)."
+          ],
+          "code": ["console.log(7 * 3);      // 21", "console.log(10 % 3);     // 1", "console.log(5 === 5);    // true", "console.log('5' === 5);  // false"]
+        },
+        {
+          "title": "Operator logika",
+          "body": "`&&` (DAN): true jika kedua sisi true. `||` (ATAU): true jika salah satu true. `!` (BUKAN): membalik true/false.",
+          "code": ["const umur = 20;", "const punyaKTP = true;", "console.log(umur >= 17 && punyaKTP); // true", "console.log(!punyaKTP);             // false"]
+        },
+        {
+          "title": "if, else if, else",
+          "body": "`if` menjalankan blok kode hanya jika kondisinya true. `else if` mengecek kondisi lain, dan `else` dijalankan jika semua kondisi sebelumnya false. Kondisi dicek dari atas ke bawah, dan hanya **satu** blok yang dijalankan.",
+          "code": ["const nilai = 75;", "if (nilai >= 85) {", "  console.log('A');", "} else if (nilai >= 70) {", "  console.log('B');", "} else {", "  console.log('C');", "}", "// tampil: B"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Hasil dari `10 % 3` adalah...",
+          "options": ["1", "3", "3.33", "0"],
+          "answer": 0,
+          "clue": "% adalah sisa pembagian.",
+          "explanation": "10 dibagi 3 = 3 sisa 1."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Operator perkalian di JavaScript adalah...",
+          "options": ["*", "x", "×", "^"],
+          "answer": 0,
+          "clue": "Tanda bintang.",
+          "explanation": "`*` untuk kali. `^` bukan pangkat di JavaScript."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Hasil dari `'5' === 5` adalah...",
+          "options": ["false", "true", "Error", "undefined"],
+          "answer": 0,
+          "clue": "=== juga membandingkan tipe data.",
+          "explanation": "Tipe berbeda (string vs number), jadi false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Operator untuk \"tidak sama dengan\" yang dianjurkan adalah...",
+          "options": ["!==", "<>", "=!", "!="],
+          "answer": 0,
+          "clue": "Pasangan dari ===.",
+          "explanation": "`!==` membandingkan nilai dan tipe."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`true && false` bernilai...",
+          "options": ["false", "true", "null", "Error"],
+          "answer": 0,
+          "clue": "&& butuh KEDUA sisi true.",
+          "explanation": "Salah satu false, jadi hasilnya false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`true || false` bernilai...",
+          "options": ["true", "false", "undefined", "Error"],
+          "answer": 0,
+          "clue": "|| cukup salah satu true.",
+          "explanation": "Salah satu true, jadi hasilnya true."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`!true` bernilai...",
+          "options": ["false", "true", "0", "Error"],
+          "answer": 0,
+          "clue": "! membalik nilai.",
+          "explanation": "Kebalikan true adalah false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `nilai = 90`, kode berikut menampilkan apa?\n`if (nilai >= 85) { console.log('A'); } else if (nilai >= 70) { console.log('B'); }`",
+          "options": ["A", "B", "A lalu B", "Tidak ada"],
+          "answer": 0,
+          "clue": "Kondisi dicek dari atas, berhenti di yang pertama true.",
+          "explanation": "90 >= 85 true, jadi hanya 'A' yang tampil."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Blok `else` dijalankan ketika...",
+          "options": ["Semua kondisi sebelumnya false", "Kondisi if true", "Selalu dijalankan", "Tidak pernah dijalankan"],
+          "answer": 0,
+          "clue": "Else = selain itu.",
+          "explanation": "else adalah pilihan terakhir jika tidak ada kondisi yang terpenuhi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Kondisi untuk mengecek apakah bilangan `n` genap adalah...",
+          "options": ["n % 2 === 0", "n / 2 === 0", "n % 2 === 1", "n === 2"],
+          "answer": 0,
+          "clue": "Bilangan genap habis dibagi 2.",
+          "explanation": "Sisa bagi 2 sama dengan 0 berarti genap."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: jika umur minimal 17, tampilkan Boleh.",
+          "answer": ["if", "(umur >= 17)", "{", "console.log('Boleh');", "}"],
+          "distractors": ["then"],
+          "clue": "Kondisi di dalam kurung, blok di dalam kurung kurawal.",
+          "explanation": "`if (umur >= 17) { console.log('Boleh'); }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan Genap atau Ganjil untuk n.",
+          "answer": ["if (n % 2 === 0) {", "console.log('Genap');", "} else {", "console.log('Ganjil');", "}"],
+          "distractors": ["} elseif {"],
+          "clue": "Penulisannya else, bukan elseif.",
+          "explanation": "`if (...) { ... } else { ... }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kondisi: umur minimal 17 DAN punya KTP.",
+          "answer": ["umur >= 17", "&&", "punyaKTP"],
+          "distractors": ["||"],
+          "clue": "DAN memakai dua tanda &.",
+          "explanation": "`umur >= 17 && punyaKTP`."
+        }
+      ]
+    },
+    {
+      "level_no": 4,
+      "title": "Perulangan & Array",
+      "cards": [
+        {
+          "title": "Array",
+          "body": [
+            "**Array** menyimpan banyak nilai dalam satu variabel, ditulis di dalam kurung siku. Setiap nilai punya **indeks** yang dimulai dari **0**.",
+            "",
+            "`.length` memberi jumlah isi array, `.push()` menambah nilai di akhir."
+          ],
+          "code": ["const buah = ['apel', 'jeruk', 'mangga'];", "console.log(buah[0]);      // apel", "console.log(buah.length);  // 3", "buah.push('pisang');", "console.log(buah.length);  // 4"]
+        },
+        {
+          "title": "Perulangan for",
+          "body": "`for` mengulang kode dengan tiga bagian: nilai awal, syarat lanjut, dan perubahan setiap putaran. Pola ini sering dipakai untuk menelusuri array dari indeks 0 sampai `length - 1`.",
+          "code": ["for (let i = 1; i <= 3; i++) {", "  console.log(i);", "}", "// 1, 2, 3", "", "const nilai = [80, 90];", "for (let i = 0; i < nilai.length; i++) {", "  console.log(nilai[i]);", "}"]
+        },
+        {
+          "title": "for...of dan while",
+          "body": "`for...of` mengambil setiap isi array secara langsung tanpa indeks. `while` mengulang selama syaratnya true. Pastikan syaratnya suatu saat menjadi false, kalau tidak terjadi **infinite loop**.",
+          "code": ["let total = 0;", "for (const n of [5, 10, 15]) {", "  total += n;", "}", "console.log(total); // 30", "", "let hitung = 3;", "while (hitung > 0) {", "  console.log(hitung);", "  hitung--;", "}"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Jika `const warna = ['merah', 'hijau', 'biru'];`, nilai `warna[1]` adalah...",
+          "options": ["'hijau'", "'merah'", "'biru'", "undefined"],
+          "answer": 0,
+          "clue": "Indeks dimulai dari 0.",
+          "explanation": "Indeks 0 = merah, 1 = hijau, 2 = biru."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Indeks pertama sebuah array adalah...",
+          "options": ["0", "1", "-1", "Tergantung isinya"],
+          "answer": 0,
+          "clue": "Programmer mulai menghitung dari nol.",
+          "explanation": "Array JavaScript berindeks mulai 0."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara mengetahui jumlah isi array `data` adalah...",
+          "options": ["data.length", "data.size()", "count(data)", "data.total"],
+          "answer": 0,
+          "clue": "length = panjang.",
+          "explanation": "`data.length` memberi jumlah elemen."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara menambah nilai 5 di akhir array `angka` adalah...",
+          "options": ["angka.push(5);", "angka.add(5);", "angka[] = 5;", "push(angka, 5);"],
+          "answer": 0,
+          "clue": "push = dorong masuk.",
+          "explanation": "`.push()` menambah elemen di akhir array."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Berapa kali `console.log` dijalankan pada `for (let i = 0; i < 4; i++) { console.log(i); }`?",
+          "options": ["4 kali", "3 kali", "5 kali", "Tidak terbatas"],
+          "answer": 0,
+          "clue": "i bernilai 0, 1, 2, 3.",
+          "explanation": "Berhenti saat i = 4 karena 4 < 4 false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`i++` artinya...",
+          "options": ["Menambah i dengan 1", "Mengalikan i dengan 2", "Menambah i dengan i", "Mengurangi i dengan 1"],
+          "answer": 0,
+          "clue": "Kebalikannya i--.",
+          "explanation": "`i++` sama dengan `i = i + 1`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`total += 5;` sama dengan...",
+          "options": ["total = total + 5;", "total = 5;", "total + 5;", "total == 5;"],
+          "answer": 0,
+          "clue": "Tambah lalu simpan kembali.",
+          "explanation": "Operator `+=` adalah singkatan tambah lalu simpan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Perulangan yang mengambil setiap isi array secara langsung (tanpa indeks) adalah...",
+          "options": ["for...of", "for...in", "if...else", "switch"],
+          "answer": 0,
+          "clue": "for (const x ... array).",
+          "explanation": "`for (const x of arr)` mengambil nilai satu per satu."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa yang terjadi jika syarat `while` tidak pernah menjadi false?",
+          "options": ["Terjadi infinite loop (tidak berhenti)", "Program langsung selesai", "Perulangan dijalankan sekali", "Muncul angka 0"],
+          "answer": 0,
+          "clue": "Perulangan terus berjalan.",
+          "explanation": "Halaman bisa macet. Pastikan syarat berubah di setiap putaran."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Indeks terakhir dari array berisi 5 elemen adalah...",
+          "options": ["4", "5", "6", "0"],
+          "answer": 0,
+          "clue": "Mulai dari 0.",
+          "explanation": "Indeks terakhir = length - 1 = 4."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun perulangan yang menampilkan angka 1 sampai 5.",
+          "answer": ["for (let i = 1;", "i <= 5;", "i++) {", "console.log(i);", "}"],
+          "distractors": ["i < 1;"],
+          "clue": "Nilai awal, syarat lanjut, lalu perubahan.",
+          "explanation": "`for (let i = 1; i <= 5; i++) { console.log(i); }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: buat array hewan berisi kucing dan anjing.",
+          "answer": ["const hewan", "=", "[", "'kucing',", "'anjing'", "];"],
+          "distractors": ["{"],
+          "clue": "Array memakai kurung siku.",
+          "explanation": "`const hewan = ['kucing', 'anjing'];`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: jumlahkan semua isi array nilai ke variabel total.",
+          "answer": ["let total = 0;", "for (const n of nilai) {", "total += n;", "}"],
+          "distractors": ["total = n;"],
+          "clue": "Mulai dari 0, lalu tambahkan satu per satu.",
+          "explanation": "Pola akumulasi: siapkan total 0, lalu `total += n` di setiap putaran."
+        }
+      ]
+    },
+    {
+      "level_no": 5,
+      "title": "Olah Data Nilai",
+      "cards": [
+        {
+          "title": "Ringkasan: variabel dan kondisi",
+          "body": "`let` untuk nilai yang berubah, `const` untuk yang tetap. Tipe: string, number, boolean. Operator `+ - * / %`, perbandingan `=== !== > < >= <=`, logika `&& || !`. Percabangan `if / else if / else`. Template literal (diapit backtick): `Total: ${total}`.",
+          "code": ["let total = 0;", "const batas = 70;", "if (total >= batas) {", "  console.log(`Lulus dengan ${total}`);", "}"]
+        },
+        {
+          "title": "Ringkasan: array dan perulangan",
+          "body": "Array `[a, b, c]`, indeks mulai 0, `.length`, `.push()`. Perulangan `for (let i = 0; i < arr.length; i++)`, `for (const x of arr)`, dan `while`. Pola akumulasi: siapkan `total = 0`, lalu `total += x`.",
+          "code": ["const data = [3, 8, 2];", "let jumlah = 0;", "for (const x of data) {", "  jumlah += x;", "}", "console.log(jumlah / data.length);"]
+        }
+      ],
+      "challenges": [
+        {
+          "instruction": [
+            "Array `nilai` berisi nilai ujian 5 siswa. Lengkapi kodenya supaya:",
+            "",
+            "1. Variabel `total` berisi jumlah semua nilai.",
+            "2. Variabel `rata` berisi rata-rata nilai.",
+            "3. Variabel `jumlahLulus` berisi banyaknya nilai yang **minimal 70**.",
+            "4. Console menampilkan tiga baris persis seperti ini:",
+            "",
+            "`Total: 362`",
+            "`Rata-rata: 72.4`",
+            "`Lulus: 3`",
+            "",
+            "Gunakan perulangan, jangan menulis angka hasilnya secara langsung."
+          ],
+          "starter": [
+            "const nilai = [80, 65, 90, 72, 55];",
+            "",
+            "let total = 0;",
+            "let jumlahLulus = 0;",
+            "",
+            "// 1. jumlahkan semua nilai dengan perulangan",
+            "",
+            "// 2. hitung rata-rata",
+            "let rata = 0;",
+            "",
+            "// 3. tampilkan hasilnya",
+            "console.log('Total: ' + total);"
+          ],
+          "tests": [
+            { "desc": "Variabel total bernilai 362", "check": "typeof total !== 'undefined' && total === 362" },
+            { "desc": "Variabel rata bernilai 72.4", "check": "typeof rata !== 'undefined' && Math.abs(rata - 72.4) < 0.0001" },
+            { "desc": "Variabel jumlahLulus bernilai 3", "check": "typeof jumlahLulus !== 'undefined' && jumlahLulus === 3" },
+            { "desc": "Console menampilkan Total: 362", "check": "__logs.includes('Total: 362')" },
+            { "desc": "Console menampilkan Rata-rata: 72.4", "check": "__logs.includes('Rata-rata: 72.4')" },
+            { "desc": "Console menampilkan Lulus: 3", "check": "__logs.includes('Lulus: 3')" }
+          ],
+          "solution": [
+            "const nilai = [80, 65, 90, 72, 55];",
+            "",
+            "let total = 0;",
+            "let jumlahLulus = 0;",
+            "",
+            "for (const n of nilai) {",
+            "  total += n;",
+            "  if (n >= 70) {",
+            "    jumlahLulus++;",
+            "  }",
+            "}",
+            "",
+            "let rata = total / nilai.length;",
+            "",
+            "console.log('Total: ' + total);",
+            "console.log('Rata-rata: ' + rata);",
+            "console.log('Lulus: ' + jumlahLulus);"
+          ]
+        },
+        {
+          "instruction": [
+            "Buat program **hitung mundur roket** dan **kumpulan bilangan genap**:",
+            "",
+            "1. Tampilkan angka **5, 4, 3, 2, 1** (satu angka per `console.log`), lalu teks `Meluncur!`.",
+            "2. Buat array `genap` berisi bilangan genap dari 2 sampai 10, diisi lewat perulangan dan `.push()`.",
+            "3. Variabel `jumlahGenap` berisi jumlah seluruh isi `genap`.",
+            "4. Tampilkan `Jumlah genap: 30` di console."
+          ],
+          "starter": [
+            "// 1. hitung mundur 5 sampai 1, lalu Meluncur!",
+            "",
+            "",
+            "// 2. kumpulkan bilangan genap 2..10",
+            "const genap = [];",
+            "",
+            "",
+            "// 3. jumlahkan isi genap",
+            "let jumlahGenap = 0;",
+            ""
+          ],
+          "tests": [
+            { "desc": "Console menampilkan 5, 4, 3, 2, 1 lalu Meluncur!", "check": "__logs.join('|').includes('5|4|3|2|1|Meluncur!')" },
+            { "desc": "Array genap berisi 2, 4, 6, 8, 10", "check": "Array.isArray(genap) && genap.join(',') === '2,4,6,8,10'" },
+            { "desc": "Variabel jumlahGenap bernilai 30", "check": "typeof jumlahGenap !== 'undefined' && jumlahGenap === 30" },
+            { "desc": "Console menampilkan Jumlah genap: 30", "check": "__logs.includes('Jumlah genap: 30')" }
+          ],
+          "solution": [
+            "for (let i = 5; i >= 1; i--) {",
+            "  console.log(i);",
+            "}",
+            "console.log('Meluncur!');",
+            "",
+            "const genap = [];",
+            "for (let i = 2; i <= 10; i += 2) {",
+            "  genap.push(i);",
+            "}",
+            "",
+            "let jumlahGenap = 0;",
+            "for (const n of genap) {",
+            "  jumlahGenap += n;",
+            "}",
+            "console.log('Jumlah genap: ' + jumlahGenap);"
+          ]
+        }
+      ]
+    },
+    { "level_no": 6, "title": "Fungsi" },
+    { "level_no": 7, "title": "Objek" },
+    { "level_no": 8, "title": "DOM: Mengubah Halaman" },
+    { "level_no": 9, "title": "Event: Merespons Klik" },
+    { "level_no": 10, "title": "Aplikasi To-Do" }
+  ]
+}

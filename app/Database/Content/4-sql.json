@@ -1,0 +1,591 @@
+{
+  "chapter": "sql",
+  "levels": [
+    {
+      "level_no": 1,
+      "title": "Kenalan dengan SELECT",
+      "cards": [
+        {
+          "title": "Database dan tabel",
+          "body": [
+            "**Database** menyimpan data secara teratur di dalam **tabel**. Setiap tabel punya **kolom** (jenis data, misalnya nama dan umur) dan **baris** (satu data utuh, misalnya satu siswa). Satu baris juga disebut **record**.",
+            "",
+            "**SQL** (Structured Query Language) adalah bahasa untuk berbicara dengan database: membaca, menambah, mengubah, dan menghapus data."
+          ],
+          "code": ["Tabel siswa", "+----+-------+-------+", "| id | nama  | kelas |", "+----+-------+-------+", "|  1 | Andi  | XA    |", "|  2 | Citra | XB    |", "+----+-------+-------+"]
+        },
+        {
+          "title": "Membaca data dengan SELECT",
+          "body": [
+            "`SELECT` mengambil data dari tabel. `SELECT * FROM siswa;` mengambil **semua kolom**. Untuk kolom tertentu, tulis nama kolomnya dipisah koma.",
+            "",
+            "Kata kunci SQL biasanya ditulis huruf besar supaya mudah dibaca (tidak wajib). Akhiri query dengan titik koma."
+          ],
+          "code": ["SELECT * FROM siswa;", "", "SELECT nama, kelas FROM siswa;"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "SQL adalah singkatan dari...",
+          "options": ["Structured Query Language", "Simple Question Language", "Server Quick Logic", "Structured Quality List"],
+          "answer": 0,
+          "clue": "Query = pertanyaan/permintaan data.",
+          "explanation": "SQL = Structured Query Language."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Satu data utuh di dalam tabel (misalnya data satu siswa) disebut...",
+          "options": ["Baris (record)", "Kolom", "Database", "Query"],
+          "answer": 0,
+          "clue": "Tersusun mendatar.",
+          "explanation": "Satu baris = satu record."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Bagian tabel yang menunjukkan jenis data, seperti nama atau umur, disebut...",
+          "options": ["Kolom", "Baris", "Record", "Index"],
+          "answer": 0,
+          "clue": "Tersusun menurun.",
+          "explanation": "Kolom (field) menentukan jenis data yang disimpan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Perintah SQL untuk MEMBACA data adalah...",
+          "options": ["SELECT", "READ", "GET", "SHOW DATA"],
+          "answer": 0,
+          "clue": "Artinya \"pilih\".",
+          "explanation": "SELECT memilih dan menampilkan data."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Arti tanda `*` pada `SELECT * FROM siswa;` adalah...",
+          "options": ["Semua kolom", "Semua tabel", "Kalikan", "Baris pertama"],
+          "answer": 0,
+          "clue": "Bintang = semuanya.",
+          "explanation": "`*` berarti ambil semua kolom."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci untuk menyebut nama tabel sumber data adalah...",
+          "options": ["FROM", "IN", "TABLE", "AT"],
+          "answer": 0,
+          "clue": "Artinya \"dari\".",
+          "explanation": "`SELECT ... FROM nama_tabel`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Query untuk mengambil kolom nama dan kelas saja dari tabel siswa adalah...",
+          "options": ["SELECT nama, kelas FROM siswa;", "SELECT nama kelas FROM siswa;", "SELECT * FROM nama, kelas;", "GET nama, kelas FROM siswa;"],
+          "answer": 0,
+          "clue": "Nama kolom dipisah koma.",
+          "explanation": "Kolom yang diambil ditulis setelah SELECT, dipisah koma."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apakah `select * from siswa;` (huruf kecil) tetap berjalan?",
+          "options": ["Ya, kata kunci SQL tidak membedakan huruf besar-kecil", "Tidak, wajib huruf besar", "Hanya di hari kerja", "Hanya kalau tabelnya kosong"],
+          "answer": 0,
+          "clue": "Huruf besar hanya kebiasaan supaya mudah dibaca.",
+          "explanation": "Kata kunci SQL tidak case-sensitive."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tanda yang biasa dipakai untuk mengakhiri query SQL adalah...",
+          "options": [";", ".", ":", "!"],
+          "answer": 0,
+          "clue": "Sama seperti di JavaScript dan CSS.",
+          "explanation": "Titik koma memisahkan satu query dengan query berikutnya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tabel siswa punya 4 kolom dan 30 baris. Berapa baris hasil dari `SELECT nama FROM siswa;`?",
+          "options": ["30", "4", "1", "120"],
+          "answer": 0,
+          "clue": "Kolomnya dikurangi, barisnya tidak disaring.",
+          "explanation": "Tanpa WHERE, semua baris diambil. Hanya kolomnya yang tinggal satu."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query untuk mengambil semua kolom dari tabel buku.",
+          "answer": ["SELECT", "*", "FROM", "buku;"],
+          "distractors": ["WHERE"],
+          "clue": "SELECT, apa yang diambil, FROM, nama tabel.",
+          "explanation": "`SELECT * FROM buku;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query untuk mengambil kolom judul dan penulis dari tabel buku.",
+          "answer": ["SELECT", "judul,", "penulis", "FROM buku;"],
+          "distractors": ["*"],
+          "clue": "Nama kolom dipisah koma, tanpa koma setelah kolom terakhir.",
+          "explanation": "`SELECT judul, penulis FROM buku;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query untuk mengambil kolom harga dari tabel produk.",
+          "answer": ["SELECT", "harga", "FROM", "produk;"],
+          "distractors": ["GET"],
+          "clue": "Perintah membaca data adalah SELECT.",
+          "explanation": "`SELECT harga FROM produk;`."
+        }
+      ]
+    },
+    {
+      "level_no": 2,
+      "title": "Menyaring dengan WHERE",
+      "cards": [
+        {
+          "title": "WHERE",
+          "body": [
+            "`WHERE` menyaring baris yang memenuhi syarat. Operator perbandingan: `=`, `<>` atau `!=` (tidak sama), `>`, `<`, `>=`, `<=`.",
+            "",
+            "Teks ditulis di antara **kutip tunggal**: `'XA'`. Angka ditulis tanpa kutip."
+          ],
+          "code": ["SELECT * FROM siswa WHERE kelas = 'XA';", "SELECT nama FROM siswa WHERE nilai >= 80;"]
+        },
+        {
+          "title": "AND, OR, NOT",
+          "body": "Gabungkan beberapa syarat dengan `AND` (semua harus benar) atau `OR` (salah satu benar). `NOT` membalik syarat. Pakai kurung kalau mencampur AND dan OR.",
+          "code": ["SELECT * FROM siswa", "WHERE kelas = 'XA' AND nilai >= 80;", "", "SELECT * FROM siswa", "WHERE kelas = 'XA' OR kelas = 'XB';"]
+        },
+        {
+          "title": "LIKE, BETWEEN, IN",
+          "body": "`LIKE` mencari pola teks: `%` mewakili karakter apa saja. `BETWEEN a AND b` untuk rentang (termasuk batasnya). `IN (...)` untuk daftar nilai.",
+          "code": ["SELECT * FROM siswa WHERE nama LIKE 'A%';     -- diawali A", "SELECT * FROM siswa WHERE nilai BETWEEN 70 AND 80;", "SELECT * FROM siswa WHERE kelas IN ('XA', 'XC');"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci untuk menyaring baris berdasarkan syarat adalah...",
+          "options": ["WHERE", "FILTER", "IF", "WHEN"],
+          "answer": 0,
+          "clue": "Artinya \"di mana\".",
+          "explanation": "`WHERE` diikuti syarat penyaringan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Penulisan syarat kelas sama dengan XA yang benar adalah...",
+          "options": ["WHERE kelas = 'XA'", "WHERE kelas == XA", "WHERE kelas = XA", "WHERE kelas === 'XA'"],
+          "answer": 0,
+          "clue": "SQL memakai satu tanda sama dengan, dan teks diapit kutip tunggal.",
+          "explanation": "`kelas = 'XA'`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Operator \"tidak sama dengan\" di SQL adalah...",
+          "options": ["<>", "=/=", "!==", "NOT="],
+          "answer": 0,
+          "clue": "Gabungan tanda kurang dari dan lebih dari.",
+          "explanation": "`<>` (atau `!=` di banyak database)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`WHERE nilai >= 80 AND kelas = 'XA'` mengambil siswa yang...",
+          "options": ["Nilainya minimal 80 DAN berada di kelas XA", "Nilainya minimal 80 ATAU di kelas XA", "Bukan kelas XA", "Semua siswa"],
+          "answer": 0,
+          "clue": "AND = kedua syarat harus benar.",
+          "explanation": "AND mengharuskan semua syarat terpenuhi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`WHERE kelas = 'XA' OR kelas = 'XB'` mengambil siswa dari...",
+          "options": ["Kelas XA dan kelas XB", "Hanya kelas XA", "Bukan XA dan bukan XB", "Tidak ada siswa"],
+          "answer": 0,
+          "clue": "OR = salah satu syarat cukup.",
+          "explanation": "Baris diambil jika kelasnya XA atau XB."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`WHERE nama LIKE 'A%'` mengambil nama yang...",
+          "options": ["Diawali huruf A", "Diakhiri huruf A", "Berisi tepat satu huruf A", "Sama persis dengan A%"],
+          "answer": 0,
+          "clue": "% mewakili karakter apa saja SETELAH A.",
+          "explanation": "Pola `'A%'` = diawali A. Untuk diakhiri A pakai `'%A'`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`WHERE nilai BETWEEN 70 AND 80` mengambil nilai...",
+          "options": ["70 sampai 80, termasuk 70 dan 80", "71 sampai 79 saja", "Di bawah 70 atau di atas 80", "Hanya 70 dan 80"],
+          "answer": 0,
+          "clue": "BETWEEN menyertakan kedua batas.",
+          "explanation": "Sama dengan `nilai >= 70 AND nilai <= 80`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara singkat menulis `kelas = 'XA' OR kelas = 'XC'` adalah...",
+          "options": ["kelas IN ('XA', 'XC')", "kelas = ('XA', 'XC')", "kelas LIKE 'XA,XC'", "kelas BETWEEN 'XA' 'XC'"],
+          "answer": 0,
+          "clue": "Nilainya ada \"di dalam\" daftar.",
+          "explanation": "`IN (...)` mengecek apakah nilai termasuk dalam daftar."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Teks pada syarat WHERE ditulis dengan...",
+          "options": ["Kutip tunggal: 'Andi'", "Tanpa kutip: Andi", "Kurung: (Andi)", "Kurung siku: [Andi]"],
+          "answer": 0,
+          "clue": "Angka tanpa kutip, teks dengan kutip.",
+          "explanation": "Standar SQL memakai kutip tunggal untuk teks."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Query `SELECT * FROM siswa WHERE nilai > 100;` pada data nilai 0-100 akan menghasilkan...",
+          "options": ["Tabel kosong (0 baris)", "Error", "Semua siswa", "Siswa dengan nilai 100"],
+          "answer": 0,
+          "clue": "Tidak ada nilai yang lebih dari 100.",
+          "explanation": "Query tetap berhasil, hanya saja tidak ada baris yang cocok."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: ambil semua siswa dari kelas XB.",
+          "answer": ["SELECT * FROM siswa", "WHERE", "kelas = 'XB'", ";"],
+          "distractors": ["kelas == XB"],
+          "clue": "SQL memakai satu tanda sama dengan dan kutip tunggal.",
+          "explanation": "`SELECT * FROM siswa WHERE kelas = 'XB';`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: ambil nama siswa dengan nilai minimal 75 dari kelas XA.",
+          "answer": ["SELECT nama FROM siswa", "WHERE nilai >= 75", "AND", "kelas = 'XA';"],
+          "distractors": ["OR"],
+          "clue": "Kedua syarat harus terpenuhi.",
+          "explanation": "`... WHERE nilai >= 75 AND kelas = 'XA';`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: ambil produk yang namanya mengandung kata kopi.",
+          "answer": ["SELECT * FROM produk", "WHERE nama", "LIKE", "'%kopi%';"],
+          "distractors": ["= '%kopi%';"],
+          "clue": "Pola teks memakai LIKE, % di kedua sisi.",
+          "explanation": "`WHERE nama LIKE '%kopi%'` = mengandung kata kopi di posisi mana pun."
+        }
+      ]
+    },
+    {
+      "level_no": 3,
+      "title": "Mengurutkan & Membatasi",
+      "cards": [
+        {
+          "title": "ORDER BY",
+          "body": [
+            "`ORDER BY` mengurutkan hasil. `ASC` = naik (kecil ke besar, A ke Z) dan merupakan default. `DESC` = turun (besar ke kecil).",
+            "",
+            "Bisa beberapa kolom: `ORDER BY kelas ASC, nilai DESC` mengurutkan per kelas, lalu nilai tertinggi lebih dulu di dalam tiap kelas."
+          ],
+          "code": ["SELECT nama, nilai FROM siswa ORDER BY nilai DESC;", "SELECT * FROM siswa ORDER BY kelas, nama;"]
+        },
+        {
+          "title": "LIMIT, DISTINCT, AS",
+          "body": "`LIMIT 3` membatasi jumlah baris hasil (misal top 3). `DISTINCT` menghapus baris kembar di hasil. `AS` memberi nama lain (alias) pada kolom hasil.",
+          "code": ["SELECT nama FROM siswa ORDER BY nilai DESC LIMIT 3;", "SELECT DISTINCT kelas FROM siswa;", "SELECT nama AS siswa_terbaik FROM siswa LIMIT 1;"]
+        },
+        {
+          "title": "Urutan penulisan klausa",
+          "body": "Urutan klausa SQL selalu: `SELECT` → `FROM` → `WHERE` → `ORDER BY` → `LIMIT`. Menukar urutannya akan menghasilkan error.",
+          "code": ["SELECT nama, nilai", "FROM siswa", "WHERE kelas = 'XA'", "ORDER BY nilai DESC", "LIMIT 2;"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci untuk mengurutkan hasil query adalah...",
+          "options": ["ORDER BY", "SORT BY", "GROUP BY", "ARRANGE"],
+          "answer": 0,
+          "clue": "order = urutan.",
+          "explanation": "`ORDER BY kolom`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Untuk mengurutkan dari nilai TERBESAR ke terkecil, gunakan...",
+          "options": ["DESC", "ASC", "UP", "REVERSE"],
+          "answer": 0,
+          "clue": "Singkatan dari descending (menurun).",
+          "explanation": "`ORDER BY nilai DESC`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika ORDER BY ditulis tanpa ASC atau DESC, urutannya...",
+          "options": ["Naik (ASC)", "Turun (DESC)", "Acak", "Error"],
+          "answer": 0,
+          "clue": "Default-nya dari kecil ke besar.",
+          "explanation": "ASC adalah urutan default."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci untuk membatasi jumlah baris hasil adalah...",
+          "options": ["LIMIT", "TOP ONLY", "MAX", "STOP"],
+          "answer": 0,
+          "clue": "limit = batas.",
+          "explanation": "`LIMIT 5` mengambil maksimal 5 baris."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Query untuk mengambil 3 siswa dengan nilai tertinggi adalah...",
+          "options": ["SELECT * FROM siswa ORDER BY nilai DESC LIMIT 3;", "SELECT * FROM siswa LIMIT 3 ORDER BY nilai DESC;", "SELECT * FROM siswa ORDER BY nilai ASC LIMIT 3;", "SELECT TOP nilai FROM siswa;"],
+          "answer": 0,
+          "clue": "Urutkan turun dulu, baru batasi. LIMIT ditulis paling akhir.",
+          "explanation": "ORDER BY ... DESC lalu LIMIT 3."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`SELECT DISTINCT kelas FROM siswa;` menampilkan...",
+          "options": ["Daftar kelas tanpa duplikat", "Semua kelas termasuk duplikat", "Jumlah kelas", "Kelas yang paling banyak siswanya"],
+          "answer": 0,
+          "clue": "distinct = berbeda/unik.",
+          "explanation": "DISTINCT menghapus baris yang sama di hasil."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi `AS` pada `SELECT nama AS siswa FROM siswa;` adalah...",
+          "options": ["Memberi nama lain (alias) pada kolom hasil", "Menyaring baris", "Mengurutkan", "Mengubah nama tabel secara permanen"],
+          "answer": 0,
+          "clue": "Hanya berlaku di hasil query.",
+          "explanation": "Alias mengubah judul kolom di hasil, bukan di tabel aslinya."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Urutan klausa yang benar adalah...",
+          "options": ["SELECT, FROM, WHERE, ORDER BY, LIMIT", "SELECT, WHERE, FROM, LIMIT, ORDER BY", "FROM, SELECT, ORDER BY, WHERE, LIMIT", "SELECT, FROM, LIMIT, WHERE, ORDER BY"],
+          "answer": 0,
+          "clue": "Pilih kolom, dari tabel, saring, urutkan, batasi.",
+          "explanation": "SELECT → FROM → WHERE → ORDER BY → LIMIT."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`ORDER BY kelas, nilai DESC` artinya...",
+          "options": ["Urut kelas A-Z, lalu di dalam tiap kelas nilai tertinggi lebih dulu", "Urut nilai saja", "Urut kelas Z-A", "Error karena dua kolom"],
+          "answer": 0,
+          "clue": "Kolom pertama prioritas utama.",
+          "explanation": "Kolom kedua dipakai saat kolom pertama bernilai sama."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`ORDER BY nama ASC` mengurutkan nama...",
+          "options": ["A ke Z", "Z ke A", "Dari yang terpanjang", "Sesuai urutan input"],
+          "answer": 0,
+          "clue": "ASC = naik.",
+          "explanation": "Teks diurutkan secara alfabet."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: ambil nama produk dengan harga termurah dulu.",
+          "answer": ["SELECT nama FROM produk", "ORDER BY", "harga", "ASC;"],
+          "distractors": ["DESC;"],
+          "clue": "Termurah dulu = naik.",
+          "explanation": "`SELECT nama FROM produk ORDER BY harga ASC;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: ambil 5 buku terbaru berdasarkan tahun.",
+          "answer": ["SELECT * FROM buku", "ORDER BY tahun DESC", "LIMIT 5;"],
+          "distractors": ["LIMIT 5 ORDER BY"],
+          "clue": "LIMIT selalu di akhir.",
+          "explanation": "`SELECT * FROM buku ORDER BY tahun DESC LIMIT 5;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: tampilkan daftar kota pelanggan tanpa duplikat.",
+          "answer": ["SELECT", "DISTINCT", "kota", "FROM pelanggan;"],
+          "distractors": ["UNIQUE"],
+          "clue": "Kata kuncinya diletakkan tepat setelah SELECT.",
+          "explanation": "`SELECT DISTINCT kota FROM pelanggan;`."
+        }
+      ]
+    },
+    {
+      "level_no": 4,
+      "title": "Fungsi Agregat",
+      "cards": [
+        {
+          "title": "Menghitung dengan agregat",
+          "body": "Fungsi agregat merangkum banyak baris menjadi satu nilai: `COUNT()` jumlah baris, `SUM()` total, `AVG()` rata-rata, `MIN()` terkecil, `MAX()` terbesar.",
+          "code": ["SELECT COUNT(*) FROM siswa;", "SELECT AVG(nilai) AS rata_rata FROM siswa;", "SELECT MAX(nilai), MIN(nilai) FROM siswa;"]
+        },
+        {
+          "title": "GROUP BY",
+          "body": [
+            "`GROUP BY` mengelompokkan baris yang nilainya sama, lalu agregat dihitung **per kelompok**. Misalnya jumlah siswa di setiap kelas.",
+            "",
+            "Kolom di SELECT yang bukan agregat sebaiknya juga ditulis di GROUP BY."
+          ],
+          "code": ["SELECT kelas, COUNT(*) AS jumlah", "FROM siswa", "GROUP BY kelas;"]
+        },
+        {
+          "title": "HAVING",
+          "body": "`WHERE` menyaring **baris** sebelum dikelompokkan. `HAVING` menyaring **kelompok** setelah agregat dihitung.",
+          "code": ["SELECT kelas, AVG(nilai) AS rata_rata", "FROM siswa", "GROUP BY kelas", "HAVING AVG(nilai) >= 80;"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk menghitung JUMLAH BARIS adalah...",
+          "options": ["COUNT()", "SUM()", "TOTAL()", "NUMBER()"],
+          "answer": 0,
+          "clue": "count = hitung.",
+          "explanation": "`COUNT(*)` menghitung banyaknya baris."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk menjumlahkan nilai dalam satu kolom adalah...",
+          "options": ["SUM()", "COUNT()", "ADD()", "PLUS()"],
+          "answer": 0,
+          "clue": "sum = jumlah/total.",
+          "explanation": "`SUM(harga)` menjumlahkan seluruh harga."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk menghitung rata-rata adalah...",
+          "options": ["AVG()", "MEAN()", "MID()", "RATA()"],
+          "answer": 0,
+          "clue": "Singkatan dari average.",
+          "explanation": "`AVG(nilai)`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk mencari nilai tertinggi adalah...",
+          "options": ["MAX()", "TOP()", "HIGH()", "BIG()"],
+          "answer": 0,
+          "clue": "Singkatan dari maximum.",
+          "explanation": "`MAX(nilai)`. Pasangannya `MIN()`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nilai di tabel: 70, 80, 90. Hasil `SELECT AVG(nilai)` adalah...",
+          "options": ["80", "240", "3", "90"],
+          "answer": 0,
+          "clue": "Jumlahkan lalu bagi banyaknya data.",
+          "explanation": "(70 + 80 + 90) / 3 = 80."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nilai di tabel: 70, 80, 90. Hasil `SELECT SUM(nilai)` adalah...",
+          "options": ["240", "80", "3", "90"],
+          "answer": 0,
+          "clue": "Jumlahkan semuanya.",
+          "explanation": "70 + 80 + 90 = 240."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Untuk menghitung jumlah siswa DI SETIAP kelas, dipakai...",
+          "options": ["GROUP BY kelas", "ORDER BY kelas", "DISTINCT kelas", "WHERE kelas"],
+          "answer": 0,
+          "clue": "Kelompokkan dulu per kelas.",
+          "explanation": "`SELECT kelas, COUNT(*) FROM siswa GROUP BY kelas;`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Untuk menyaring KELOMPOK hasil GROUP BY (misalnya rata-rata minimal 80), dipakai...",
+          "options": ["HAVING", "WHERE", "LIMIT", "FILTER"],
+          "answer": 0,
+          "clue": "WHERE bekerja sebelum pengelompokan.",
+          "explanation": "HAVING menyaring setelah agregat dihitung."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Hasil `SELECT COUNT(*) FROM siswa WHERE kelas = 'XA';` berbentuk...",
+          "options": ["Satu baris berisi satu angka", "Daftar nama siswa XA", "Semua kolom siswa XA", "Error"],
+          "answer": 0,
+          "clue": "Agregat merangkum menjadi satu nilai.",
+          "explanation": "COUNT mengembalikan satu angka: banyaknya siswa di kelas XA."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Pada `SELECT kelas, COUNT(*) FROM siswa GROUP BY kelas;`, ada 3 kelas berbeda. Hasilnya berapa baris?",
+          "options": ["3", "1", "Sebanyak jumlah siswa", "0"],
+          "answer": 0,
+          "clue": "Satu baris per kelompok.",
+          "explanation": "GROUP BY menghasilkan satu baris untuk setiap kelompok."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: hitung banyaknya baris di tabel produk.",
+          "answer": ["SELECT", "COUNT(*)", "FROM", "produk;"],
+          "distractors": ["SUM(*)"],
+          "clue": "Menghitung baris memakai COUNT.",
+          "explanation": "`SELECT COUNT(*) FROM produk;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: total penjualan (kolom jumlah) per kota.",
+          "answer": ["SELECT kota, SUM(jumlah)", "FROM penjualan", "GROUP BY kota;"],
+          "distractors": ["ORDER BY kota;"],
+          "clue": "Agregat per kelompok memakai GROUP BY.",
+          "explanation": "`SELECT kota, SUM(jumlah) FROM penjualan GROUP BY kota;`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun query: kelas yang rata-rata nilainya minimal 80.",
+          "answer": ["SELECT kelas, AVG(nilai)", "FROM siswa", "GROUP BY kelas", "HAVING AVG(nilai) >= 80;"],
+          "distractors": ["WHERE AVG(nilai) >= 80"],
+          "clue": "Syarat agregat ditulis setelah GROUP BY.",
+          "explanation": "HAVING dipakai untuk syarat pada hasil agregat."
+        }
+      ]
+    },
+    {
+      "level_no": 5,
+      "title": "Laporan Nilai",
+      "cards": [
+        {
+          "title": "Ringkasan: SELECT dan WHERE",
+          "body": "`SELECT kolom FROM tabel WHERE syarat;`. Operator `= <> > < >= <=`, gabungkan dengan `AND`/`OR`. Pola teks `LIKE 'A%'`, rentang `BETWEEN`, daftar `IN (...)`. Teks diapit kutip tunggal.",
+          "code": ["SELECT nama, nilai", "FROM siswa", "WHERE kelas = 'XA' AND nilai >= 80;"]
+        },
+        {
+          "title": "Ringkasan: urut dan agregat",
+          "body": "`ORDER BY kolom DESC`, `LIMIT n`, `DISTINCT`, alias `AS`. Agregat `COUNT SUM AVG MIN MAX` dengan `GROUP BY` dan `HAVING`. Urutan klausa: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT.",
+          "code": ["SELECT kelas, COUNT(*) AS jumlah", "FROM siswa", "GROUP BY kelas", "ORDER BY kelas;"]
+        }
+      ],
+      "challenges": [
+        {
+          "instruction": [
+            "Tabel `siswa` (kolom: `id`, `nama`, `kelas`, `nilai`) sudah tersedia. Tekan **Run** dengan `SELECT * FROM siswa;` untuk melihat isinya.",
+            "",
+            "Tulis **satu query** yang menampilkan kolom `nama` dan `nilai` milik siswa yang nilainya **minimal 80**, diurutkan dari nilai **tertinggi**."
+          ],
+          "starter": ["-- Lihat dulu isi tabel, lalu ganti dengan query jawabanmu", "SELECT * FROM siswa;"],
+          "setup": [
+            "CREATE TABLE siswa (id INTEGER PRIMARY KEY, nama TEXT, kelas TEXT, nilai INTEGER);",
+            "INSERT INTO siswa (nama, kelas, nilai) VALUES",
+            "  ('Andi', 'XA', 85), ('Budi', 'XA', 72), ('Citra', 'XB', 90), ('Dewi', 'XB', 78),",
+            "  ('Eka', 'XA', 95), ('Fajar', 'XC', 60), ('Gita', 'XC', 88), ('Hana', 'XB', 81);"
+          ],
+          "tests": [
+            { "desc": "Hasil berisi kolom nama dan nilai", "type": "result", "columns": ["nama", "nilai"] },
+            { "desc": "Hanya siswa dengan nilai minimal 80", "type": "result", "expect": [["Eka", 95], ["Citra", 90], ["Gita", 88], ["Andi", 85], ["Hana", 81]] },
+            { "desc": "Urut dari nilai tertinggi", "type": "result", "ordered": true, "expect": [["Eka", 95], ["Citra", 90], ["Gita", 88], ["Andi", 85], ["Hana", 81]] }
+          ],
+          "solution": ["SELECT nama, nilai", "FROM siswa", "WHERE nilai >= 80", "ORDER BY nilai DESC;"]
+        },
+        {
+          "instruction": [
+            "Tabel `siswa` (kolom: `id`, `nama`, `kelas`, `nilai`) sudah tersedia. Tekan **Run** dengan `SELECT * FROM siswa;` untuk melihat isinya.",
+            "",
+            "Tulis **satu query** yang menampilkan rekap **per kelas** dengan tiga kolom bernama persis: `kelas`, `jumlah` (banyaknya siswa), dan `rata_rata` (rata-rata nilai). Urutkan berdasarkan kelas **A-Z**."
+          ],
+          "starter": ["-- Lihat dulu isi tabel, lalu ganti dengan query jawabanmu", "SELECT * FROM siswa;"],
+          "setup": [
+            "CREATE TABLE siswa (id INTEGER PRIMARY KEY, nama TEXT, kelas TEXT, nilai INTEGER);",
+            "INSERT INTO siswa (nama, kelas, nilai) VALUES",
+            "  ('Andi', 'XA', 85), ('Budi', 'XA', 72), ('Citra', 'XB', 90), ('Dewi', 'XB', 78),",
+            "  ('Eka', 'XA', 95), ('Fajar', 'XC', 60), ('Gita', 'XC', 88), ('Hana', 'XB', 81);"
+          ],
+          "tests": [
+            { "desc": "Hasil berisi kolom kelas, jumlah, rata_rata", "type": "result", "columns": ["kelas", "jumlah", "rata_rata"] },
+            { "desc": "Isi rekap per kelas benar (jumlah dan rata-rata)", "type": "result", "expect": [["XA", 3, 84], ["XB", 3, 83], ["XC", 2, 74]] },
+            { "desc": "Urut berdasarkan kelas A-Z", "type": "result", "ordered": true, "expect": [["XA", 3, 84], ["XB", 3, 83], ["XC", 2, 74]] }
+          ],
+          "solution": ["SELECT kelas, COUNT(*) AS jumlah, AVG(nilai) AS rata_rata", "FROM siswa", "GROUP BY kelas", "ORDER BY kelas;"]
+        }
+      ]
+    },
+    { "level_no": 6, "title": "Menambah Data (INSERT)" },
+    { "level_no": 7, "title": "Mengubah & Menghapus Data" },
+    { "level_no": 8, "title": "Menggabungkan Tabel (JOIN)" },
+    { "level_no": 9, "title": "Membuat Tabel" },
+    { "level_no": 10, "title": "Database Perpustakaan" }
+  ]
+}

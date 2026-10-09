@@ -1,0 +1,654 @@
+{
+  "chapter": "php",
+  "levels": [
+    {
+      "level_no": 1,
+      "title": "Kenalan dengan PHP",
+      "cards": [
+        {
+          "title": "Apa itu PHP?",
+          "body": [
+            "**PHP** adalah bahasa pemrograman yang berjalan di **server**. Server menjalankan kode PHP, lalu mengirim hasilnya (biasanya HTML) ke browser. Pengguna tidak pernah melihat kode PHP-nya.",
+            "",
+            "Aplikasi yang sedang kamu pakai ini juga dibuat dengan PHP (framework CodeIgniter)."
+          ]
+        },
+        {
+          "title": "Tag PHP dan echo",
+          "body": [
+            "Kode PHP ditulis di antara `<?php` dan `?>`. Kalau file hanya berisi PHP, tag penutup boleh dihilangkan.",
+            "",
+            "`echo` menampilkan teks. Setiap pernyataan **wajib** diakhiri titik koma `;`. Untuk pindah baris di output teks, pakai `\"\\n\"` (di dalam kutip ganda)."
+          ],
+          "code": ["<?php", "echo \"Halo Dunia!\\n\";", "echo 'Belajar PHP';"]
+        },
+        {
+          "title": "Menggabung teks dan komentar",
+          "body": "Teks digabung dengan operator **titik** `.` (bukan `+` seperti JavaScript). Komentar satu baris memakai `//` atau `#`, komentar banyak baris memakai `/* ... */`.",
+          "code": ["<?php", "// komentar satu baris", "echo 'Halo ' . 'Rina';   // Halo Rina", "echo 10 + 5;             // 15"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Di mana kode PHP dijalankan?",
+          "options": ["Di server", "Di browser pengguna", "Di dalam file CSS", "Di printer"],
+          "answer": 0,
+          "clue": "Pengguna hanya menerima hasilnya.",
+          "explanation": "PHP adalah bahasa sisi server (server-side)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tag pembuka kode PHP adalah...",
+          "options": ["<?php", "<php>", "<script php>", "<%php"],
+          "answer": 0,
+          "clue": "Diawali tanda kurang dari dan tanda tanya.",
+          "explanation": "Kode PHP dibuka dengan `<?php`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Perintah untuk menampilkan teks di PHP adalah...",
+          "options": ["echo", "console.log", "print()", "write"],
+          "answer": 0,
+          "clue": "Artinya \"gema\".",
+          "explanation": "`echo 'teks';` (PHP juga punya `print`, tapi echo paling umum)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Setiap pernyataan PHP harus diakhiri dengan...",
+          "options": [";", ".", ":", "Enter saja"],
+          "answer": 0,
+          "clue": "Lupa tanda ini adalah error paling sering di PHP.",
+          "explanation": "Titik koma wajib di akhir pernyataan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Operator untuk menggabungkan teks di PHP adalah...",
+          "options": [".", "+", "&", ","],
+          "answer": 0,
+          "clue": "Berbeda dengan JavaScript.",
+          "explanation": "`'Halo ' . 'Rina'` menghasilkan Halo Rina."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa output dari `echo 'Halo' . ' ' . 'PHP';`?",
+          "options": ["Halo PHP", "HaloPHP", "Halo . PHP", "Error"],
+          "answer": 0,
+          "clue": "Ada spasi yang ikut digabung di tengah.",
+          "explanation": "Tiga teks digabung: Halo + spasi + PHP."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa output dari `echo 7 + 3;`?",
+          "options": ["10", "73", "7 + 3", "Error"],
+          "answer": 0,
+          "clue": "Keduanya angka.",
+          "explanation": "Angka dijumlahkan: 10."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Komentar satu baris di PHP bisa ditulis dengan...",
+          "options": ["// atau #", "<!-- -->", "-- saja", "%"],
+          "answer": 0,
+          "clue": "Ada dua pilihan yang sama-sama benar.",
+          "explanation": "PHP menerima `//` dan `#` untuk komentar satu baris."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Untuk pindah baris di output teks, PHP memakai...",
+          "options": ["\"\\n\" di dalam kutip ganda", "'\\n' di dalam kutip tunggal", "Tag <newline>", "Tanda +"],
+          "answer": 0,
+          "clue": "Karakter khusus hanya diproses di dalam kutip ganda.",
+          "explanation": "`echo \"Baris 1\\nBaris 2\";`. Di halaman HTML biasanya dipakai `<br>`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Ekstensi file PHP adalah...",
+          "options": [".php", ".ph", ".html", ".server"],
+          "answer": 0,
+          "clue": "Sama dengan nama bahasanya.",
+          "explanation": "Contoh: `index.php`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode PHP yang menampilkan Halo.",
+          "answer": ["<?php", "echo", "'Halo'", ";"],
+          "distractors": ["console.log"],
+          "clue": "Tag pembuka, perintah tampil, teks, titik koma.",
+          "explanation": "`<?php echo 'Halo';`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan gabungan teks Selamat dan Pagi (dengan spasi).",
+          "answer": ["echo", "'Selamat '", ".", "'Pagi';"],
+          "distractors": ["+"],
+          "clue": "PHP menggabung teks dengan titik.",
+          "explanation": "`echo 'Selamat ' . 'Pagi';`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan Baris 1, pindah baris, lalu Baris 2.",
+          "answer": ["echo", "\"Baris 1\\nBaris 2\"", ";"],
+          "distractors": ["'Baris 1\\nBaris 2'"],
+          "clue": "\\n hanya diproses di dalam kutip ganda.",
+          "explanation": "`echo \"Baris 1\\nBaris 2\";`."
+        }
+      ]
+    },
+    {
+      "level_no": 2,
+      "title": "Variabel & Tipe Data",
+      "cards": [
+        {
+          "title": "Variabel diawali $",
+          "body": [
+            "Semua variabel PHP diawali tanda dolar: `$nama`, `$umur`. Tidak perlu kata kunci seperti `let`, cukup langsung diisi dengan `=`.",
+            "",
+            "Nama variabel tidak boleh diawali angka dan **membedakan** huruf besar-kecil (`$nama` berbeda dengan `$Nama`)."
+          ],
+          "code": ["<?php", "$nama = 'Rina';", "$umur = 17;", "$umur = $umur + 1;  // 18"]
+        },
+        {
+          "title": "Tipe data",
+          "body": "**string** (`'Halo'`), **int** (bilangan bulat, `42`), **float** (desimal, `3.14`), **bool** (`true`/`false`), **array**, dan **null** (kosong). `var_dump()` menampilkan tipe sekaligus nilainya, cocok untuk memeriksa variabel.",
+          "code": ["<?php", "var_dump(42);      // int(42)", "var_dump(3.14);    // float(3.14)", "var_dump('Hai');   // string(3) \"Hai\"", "var_dump(true);    // bool(true)"]
+        },
+        {
+          "title": "Kutip ganda vs kutip tunggal",
+          "body": "Di dalam **kutip ganda**, variabel otomatis diganti nilainya (interpolasi) dan `\\n` menjadi baris baru. Di dalam **kutip tunggal**, semuanya ditampilkan apa adanya.",
+          "code": ["<?php", "$nama = 'Rina';", "echo \"Halo $nama\\n\";  // Halo Rina", "echo 'Halo $nama';     // Halo $nama"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Variabel di PHP selalu diawali tanda...",
+          "options": ["$", "@", "#", "&"],
+          "answer": 0,
+          "clue": "Tanda mata uang dolar.",
+          "explanation": "Contoh: `$nama`, `$total`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Penulisan variabel yang benar adalah...",
+          "options": ["$umur = 17;", "let umur = 17;", "$umur == 17;", "umur = 17;"],
+          "answer": 0,
+          "clue": "Pakai $ dan satu tanda sama dengan.",
+          "explanation": "Isi variabel dengan `=`. Tanda `==` untuk membandingkan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Nama variabel mana yang VALID?",
+          "options": ["$totalHarga", "$2harga", "$total harga", "$total-harga"],
+          "answer": 0,
+          "clue": "Tidak boleh diawali angka, spasi, atau tanda minus.",
+          "explanation": "`$totalHarga` atau `$total_harga` sama-sama valid."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tipe data dari nilai `3.14` adalah...",
+          "options": ["float", "int", "string", "bool"],
+          "answer": 0,
+          "clue": "Bilangan dengan koma desimal.",
+          "explanation": "Bilangan desimal bertipe float."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Tipe data dari nilai `42` adalah...",
+          "options": ["int", "float", "string", "number"],
+          "answer": 0,
+          "clue": "Singkatan dari integer.",
+          "explanation": "Bilangan bulat bertipe int."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk menampilkan tipe dan nilai sebuah variabel adalah...",
+          "options": ["var_dump()", "typeof()", "echo_type()", "show()"],
+          "answer": 0,
+          "clue": "Diawali var.",
+          "explanation": "`var_dump($x);` menampilkan misalnya `int(42)`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `$nama = 'Rina';`, output dari `echo \"Halo $nama\";` adalah...",
+          "options": ["Halo Rina", "Halo $nama", "Halo nama", "Error"],
+          "answer": 0,
+          "clue": "Kutip ganda mengganti variabel dengan nilainya.",
+          "explanation": "Interpolasi bekerja di kutip ganda."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `$nama = 'Rina';`, output dari `echo 'Halo $nama';` adalah...",
+          "options": ["Halo $nama", "Halo Rina", "Halo", "Error"],
+          "answer": 0,
+          "clue": "Kutip tunggal menampilkan apa adanya.",
+          "explanation": "Kutip tunggal tidak melakukan interpolasi."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apakah `$Nama` dan `$nama` adalah variabel yang sama?",
+          "options": ["Tidak, nama variabel membedakan huruf besar-kecil", "Ya, sama saja", "Ya, kalau isinya teks", "Error saat dibuat"],
+          "answer": 0,
+          "clue": "Case-sensitive.",
+          "explanation": "Keduanya dianggap variabel yang berbeda."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `$a = 5; $a = $a * 2;`, nilai `$a` sekarang...",
+          "options": ["10", "5", "52", "7"],
+          "answer": 0,
+          "clue": "Ambil nilai lama, kalikan 2, simpan kembali.",
+          "explanation": "5 * 2 = 10."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: buat variabel kota berisi teks Bandung.",
+          "answer": ["$kota", "=", "'Bandung'", ";"],
+          "distractors": ["let"],
+          "clue": "Variabel PHP diawali $ tanpa kata kunci.",
+          "explanation": "`$kota = 'Bandung';`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan \"Umur: \" diikuti nilai $umur dengan interpolasi.",
+          "answer": ["echo", "\"Umur: $umur\"", ";"],
+          "distractors": ["'Umur: $umur'"],
+          "clue": "Interpolasi butuh kutip ganda.",
+          "explanation": "`echo \"Umur: $umur\";`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: periksa tipe dan nilai variabel $harga.",
+          "answer": ["var_dump(", "$harga", ");"],
+          "distractors": ["typeof"],
+          "clue": "Fungsi pemeriksa variabel diawali var.",
+          "explanation": "`var_dump($harga);`."
+        }
+      ]
+    },
+    {
+      "level_no": 3,
+      "title": "Operator & Kondisi",
+      "cards": [
+        {
+          "title": "Operator",
+          "body": [
+            "Aritmetika: `+ - * /` dan `%` (sisa bagi). Perbandingan: `==` (nilai sama), `===` (nilai dan tipe sama), `!=` atau `!==`, `>`, `<`, `>=`, `<=`.",
+            "",
+            "Logika: `&&` (dan), `||` (atau), `!` (bukan)."
+          ],
+          "code": ["<?php", "var_dump(10 % 3);      // int(1)", "var_dump('5' == 5);    // bool(true)", "var_dump('5' === 5);   // bool(false)"]
+        },
+        {
+          "title": "if, elseif, else",
+          "body": "Struktur kondisi PHP mirip JavaScript, tapi kata kuncinya `elseif` (boleh juga `else if`). Kondisi dicek dari atas, dan hanya satu blok yang dijalankan.",
+          "code": ["<?php", "$nilai = 75;", "if ($nilai >= 85) {", "    echo 'A';", "} elseif ($nilai >= 70) {", "    echo 'B';", "} else {", "    echo 'C';", "}", "// output: B"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Hasil dari `17 % 5` adalah...",
+          "options": ["2", "3", "3.4", "12"],
+          "answer": 0,
+          "clue": "17 dibagi 5 = 3 sisa ...",
+          "explanation": "17 = 5 x 3 + 2, sisanya 2."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`'5' == 5` di PHP bernilai...",
+          "options": ["true", "false", "null", "Error"],
+          "answer": 0,
+          "clue": "== hanya membandingkan nilai.",
+          "explanation": "Nilainya sama setelah tipe disesuaikan, jadi true."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`'5' === 5` di PHP bernilai...",
+          "options": ["false", "true", "null", "Error"],
+          "answer": 0,
+          "clue": "=== juga membandingkan tipe.",
+          "explanation": "string vs int, jadi false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Kata kunci PHP untuk \"jika tidak, cek kondisi lain\" adalah...",
+          "options": ["elseif", "elif", "otherwise", "then"],
+          "answer": 0,
+          "clue": "Gabungan dua kata tanpa spasi (boleh juga dengan spasi).",
+          "explanation": "`elseif` (atau `else if`). `elif` adalah milik Python."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Operator logika DAN di PHP adalah...",
+          "options": ["&&", "&", "AND&", "++"],
+          "answer": 0,
+          "clue": "Dua tanda ampersand.",
+          "explanation": "`&&` bernilai true jika kedua sisi true."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `$umur = 15;`, kode `if ($umur >= 17) { echo 'Dewasa'; } else { echo 'Remaja'; }` menampilkan...",
+          "options": ["Remaja", "Dewasa", "DewasaRemaja", "Tidak ada"],
+          "answer": 0,
+          "clue": "15 >= 17 bernilai apa?",
+          "explanation": "Kondisi false, jadi blok else dijalankan."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Kondisi untuk mengecek apakah `$n` habis dibagi 3 adalah...",
+          "options": ["$n % 3 == 0", "$n / 3 == 0", "$n % 3 == 1", "$n == 3"],
+          "answer": 0,
+          "clue": "Habis dibagi = sisa bagi nol.",
+          "explanation": "Sisa bagi 3 sama dengan 0 berarti kelipatan 3."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`!true` bernilai...",
+          "options": ["false", "true", "0", "Error"],
+          "answer": 0,
+          "clue": "! membalik nilai boolean.",
+          "explanation": "Kebalikan true adalah false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`$nilai >= 70 || $remedial` bernilai true jika...",
+          "options": ["Salah satu kondisi true", "Kedua kondisi true", "Kedua kondisi false", "Tidak pernah"],
+          "answer": 0,
+          "clue": "|| = atau.",
+          "explanation": "OR cukup satu sisi yang true."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `$nilai = 90;`, kode `if ($nilai >= 70) { echo 'B'; } elseif ($nilai >= 85) { echo 'A'; }` menampilkan...",
+          "options": ["B", "A", "BA", "Tidak ada"],
+          "answer": 0,
+          "clue": "Kondisi dicek dari atas dan berhenti di yang pertama true.",
+          "explanation": "90 >= 70 sudah true, jadi 'B'. Urutan kondisi itu penting!"
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: jika $stok kosong (0), tampilkan Habis.",
+          "answer": ["if", "($stok == 0)", "{", "echo 'Habis';", "}"],
+          "distractors": ["($stok = 0)"],
+          "clue": "Membandingkan memakai ==, bukan =.",
+          "explanation": "`if ($stok == 0) { echo 'Habis'; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan Genap atau Ganjil untuk $n.",
+          "answer": ["if ($n % 2 == 0) {", "echo 'Genap';", "} else {", "echo 'Ganjil';", "}"],
+          "distractors": ["} elif {"],
+          "clue": "Pakai else, bukan elif.",
+          "explanation": "Pola if-else dengan sisa bagi 2."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kondisi: $umur minimal 17 DAN $punyaKtp bernilai true.",
+          "answer": ["$umur >= 17", "&&", "$punyaKtp"],
+          "distractors": ["||"],
+          "clue": "DAN memakai dua ampersand.",
+          "explanation": "`$umur >= 17 && $punyaKtp`."
+        }
+      ]
+    },
+    {
+      "level_no": 4,
+      "title": "Perulangan & Array",
+      "cards": [
+        {
+          "title": "Array",
+          "body": [
+            "Array ditulis dengan kurung siku: `$buah = ['apel', 'jeruk'];`. Indeks dimulai dari **0**. `count($buah)` memberi jumlah isi, dan `$buah[] = 'mangga';` menambah isi di akhir.",
+            "",
+            "Untuk melihat isi array, pakai `print_r($buah);`."
+          ],
+          "code": ["<?php", "$buah = ['apel', 'jeruk'];", "echo $buah[0];        // apel", "$buah[] = 'mangga';", "echo count($buah);    // 3"]
+        },
+        {
+          "title": "for dan while",
+          "body": "`for` sama seperti JavaScript, hanya variabelnya memakai `$`. `while` mengulang selama syaratnya true.",
+          "code": ["<?php", "for ($i = 1; $i <= 3; $i++) {", "    echo $i . \"\\n\";", "}", "", "$n = 3;", "while ($n > 0) {", "    echo $n;", "    $n--;", "}"]
+        },
+        {
+          "title": "foreach",
+          "body": "`foreach` adalah cara paling umum menelusuri array di PHP: `foreach ($array as $isi) { ... }`. Setiap putaran, `$isi` berisi satu elemen.",
+          "code": ["<?php", "$nilai = [80, 90, 70];", "$total = 0;", "foreach ($nilai as $n) {", "    $total += $n;", "}", "echo $total;  // 240"]
+        }
+      ],
+      "questions": [
+        {
+          "type": "mcq",
+          "prompt": "Jika `$warna = ['merah', 'hijau', 'biru'];`, nilai `$warna[2]` adalah...",
+          "options": ["'biru'", "'hijau'", "'merah'", "null"],
+          "answer": 0,
+          "clue": "Indeks dimulai dari 0.",
+          "explanation": "0 = merah, 1 = hijau, 2 = biru."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk menghitung jumlah isi array adalah...",
+          "options": ["count()", "length()", "size()", ".length"],
+          "answer": 0,
+          "clue": "count = hitung.",
+          "explanation": "`count($array)`. `.length` adalah milik JavaScript."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Cara menambah 'mangga' di akhir array `$buah` adalah...",
+          "options": ["$buah[] = 'mangga';", "$buah.push('mangga');", "$buah + 'mangga';", "add($buah, 'mangga');"],
+          "answer": 0,
+          "clue": "Kurung siku kosong.",
+          "explanation": "`$buah[] = 'mangga';` (bisa juga `array_push($buah, 'mangga');`)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Perulangan yang paling umum untuk menelusuri setiap isi array di PHP adalah...",
+          "options": ["foreach", "for...of", "each()", "loop"],
+          "answer": 0,
+          "clue": "for + each.",
+          "explanation": "`foreach ($array as $isi) { ... }`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Penulisan foreach yang benar adalah...",
+          "options": ["foreach ($nilai as $n) { }", "foreach ($n in $nilai) { }", "foreach $nilai => $n { }", "for each ($nilai) { }"],
+          "answer": 0,
+          "clue": "Array dulu, lalu kata as.",
+          "explanation": "`foreach ($nilai as $n)`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Berapa kali `echo` dijalankan pada `for ($i = 0; $i < 5; $i++) { echo $i; }`?",
+          "options": ["5 kali", "4 kali", "6 kali", "Tidak terbatas"],
+          "answer": 0,
+          "clue": "$i bernilai 0 sampai 4.",
+          "explanation": "Output: 01234 (lima kali)."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Fungsi untuk menampilkan seluruh isi array agar mudah dibaca adalah...",
+          "options": ["print_r()", "echo", "show_array()", "console.log()"],
+          "answer": 0,
+          "clue": "Diawali print.",
+          "explanation": "`echo` tidak bisa menampilkan array secara langsung. Pakai `print_r()` atau `var_dump()`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "`$total += 5;` sama dengan...",
+          "options": ["$total = $total + 5;", "$total = 5;", "$total + 5;", "$total == 5;"],
+          "answer": 0,
+          "clue": "Tambah lalu simpan kembali.",
+          "explanation": "Operator gabungan `+=`."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Apa output dari kode berikut?\n`$n = 3; while ($n > 0) { echo $n; $n--; }`",
+          "options": ["321", "123", "3210", "333"],
+          "answer": 0,
+          "clue": "$n berkurang 1 setiap putaran dan berhenti saat 0.",
+          "explanation": "Tampil 3, 2, 1, lalu berhenti karena 0 > 0 false."
+        },
+        {
+          "type": "mcq",
+          "prompt": "Jika `$data = [4, 8, 6];`, nilai `count($data)` adalah...",
+          "options": ["3", "18", "2", "8"],
+          "answer": 0,
+          "clue": "Hitung banyaknya isi, bukan jumlah nilainya.",
+          "explanation": "Ada 3 elemen."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: tampilkan setiap nama di array $nama.",
+          "answer": ["foreach", "($nama as $n)", "{", "echo $n;", "}"],
+          "distractors": ["($n in $nama)"],
+          "clue": "Array dulu, lalu as, lalu variabel isi.",
+          "explanation": "`foreach ($nama as $n) { echo $n; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun perulangan for yang menampilkan angka 1 sampai 10.",
+          "answer": ["for ($i = 1;", "$i <= 10;", "$i++) {", "echo $i;", "}"],
+          "distractors": ["$i < 1;"],
+          "clue": "Nilai awal, syarat lanjut, perubahan.",
+          "explanation": "`for ($i = 1; $i <= 10; $i++) { echo $i; }`."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun kode: buat array angka berisi 1, 2, 3.",
+          "answer": ["$angka", "=", "[1, 2, 3]", ";"],
+          "distractors": ["{1, 2, 3}"],
+          "clue": "Array memakai kurung siku.",
+          "explanation": "`$angka = [1, 2, 3];`."
+        }
+      ]
+    },
+    {
+      "level_no": 5,
+      "title": "Rapor Mini",
+      "cards": [
+        {
+          "title": "Ringkasan: dasar PHP",
+          "body": "Kode di antara `<?php` dan `?>`. Variabel diawali `$`. Tampilkan dengan `echo`, gabung teks dengan titik `.`, pindah baris dengan `\"\\n\"`. Kutip ganda mendukung interpolasi: `\"Total: $total\\n\"`.",
+          "code": ["<?php", "$total = 10;", "echo \"Total: $total\\n\";", "echo 'Total: ' . $total . \"\\n\";"]
+        },
+        {
+          "title": "Ringkasan: kondisi dan perulangan",
+          "body": "`if / elseif / else`, perbandingan `== === != > < >= <=`, sisa bagi `%`. Array `[...]`, `count()`, `$arr[] = x`. Perulangan `for`, `while`, dan `foreach ($arr as $x)`.",
+          "code": ["<?php", "$lulus = 0;", "foreach ([80, 60, 90] as $n) {", "    if ($n >= 70) {", "        $lulus++;", "    }", "}", "echo $lulus;  // 2"]
+        }
+      ],
+      "challenges": [
+        {
+          "instruction": [
+            "Array `$nilai` berisi nilai ujian 5 siswa. Lengkapi kodenya supaya:",
+            "",
+            "1. `$total` berisi jumlah semua nilai.",
+            "2. `$rata` berisi rata-rata nilai.",
+            "3. `$lulus` berisi banyaknya nilai yang **minimal 70**.",
+            "4. Output persis tiga baris berikut (tanpa teks lain):",
+            "",
+            "`Total: 362`",
+            "`Rata-rata: 72.4`",
+            "`Lulus: 3`",
+            "",
+            "Gunakan `foreach`, jangan menulis angka hasilnya secara langsung."
+          ],
+          "starter": [
+            "<?php",
+            "$nilai = [80, 65, 90, 72, 55];",
+            "",
+            "$total = 0;",
+            "$lulus = 0;",
+            "",
+            "// 1. jumlahkan nilai dan hitung yang lulus dengan foreach",
+            "",
+            "",
+            "// 2. hitung rata-rata",
+            "$rata = 0;",
+            "",
+            "// 3. tampilkan hasil",
+            "echo \"Total: $total\\n\";"
+          ],
+          "tests": [
+            { "desc": "$total bernilai 362", "type": "php", "check": "isset($total) && $total === 362" },
+            { "desc": "$rata bernilai 72.4", "type": "php", "check": "isset($rata) && abs($rata - 72.4) < 0.0001" },
+            { "desc": "$lulus bernilai 3", "type": "php", "check": "isset($lulus) && $lulus === 3" },
+            { "desc": "Output persis tiga baris: Total, Rata-rata, Lulus", "type": "output", "match": "exact", "expect": "Total: 362\nRata-rata: 72.4\nLulus: 3" }
+          ],
+          "solution": [
+            "<?php",
+            "$nilai = [80, 65, 90, 72, 55];",
+            "",
+            "$total = 0;",
+            "$lulus = 0;",
+            "",
+            "foreach ($nilai as $n) {",
+            "    $total += $n;",
+            "    if ($n >= 70) {",
+            "        $lulus++;",
+            "    }",
+            "}",
+            "",
+            "$rata = $total / count($nilai);",
+            "",
+            "echo \"Total: $total\\n\";",
+            "echo \"Rata-rata: $rata\\n\";",
+            "echo \"Lulus: $lulus\\n\";"
+          ]
+        },
+        {
+          "instruction": [
+            "Buat program **FizzBuzz** untuk angka **1 sampai 15**. Setiap angka ditampilkan di baris sendiri, dengan aturan:",
+            "",
+            "1. Kelipatan 3 dan 5 → tampilkan `FizzBuzz`.",
+            "2. Kelipatan 3 saja → tampilkan `Fizz`.",
+            "3. Kelipatan 5 saja → tampilkan `Buzz`.",
+            "4. Selain itu → tampilkan angkanya.",
+            "",
+            "Contoh awal output: `1`, `2`, `Fizz`, `4`, `Buzz`, ... sampai `FizzBuzz` di baris ke-15.",
+            "",
+            "Simpan juga banyaknya baris berisi tepat `Fizz` di variabel `$jumlahFizz`."
+          ],
+          "starter": [
+            "<?php",
+            "$jumlahFizz = 0;",
+            "",
+            "for ($i = 1; $i <= 15; $i++) {",
+            "    // cek kelipatan 3 dan 5 lebih dulu",
+            "    echo $i . \"\\n\";",
+            "}"
+          ],
+          "tests": [
+            { "desc": "Lima baris pertama: 1, 2, Fizz, 4, Buzz", "type": "output", "match": "contains", "expect": "1\n2\nFizz\n4\nBuzz" },
+            { "desc": "Angka 15 ditampilkan sebagai FizzBuzz", "type": "output", "match": "contains", "expect": "14\nFizzBuzz" },
+            { "desc": "Seluruh output 1 sampai 15 tepat", "type": "output", "match": "exact", "expect": "1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz" },
+            { "desc": "$jumlahFizz bernilai 4", "type": "php", "check": "isset($jumlahFizz) && $jumlahFizz === 4" }
+          ],
+          "solution": [
+            "<?php",
+            "$jumlahFizz = 0;",
+            "",
+            "for ($i = 1; $i <= 15; $i++) {",
+            "    if ($i % 15 == 0) {",
+            "        echo \"FizzBuzz\\n\";",
+            "    } elseif ($i % 3 == 0) {",
+            "        echo \"Fizz\\n\";",
+            "        $jumlahFizz++;",
+            "    } elseif ($i % 5 == 0) {",
+            "        echo \"Buzz\\n\";",
+            "    } else {",
+            "        echo $i . \"\\n\";",
+            "    }",
+            "}"
+          ]
+        }
+      ]
+    },
+    { "level_no": 6, "title": "Fungsi" },
+    { "level_no": 7, "title": "Array Asosiatif" },
+    { "level_no": 8, "title": "String & Fungsi Bawaan" },
+    { "level_no": 9, "title": "Form & $_GET" },
+    { "level_no": 10, "title": "Kalkulator Nilai" }
+  ]
+}
