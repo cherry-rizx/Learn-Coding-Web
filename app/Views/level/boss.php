@@ -48,7 +48,9 @@ $langLabel = ['html' => 'HTML', 'css' => 'HTML + CSS', 'javascript' => 'JavaScri
             <div class="action-bar">
                 <button class="btn" type="button" data-run><?= icon('play') ?> Run</button>
                 <button class="btn btn-boss" type="button" data-submit><?= icon('send') ?> Submit</button>
-                <span class="small muted">Ctrl+Enter = Run</span>
+                <span class="small muted">
+                    <?= $boot['runner'] === 'iframe' ? 'Preview otomatis saat mengetik · Ctrl+Enter = Run' : 'Ctrl+Enter = Run untuk melihat hasil' ?>
+                </span>
             </div>
         </section>
 

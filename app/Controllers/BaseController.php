@@ -40,6 +40,10 @@ abstract class BaseController extends Controller
             throw PageNotFoundException::forPageNotFound('Level tidak ditemukan.');
         }
 
+        if ($this->user()?->ingroup('admin')) {
+            return $found;
+        }
+
         return $found['level']['unlocked'] ? $found : null;
     }
 

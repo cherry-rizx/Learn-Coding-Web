@@ -1,58 +1,60 @@
+<?php $bodyClass = 'page-home' ?>
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('title') ?>Belajar coding dari nol<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
 <div class="container">
-    <section class="hero">
-        <div>
-            <span class="badge badge-ok"><?= icon('target') ?> 50 misi, 5 bab</span>
-            <h1>Belajar coding dari nol, satu misi kecil setiap hari.</h1>
-            <p class="lead">Baca kartu materi singkat, jawab kuis, lalu kalahkan boss dengan menulis kode sungguhan langsung di browser. Kalau buntu, AI tutor siap memberi petunjuk tanpa membocorkan jawaban.</p>
-            <div class="row">
-                <a class="btn btn-primary btn-lg" href="<?= url_to('register') ?>">Mulai Belajar <?= icon('arrow-right') ?></a>
+    <section class="home-hero">
+        <div class="home-copy">
+            <span class="home-kicker"><span></span> 50 MISI, 5 BAB <b>•</b> BELAJAR DARI NOL</span>
+            <h1>Belajar coding dari nol, satu misi kecil <em>setiap hari.</em></h1>
+            <p class="lead">Baca kartu materi ringkas, selesaikan tantangan kode harian, lalu taklukkan boss langsung di browser. Kodi dan AI tutor siap membantumu memahami konsepnya.</p>
+            <div class="home-actions">
+                <a class="btn btn-primary btn-lg" href="<?= url_to('register') ?>">Mulai Belajar Sekarang <?= icon('arrow-right') ?></a>
                 <form method="post" action="<?= site_url('tamu') ?>">
                     <?= csrf_field() ?>
                     <button class="btn btn-lg" type="submit"><?= icon('user') ?> Coba sebagai Tamu</button>
                 </form>
             </div>
-            <p class="small muted" style="margin-top:12px">Sudah punya akun? <a href="<?= url_to('login') ?>">Masuk di sini</a>.</p>
-        </div>
-        <div class="hero-art"><img src="<?= base_url('assets/img/kodi.svg') ?>" alt="Kodi, maskot robot"></div>
-    </section>
-
-    <div class="chapter-strip">
-        <?php foreach ([['html', 'HTML', 'Level 1-10'], ['css', 'CSS', 'Level 11-20'], ['javascript', 'JavaScript', 'Level 21-30'], ['sql', 'SQL', 'Level 31-40'], ['php', 'PHP', 'Level 41-50']] as [$slug, $name, $range]): ?>
-            <?php $meta = chapter_meta($slug) ?>
-            <div class="chapter-pill ch-<?= $meta['color'] ?>">
-                <?= icon($meta['icon']) ?>
-                <span><?= esc($name) ?></span>
-                <small><?= esc($range) ?></small>
+            <p class="home-signin">Sudah punya akun? <a href="<?= url_to('login') ?>">Masuk di sini</a><span>•</span><strong>★</strong> Belajar dengan ritmemu sendiri</p>
+            <div class="home-highlights" id="fitur">
+                <div><span class="highlight-icon is-blue"><?= icon('bolt') ?></span><span><strong>5 menit / hari</strong><small>Mikro-learning</small></span></div>
+                <div><span class="highlight-icon is-cyan"><?= icon('bulb') ?></span><span><strong>AI Mentor</strong><small>Feedback instan</small></span></div>
+                <div><span class="highlight-icon is-gold"><?= icon('trophy') ?></span><span><strong>Boss Battle</strong><small>Uji portofolio</small></span></div>
             </div>
-        <?php endforeach ?>
-    </div>
-
-    <section class="feature-grid">
-        <div class="card feature">
-            <div class="feature-icon"><?= icon('book') ?></div>
-            <h3>Materi singkat</h3>
-            <p class="muted">2-3 kartu materi per level, lengkap dengan contoh kode. Bisa dibuka lagi kapan saja di perpustakaan.</p>
         </div>
-        <div class="card feature">
-            <div class="feature-icon"><?= icon('bulb') ?></div>
-            <h3>Kuis dengan clue</h3>
-            <p class="muted">Salah? Muncul clue dan kamu boleh coba lagi. Yang dinilai hanya jawaban pertama.</p>
-        </div>
-        <div class="card feature">
-            <div class="feature-icon"><?= icon('sword') ?></div>
-            <h3>Boss = ngoding beneran</h3>
-            <p class="muted">Level 5 dan 10 tiap bab adalah tantangan kode di sandbox. Hasilnya tampil langsung.</p>
-        </div>
-        <div class="card feature">
-            <div class="feature-icon"><?= icon('award') ?></div>
-            <h3>Bintang &amp; sertifikat</h3>
-            <p class="muted">Kumpulkan bintang, naik di papan peringkat, dan raih sertifikat dengan 150 bintang penuh.</p>
+        <div class="home-art" aria-label="Kodi, maskot Misi Koding">
+            <div class="art-halo"></div>
+            <img src="<?= base_url('assets/img/kodi.png') ?>" alt="Kodi, robot tutor Misi Koding">
+            <div class="art-note art-note-ai"><span></span><div><small>AI TUTOR</small><strong>Siap membantu 24/7</strong></div></div>
+            <div class="art-note art-note-code"><span><?= icon('code') ?></span><div><small>TANTANGAN HARI INI</small><strong>const solve = () =&gt; boss();</strong></div></div>
         </div>
     </section>
+
+    <section class="curriculum" id="kurikulum">
+        <div class="curriculum-heading">
+            <div><span class="section-kicker">KURIKULUM MISI TERSTRUKTUR</span><h2>Jalur Belajar Bertahap</h2><p>Mulai dari fondasi HTML sampai logika backend. Buka modul berikutnya dengan menaklukkan boss.</p></div>
+            <span class="curriculum-status"><i></i> 5 jalur belajar</span>
+        </div>
+        <div class="curriculum-grid">
+            <?php foreach ([
+                ['html', 'HTML', 'Level 1–10', 'DASAR WEB', '<>', 'Tag, struktur DOM, form interaktif, semantik modern, dan SEO web.'],
+                ['css', 'CSS', 'Level 11–20', 'STYLING UI', '✦', 'Box model, Flexbox, CSS Grid, animasi, hingga responsive web design.'],
+                ['javascript', 'JavaScript', 'Level 21–30', 'LOGIKA KODE', 'ϟ', 'Variabel, fungsi, DOM manipulation, event listener, dan async.'],
+                ['sql', 'SQL', 'Level 31–40', 'BASIS DATA', '▤', 'Query SELECT, filtering, relasi tabel JOIN, indexing, dan CRUD.'],
+                ['php', 'PHP', 'Level 41–50', 'BACKEND API', '⌘', 'Server-side scripting, RESTful API endpoint, autentikasi, dan boss akhir.'],
+            ] as [$slug, $name, $range, $label, $mark, $description]): ?>
+                <?php $meta = chapter_meta($slug) ?>
+                <article class="curriculum-card ch-<?= $meta['color'] ?>">
+                    <div class="curriculum-card-top"><span class="curriculum-mark"><?= esc($mark) ?></span><span class="curriculum-tag"><?= esc($label) ?></span></div>
+                    <h3><?= esc($name) ?></h3><span class="curriculum-range"><?= esc($range) ?></span>
+                    <p><?= esc($description) ?></p>
+                    <div class="curriculum-card-bottom"><span><i></i> 10 misi</span><a href="<?= url_to('register') ?>" aria-label="Mulai jalur <?= esc($name, 'attr') ?>">→</a></div>
+                </article>
+            <?php endforeach ?>
+        </div>
+    </section>
+
 </div>
 <?= $this->endSection() ?>

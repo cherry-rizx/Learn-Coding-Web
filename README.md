@@ -14,6 +14,7 @@ User menempuh 50 level berurutan di 5 bab: HTML, CSS, JavaScript, SQL, dan PHP. 
 | AI tutor | Lewat 9Router lokal (OpenAI-compatible), petunjuk manual/otomatis, kode jawaban dibatasi, fallback kalau AI mati |
 | Gamifikasi | Hearts + isi ulang tanpa cron, bintang terbaik per level, syarat buka bab, leaderboard, portofolio |
 | Sertifikat | PDF (Dompdf) ber-kode unik + halaman verifikasi publik `/verifikasi/KODE` |
+| Admin | Semua level terbuka untuk akun admin; panel dapat menambah, mengedit, mencari, menduplikasi, dan menghapus soal kuis |
 | Pendukung | Peta belajar, perpustakaan materi, tutorial pertama kali, halaman bantuan, tampilan HP |
 
 ## Prasyarat
@@ -44,6 +45,7 @@ Buat tabel dan isi data:
 php spark migrate --all              # tabel Shield + 13 tabel aplikasi
 php spark db:seed DatabaseSeeder     # 5 bab, 50 level, semua konten soal & tantangan
 php spark db:seed DemoSeeder         # (opsional) akun demo + isi leaderboard
+php spark db:seed TestAccountsSeeder # (opsional) akun uji user dan admin
 php spark serve                      # http://localhost:8080
 ```
 
@@ -55,6 +57,17 @@ php spark serve                      # http://localhost:8080
 | `siswa@misikoding.test` | `siswa12345` | Baru menyelesaikan level 1-4, berikutnya mini boss |
 
 Akun demo bisa mengulang level mana pun tanpa memotong hearts, jadi cocok untuk menunjukkan sandbox SQL dan PHP.
+
+### Akun pengujian
+
+Buat akun berikut di lingkungan development dengan `php spark db:seed TestAccountsSeeder`:
+
+| Peran | Email | Kata sandi |
+| --- | --- | --- |
+| User | `user.test@misikoding.test` | `UserTest!2026` |
+| Admin | `admin.test@misikoding.test` | `AdminTest!2026` |
+
+Akun admin dapat membuka panel `/admin`. Seeder aman dijalankan ulang: akun yang sudah ada tidak dihapus atau diubah password-nya, dan akun admin akan dipastikan berada di grup `admin`. Seeder menolak dijalankan saat `CI_ENVIRONMENT=production`. Gunakan kredensial ini hanya untuk pengujian lokal.
 
 ### Saat presentasi
 
@@ -94,7 +107,7 @@ app/
   Services/                    ProgressService (bintang, hearts), CurriculumService (peta & kunci level),
                                QuizService, BossService, RankService, AiTutorService
   Database/Content/*.json      konten per bab (kartu materi, soal, tantangan)
-  Database/Seeds/              ChapterLevelSeeder, ContentSeeder, DemoSeeder
+  Database/Seeds/              ChapterLevelSeeder, ContentSeeder, DemoSeeder, TestAccountsSeeder
   Filters/AiThrottle.php       batas panggilan AI per user per menit
   Views/                       layouts, partials, dan halaman per fitur
   Commands/GuestCleanup.php    php spark guest:cleanup

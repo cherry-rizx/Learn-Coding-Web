@@ -45,7 +45,7 @@ class Quiz extends BaseController
         // Key "finished" hanya ada saat soal selesai (maju ke soal berikutnya)
         if (array_key_exists('finished', $result)) {
             if ($result['finished'] !== null) {
-                $next                        = (new CurriculumService())->nextLevel($this->userId(), $levelId);
+                $next                        = (new CurriculumService())->nextLevel($this->userId(), $levelId, $this->user()?->ingroup('admin') ?? false);
                 $result['finished']['next']  = $next === null ? null : site_url('level/' . $next['id']);
                 $result['finished']['retry'] = site_url('level/' . $levelId);
             } else {

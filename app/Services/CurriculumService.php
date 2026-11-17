@@ -17,7 +17,7 @@ class CurriculumService
     }
 
     // Peta 5 bab x 10 level beserta status kunci & bintang milik user
-    public function map(int $userId): array
+    public function map(int $userId, bool $admin = false): array
     {
         $chapters = model(ChapterModel::class)->orderBy('order_no')->findAll();
         $levels   = model(LevelModel::class)->orderBy('level_no')->findAll();
@@ -46,7 +46,7 @@ class CurriculumService
 
             foreach ($byChapter[$chapter['id']] ?? [] as $level) {
                 $best     = (int) ($progress[$level['id']]['best_stars'] ?? 0);
-                $unlocked = $chapterUnlocked && $prevPassed;
+                $unlocked = $admin || ($chapterUnlocked && $prevPassed);
                 $state    = match (true) {
                     ! $unlocked => 'locked',
                     $best >= 2  => 'passed',
@@ -82,7 +82,7 @@ class CurriculumService
             }
 
             $result[] = $chapter + [
-                'unlocked'     => $chapterUnlocked,
+                'unlocked'     => $admin || $chapterUnlocked,
                 'stars'        => $chapterStars,
                 'max_stars'    => count($items) * 3,
                 'passed_count' => count(array_filter($items, static fn ($l) => $l['state'] === 'passed')),
@@ -114,11 +114,11 @@ class CurriculumService
     }
 
     // Level setelah $levelId kalau sudah terbuka, untuk tombol "Lanjut"
-    public function nextLevel(int $userId, int $levelId): ?array
+    public function nextLevel(int $userId, int $levelId, bool $admin = false): ?array
     {
         $flat = [];
 
-        foreach ($this->map($userId) as $chapter) {
+        foreach ($this->map($userId, $admin) as $chapter) {
             array_push($flat, ...$chapter['levels']);
         }
 

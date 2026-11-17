@@ -10,7 +10,7 @@ class Library extends BaseController
 {
     public function index()
     {
-        $map   = (new CurriculumService())->map($this->userId());
+        $map   = (new CurriculumService())->map($this->userId(), $this->user()?->ingroup('admin') ?? false);
         $ids   = [];
         $index = [];
 

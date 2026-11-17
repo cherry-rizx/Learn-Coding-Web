@@ -39,3 +39,16 @@ $routes->group('', ['filter' => 'session'], static function (RouteCollection $ro
         $routes->post('boss/(:num)/petunjuk', 'Api\Boss::hint/$1', ['filter' => 'aithrottle']);
     });
 });
+
+$routes->group('admin', ['filter' => 'group:admin'], static function (RouteCollection $routes) {
+    $routes->get('/', 'Admin\Dashboard::index');
+    $routes->get('level/(:num)', 'Admin\Dashboard::level/$1');
+    $routes->get('bank', 'Admin\Questions::bank');
+
+    $routes->get('level/(:num)/soal/baru', 'Admin\Questions::create/$1');
+    $routes->post('level/(:num)/soal', 'Admin\Questions::store/$1');
+    $routes->get('soal/(:num)', 'Admin\Questions::edit/$1');
+    $routes->post('soal/(:num)', 'Admin\Questions::update/$1');
+    $routes->post('soal/(:num)/hapus', 'Admin\Questions::delete/$1');
+    $routes->post('soal/(:num)/duplikat', 'Admin\Questions::duplicate/$1');
+});

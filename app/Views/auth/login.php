@@ -1,17 +1,17 @@
+<?php $bodyClass = 'page-login' ?>
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('title') ?>Masuk<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="container">
-    <div class="auth-wrap">
-        <div class="auth-head">
-            <img src="<?= base_url('assets/img/kodi.svg') ?>" alt="">
-            <h1>Selamat datang lagi!</h1>
-            <p class="muted">Masuk untuk melanjutkan misimu.</p>
-        </div>
-
+<div class="container auth-screen">
+    <div class="auth-wrap auth-login">
         <div class="card">
+            <div class="auth-head">
+                <img src="<?= base_url('assets/img/kodi.png') ?>" alt="">
+                <h1>Selamat datang lagi!</h1>
+                <p class="muted">Masuk untuk melanjutkan misimu.</p>
+            </div>
             <form action="<?= url_to('login') ?>" method="post">
                 <?= csrf_field() ?>
 
@@ -40,12 +40,8 @@
                 <?= csrf_field() ?>
                 <button class="btn btn-block" type="submit"><?= icon('user') ?> Lanjut sebagai Tamu</button>
             </form>
-            <p class="small muted center" style="margin-top:10px">Login Google segera hadir.</p>
         </div>
 
-        <?php if (setting('Auth.allowRegistration')): ?>
-            <p class="center" style="margin-top:16px">Belum punya akun? <a href="<?= url_to('register') ?>">Daftar gratis</a></p>
-        <?php endif ?>
     </div>
 </div>
 <?= $this->endSection() ?>

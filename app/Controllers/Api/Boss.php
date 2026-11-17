@@ -52,7 +52,7 @@ class Boss extends BaseController
         }
 
         if ($result['passed']) {
-            $next            = (new CurriculumService())->nextLevel($this->userId(), $levelId);
+            $next            = (new CurriculumService())->nextLevel($this->userId(), $levelId, $this->user()?->ingroup('admin') ?? false);
             $result['next']  = $next === null ? null : site_url('level/' . $next['id']);
         }
 

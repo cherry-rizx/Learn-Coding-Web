@@ -23,6 +23,8 @@ let failCount = boot.fail_count;
 let hearts = boot.hearts;
 let busy = false;
 let lastSummary = '';
+let livePreviewTimer = null;
+let livePreviewQueued = false;
 
 /* ---------- editor ---------- */
 const MODES = {
@@ -66,13 +68,34 @@ if (window.CodeMirror) {
 const getCode = () => (editor ? editor.getValue() : textarea.value);
 const setCode = (code) => (editor ? editor.setValue(code) : (textarea.value = code));
 
+// Preview DOM berjalan otomatis setelah jeda singkat; SQL/PHP tetap lewat Run
+// karena keduanya memulai worker/runtime penuh untuk setiap eksekusi.
+const supportsLivePreview = boot.runner === 'iframe';
+
 /* ---------- autosave draf ---------- */
 let saveTimer = null;
 let lastSaved = getCode();
 function scheduleSave() {
   saveState.textContent = 'Belum tersimpan';
+  renderTests(null);
+  if (!supportsLivePreview) runState.textContent = 'Kode berubah — tekan Run untuk melihat hasil terbaru';
   clearTimeout(saveTimer);
   saveTimer = setTimeout(saveDraft, 1500);
+  scheduleLivePreview();
+}
+
+function scheduleLivePreview() {
+  if (!supportsLivePreview) return;
+
+  runState.textContent = 'Memperbarui preview...';
+  clearTimeout(livePreviewTimer);
+  livePreviewTimer = setTimeout(() => {
+    if (busy) {
+      livePreviewQueued = true;
+      return;
+    }
+    run(false, true);
+  }, 500);
 }
 async function saveDraft() {
   const code = getCode();
@@ -112,13 +135,27 @@ function setBusy(on, label) {
   if (on) runState.append(el('span', { class: 'spinner' }), ' ' + (label || 'Menjalankan...'));
 }
 
-async function run(switchTab = true) {
-  if (busy) return;
+async function run(switchTab = true, livePreview = false) {
+  if (busy) {
+    if (livePreview) livePreviewQueued = true;
+    return;
+  }
+  if (livePreview) {
+    livePreviewQueued = false;
+  } else {
+    clearTimeout(livePreviewTimer);
+    livePreviewQueued = false;
+  }
   if (switchTab) showTab('output');
-  setBusy(true, 'Menjalankan...');
+  setBusy(true, livePreview ? 'Memperbarui preview...' : 'Menjalankan...');
   await runner.run(getCode());
   setBusy(false);
-  runState.textContent = 'Selesai dijalankan';
+  runState.textContent = livePreview ? 'Preview langsung' : 'Selesai dijalankan';
+
+  if (livePreviewQueued) {
+    livePreviewQueued = false;
+    run(false, true);
+  }
 }
 
 function renderTests(results) {

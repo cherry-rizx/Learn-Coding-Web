@@ -3,7 +3,7 @@
   "levels": [
     {
       "level_no": 1,
-      "title": "Kenalan dengan HTML",
+      "title": "HTML Dasar dan Struktur",
       "cards": [
         {
           "title": "Apa itu HTML?",
@@ -12,7 +12,10 @@
             "",
             "HTML bukan bahasa pemrograman, melainkan bahasa markup: kita menandai bagian-bagian isi halaman, misalnya \"ini judul\", \"ini paragraf\", \"ini gambar\". Browser membaca file HTML lalu menampilkannya sebagai halaman."
           ],
-          "code": ["<h1>Halo Dunia!</h1>", "<p>Ini halaman web pertamaku.</p>"]
+          "code": [
+            "<h1>Halo Dunia!</h1>",
+            "<p>Ini halaman web pertamaku.</p>"
+          ]
         },
         {
           "title": "Tag dan elemen",
@@ -21,7 +24,12 @@
             "",
             "Tag pembuka + isi + tag penutup disebut **elemen**. Ada juga tag tanpa penutup (tag kosong), misalnya `<br>` untuk ganti baris dan `<img>` untuk gambar."
           ],
-          "code": ["<p>Ini isi paragraf</p>", "", "<!-- <p> = tag pembuka, </p> = tag penutup -->", "<!-- seluruh baris = satu elemen -->"]
+          "code": [
+            "<p>Ini isi paragraf</p>",
+            "",
+            "<!-- <p> = tag pembuka, </p> = tag penutup -->",
+            "<!-- seluruh baris = satu elemen -->"
+          ]
         },
         {
           "title": "Struktur dasar dokumen",
@@ -47,113 +55,139 @@
       "questions": [
         {
           "type": "mcq",
-          "prompt": "HTML adalah singkatan dari...",
-          "options": ["HyperText Markup Language", "HighText Machine Language", "Hyperlink and Text Management Language", "Home Tool Markup Language"],
+          "prompt": "Kepanjangan dari HTML adalah...",
+          "options": [
+            "Hyper Text Markup Language",
+            "High Text Machine Language",
+            "Hyperlink and Text Markup Language",
+            "Home Tool Markup Language"
+          ],
           "answer": 0,
-          "clue": "Kata kuncinya: hypertext dan markup.",
-          "explanation": "HTML = HyperText Markup Language, bahasa markup untuk menyusun kerangka halaman web."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Hyper Text Markup Language."
         },
         {
           "type": "mcq",
-          "prompt": "HTML termasuk jenis bahasa apa?",
-          "options": ["Bahasa markup untuk menyusun isi halaman", "Bahasa pemrograman untuk berhitung", "Bahasa query untuk database", "Bahasa untuk mengatur warna dan tata letak"],
-          "answer": 0,
-          "clue": "HTML menandai bagian-bagian isi halaman.",
-          "explanation": "HTML adalah bahasa markup. Warna dan tata letak diurus CSS, sedangkan logika diurus JavaScript."
+          "prompt": "Tag yang digunakan untuk membuat judul utama (heading terbesar) di dalam isi halaman web adalah...",
+          "options": [
+            "<head>",
+            "<h1>",
+            "<title>",
+            "<header>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <h1>."
         },
         {
           "type": "mcq",
-          "prompt": "Manakah tag penutup yang benar untuk `<p>`?",
-          "options": ["</p>", "<p/>", "<end p>", "<p>"],
-          "answer": 0,
-          "clue": "Tag penutup memakai garis miring (/) tepat setelah tanda <.",
-          "explanation": "Tag penutup = nama tag yang diawali garis miring: `</p>`."
+          "prompt": "Atribut yang memberi identitas unik pada sebuah elemen HTML agar dapat diakses oleh CSS atau JavaScript adalah...",
+          "options": [
+            "class",
+            "id",
+            "style",
+            "name"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: id."
         },
         {
           "type": "mcq",
-          "prompt": "Gabungan tag pembuka + isi + tag penutup disebut...",
-          "options": ["Elemen", "Atribut", "Komentar", "Selector"],
-          "answer": 0,
-          "clue": "Istilah ini dipakai untuk satu kesatuan utuh di HTML.",
-          "explanation": "Satu kesatuan seperti `<p>Isi</p>` disebut elemen."
+          "prompt": "Dokumen HTML5 diawali dengan deklarasi tipe dokumen berikut...",
+          "options": [
+            "<html>",
+            "<!DOCTYPE html>",
+            "<head>",
+            "<body>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <!DOCTYPE html>."
         },
         {
           "type": "mcq",
-          "prompt": "Bagian mana yang berisi semua konten yang TAMPIL di layar?",
-          "options": ["<body>", "<head>", "<title>", "<!DOCTYPE html>"],
+          "prompt": "Tag yang digunakan untuk membuat paragraf dalam HTML adalah...",
+          "options": [
+            "<p>",
+            "<br>",
+            "<div>",
+            "<span>"
+          ],
           "answer": 0,
-          "clue": "Bagian ini adalah \"badan\" halaman.",
-          "explanation": "`<body>` berisi semua yang tampil di layar, sedangkan `<head>` berisi informasi tentang halaman."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <p>."
         },
         {
           "type": "mcq",
-          "prompt": "Teks di dalam `<title>` akan muncul di mana?",
-          "options": ["Di tab browser", "Sebagai judul besar di tengah halaman", "Di bagian paling bawah halaman", "Tidak muncul di mana pun"],
-          "answer": 0,
-          "clue": "`<title>` ada di dalam `<head>`, bukan di `<body>`.",
-          "explanation": "`<title>` tampil sebagai judul di tab browser dan di hasil mesin pencari."
+          "prompt": "Tag untuk membuat teks tebal (bold) adalah...",
+          "options": [
+            "<i>",
+            "<b>",
+            "<u>",
+            "<s>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <b>."
         },
         {
           "type": "mcq",
-          "prompt": "Apa fungsi `<!DOCTYPE html>`?",
-          "options": ["Memberi tahu browser bahwa dokumen ini HTML5", "Membuat judul halaman", "Menutup dokumen HTML", "Menambahkan komentar"],
-          "answer": 0,
-          "clue": "Baris ini selalu ditulis paling atas, sebelum `<html>`.",
-          "explanation": "`<!DOCTYPE html>` adalah deklarasi jenis dokumen supaya browser memakai aturan HTML5."
+          "prompt": "Untuk membuat daftar bernomor (ordered list), tag yang digunakan adalah...",
+          "options": [
+            "<ul>",
+            "<ol>",
+            "<li>",
+            "<dl>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <ol>."
         },
         {
           "type": "mcq",
-          "prompt": "Tag mana yang TIDAK punya tag penutup?",
-          "options": ["<br>", "<p>", "<body>", "<title>"],
-          "answer": 0,
-          "clue": "Tag ini dipakai untuk pindah baris.",
-          "explanation": "`<br>` adalah tag kosong (void element), jadi tidak punya penutup."
+          "prompt": "Tag <a> digunakan untuk membuat...",
+          "options": [
+            "Gambar",
+            "Tautan atau link",
+            "Tabel",
+            "Formulir"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Tautan atau link."
         },
         {
           "type": "mcq",
-          "prompt": "Elemen apa yang membungkus seluruh dokumen, termasuk `<head>` dan `<body>`?",
-          "options": ["<html>", "<body>", "<main>", "<doc>"],
+          "prompt": "Untuk menampilkan gambar pada halaman web, tag yang digunakan adalah...",
+          "options": [
+            "<img>",
+            "<picture>",
+            "<image>",
+            "<src>"
+          ],
           "answer": 0,
-          "clue": "Namanya sama dengan nama bahasanya.",
-          "explanation": "`<html>` adalah elemen akar (root) yang membungkus `<head>` dan `<body>`."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <img>."
         },
         {
           "type": "mcq",
-          "prompt": "File HTML biasanya disimpan dengan ekstensi...",
-          "options": [".html", ".ht", ".web", ".txt"],
-          "answer": 0,
-          "clue": "Ekstensinya sama dengan nama bahasanya.",
-          "explanation": "File HTML disimpan dengan ekstensi `.html`, misalnya `index.html`."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun elemen paragraf yang berisi teks Halo.",
-          "answer": ["<p>", "Halo", "</p>"],
-          "distractors": ["<p/>"],
-          "clue": "Tag pembuka, isi, lalu tag penutup.",
-          "explanation": "Elemen paragraf ditulis `<p>Halo</p>`."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun bagian `<head>` yang berisi judul tab \"Belajar\".",
-          "answer": ["<head>", "<title>", "Belajar", "</title>", "</head>"],
-          "distractors": ["<body>"],
-          "clue": "`<title>` berada di dalam `<head>`.",
-          "explanation": "`<head><title>Belajar</title></head>` membuat tab browser bertuliskan Belajar."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun kerangka dokumen HTML dari atas ke bawah.",
-          "answer": ["<!DOCTYPE html>", "<html>", "<head>", "</head>", "<body>", "</body>", "</html>"],
-          "distractors": [],
-          "clue": "DOCTYPE paling atas, lalu html. Di dalamnya head dulu, baru body.",
-          "explanation": "Urutannya: DOCTYPE, `<html>`, `<head>...</head>`, `<body>...</body>`, lalu `</html>`."
+          "prompt": "Atribut src pada tag <img> berfungsi untuk...",
+          "options": [
+            "Menentukan lebar gambar",
+            "Menentukan sumber file gambar",
+            "Menentukan teks alternatif",
+            "Menentukan tinggi gambar"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Menentukan sumber file gambar."
         }
       ]
     },
     {
       "level_no": 2,
-      "title": "Judul & Paragraf",
+      "title": "Elemen dan Format Teks",
       "cards": [
         {
           "title": "Heading h1 sampai h6",
@@ -162,7 +196,11 @@
             "",
             "Pakai **satu** `<h1>` untuk judul utama halaman, lalu `<h2>`, `<h3>`, dan seterusnya untuk sub-judul secara berurutan."
           ],
-          "code": ["<h1>Resep Nasi Goreng</h1>", "<h2>Bahan</h2>", "<h3>Bumbu halus</h3>"]
+          "code": [
+            "<h1>Resep Nasi Goreng</h1>",
+            "<h2>Bahan</h2>",
+            "<h3>Bumbu halus</h3>"
+          ]
         },
         {
           "title": "Paragraf",
@@ -171,124 +209,158 @@
             "",
             "Penting: spasi dan Enter berlebih di dalam kode HTML **diabaikan**. Beberapa spasi berturut-turut tampil sebagai satu spasi saja."
           ],
-          "code": ["<p>Ini paragraf pertama.</p>", "<p>Ini      paragraf      kedua.</p>", "<!-- tampil: Ini paragraf kedua. -->"]
+          "code": [
+            "<p>Ini paragraf pertama.</p>",
+            "<p>Ini      paragraf      kedua.</p>",
+            "<!-- tampil: Ini paragraf kedua. -->"
+          ]
         },
         {
           "title": "Ganti baris dan garis pemisah",
           "body": "`<br>` memaksa teks pindah ke baris berikutnya tanpa membuat paragraf baru. `<hr>` membuat garis horizontal pemisah antar bagian. Keduanya tag kosong, tidak punya penutup.",
-          "code": ["<p>Jl. Merdeka No. 1<br>Jakarta</p>", "<hr>", "<p>Bagian berikutnya</p>"]
+          "code": [
+            "<p>Jl. Merdeka No. 1<br>Jakarta</p>",
+            "<hr>",
+            "<p>Bagian berikutnya</p>"
+          ]
         }
       ],
       "questions": [
         {
           "type": "mcq",
-          "prompt": "Tag heading yang paling besar dan paling penting adalah...",
-          "options": ["<h1>", "<h6>", "<head>", "<header>"],
+          "prompt": "Tag yang membungkus seluruh konten dan elemen dalam sebuah halaman HTML adalah...",
+          "options": [
+            "<html>",
+            "<head>",
+            "<title>",
+            "<body>"
+          ],
           "answer": 0,
-          "clue": "Angkanya paling kecil, tingkatnya paling tinggi.",
-          "explanation": "`<h1>` adalah heading tingkat tertinggi, biasanya untuk judul utama halaman."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <html>."
         },
         {
           "type": "mcq",
-          "prompt": "Tag heading yang paling kecil adalah...",
-          "options": ["<h6>", "<h1>", "<h0>", "<h9>"],
-          "answer": 0,
-          "clue": "Heading hanya ada dari 1 sampai 6.",
-          "explanation": "Heading terkecil adalah `<h6>`."
+          "prompt": "Tag yang berisi bagian isi halaman web yang tampil di browser adalah...",
+          "options": [
+            "<head>",
+            "<body>",
+            "<table>",
+            "<tr>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <body>."
         },
         {
           "type": "mcq",
-          "prompt": "Ada berapa tingkat heading di HTML?",
-          "options": ["6", "3", "5", "10"],
+          "prompt": "Elemen HTML pada umumnya terdiri dari...",
+          "options": [
+            "Tag pembuka, isi, dan tag penutup",
+            "Hanya tag pembuka",
+            "Hanya atribut",
+            "Hanya teks"
+          ],
           "answer": 0,
-          "clue": "Dari h1 sampai h...?",
-          "explanation": "Ada 6 tingkat heading: `<h1>` sampai `<h6>`."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Tag pembuka, isi, dan tag penutup."
         },
         {
           "type": "mcq",
-          "prompt": "Tag untuk membuat paragraf adalah...",
-          "options": ["<p>", "<para>", "<pg>", "<text>"],
-          "answer": 0,
-          "clue": "Huruf pertama dari kata paragraf.",
-          "explanation": "Paragraf ditulis dengan `<p>...</p>`."
+          "prompt": "Manakah di bawah ini yang BUKAN tag heading yang valid dalam HTML?",
+          "options": [
+            "<h2>",
+            "<h4>",
+            "<h6>",
+            "<h7>"
+          ],
+          "answer": 3,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <h7>."
         },
         {
           "type": "mcq",
-          "prompt": "Apa yang terjadi kalau kamu menulis 5 spasi berturut-turut di dalam `<p>`?",
-          "options": ["Browser menampilkannya sebagai 1 spasi", "Browser menampilkan 5 spasi", "Muncul pesan error", "Teks otomatis pindah baris"],
-          "answer": 0,
-          "clue": "Browser menyederhanakan spasi berlebih.",
-          "explanation": "Spasi berturut-turut digabung menjadi satu spasi oleh browser."
+          "prompt": "Tag yang menampilkan judul pada tab browser adalah...",
+          "options": [
+            "<h1>",
+            "<title>",
+            "<header>",
+            "<meta>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <title>."
         },
         {
           "type": "mcq",
-          "prompt": "Tag untuk pindah baris TANPA membuat paragraf baru adalah...",
-          "options": ["<br>", "<hr>", "<lb>", "<break>"],
-          "answer": 0,
-          "clue": "Singkatan dari break.",
-          "explanation": "`<br>` (break) memindahkan teks ke baris berikutnya di paragraf yang sama."
+          "prompt": "Tag yang berisi metadata halaman dan tidak ditampilkan di layar adalah...",
+          "options": [
+            "<body>",
+            "<head>",
+            "<footer>",
+            "<section>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <head>."
         },
         {
           "type": "mcq",
-          "prompt": "`<hr>` digunakan untuk...",
-          "options": ["Membuat garis horizontal pemisah", "Membuat heading", "Membuat huruf tebal", "Pindah ke halaman lain"],
-          "answer": 0,
-          "clue": "hr = horizontal rule.",
-          "explanation": "`<hr>` menampilkan garis horizontal sebagai pemisah bagian."
+          "prompt": "Ekstensi file dokumen HTML yang benar adalah...",
+          "options": [
+            ".htm5",
+            ".xml",
+            ".html",
+            ".web"
+          ],
+          "answer": 2,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: .html."
         },
         {
           "type": "mcq",
-          "prompt": "Berapa `<h1>` yang disarankan dalam satu halaman?",
-          "options": ["Satu, untuk judul utama", "Sebanyak-banyaknya", "Tidak boleh ada", "Tepat enam"],
-          "answer": 0,
-          "clue": "Judul utama halaman biasanya hanya satu.",
-          "explanation": "Satu `<h1>` sebagai judul utama memudahkan mesin pencari dan pembaca layar memahami halaman."
+          "prompt": "Tag penutup dalam HTML ditandai dengan karakter...",
+          "options": [
+            "!",
+            "/",
+            "\\",
+            "#"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: /."
         },
         {
           "type": "mcq",
-          "prompt": "Mana penulisan heading tingkat 2 yang benar?",
-          "options": ["<h2>Fitur</h2>", "<h2>Fitur</h3>", "<heading2>Fitur</heading2>", "<h-2>Fitur</h-2>"],
-          "answer": 0,
-          "clue": "Tag pembuka dan penutup harus bernama sama.",
-          "explanation": "`<h2>Fitur</h2>`: pembuka dan penutup sama-sama h2."
+          "prompt": "Tag <br> berfungsi untuk...",
+          "options": [
+            "Membuat teks tebal",
+            "Membuat paragraf baru",
+            "Membuat baris baru",
+            "Membuat garis"
+          ],
+          "answer": 2,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Membuat baris baru."
         },
         {
           "type": "mcq",
-          "prompt": "Mana urutan heading yang rapi untuk sebuah artikel?",
-          "options": ["h1 untuk judul, h2 untuk sub-bagian, h3 untuk sub-sub-bagian", "h3 dulu, lalu h1, lalu h2", "Semua judul memakai h1", "Memilih heading berdasarkan ukuran yang paling disukai"],
-          "answer": 0,
-          "clue": "Heading menunjukkan tingkat kepentingan, bukan sekadar ukuran.",
-          "explanation": "Heading dipakai berurutan sesuai struktur isi. Ukuran tampilan bisa diatur nanti dengan CSS."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun heading tingkat 1 berisi teks Profil.",
-          "answer": ["<h1>", "Profil", "</h1>"],
-          "distractors": ["</h2>"],
-          "clue": "Pembuka dan penutup harus sama-sama h1.",
-          "explanation": "`<h1>Profil</h1>`."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun paragraf berisi \"Baris satu\", ganti baris, lalu \"Baris dua\".",
-          "answer": ["<p>", "Baris satu", "<br>", "Baris dua", "</p>"],
-          "distractors": ["<hr>"],
-          "clue": "Tag ganti baris diletakkan di antara dua teks, masih di dalam paragraf.",
-          "explanation": "`<p>Baris satu<br>Baris dua</p>`."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun sub-judul h2 \"Hobi\" lalu paragraf \"Membaca\".",
-          "answer": ["<h2>", "Hobi", "</h2>", "<p>", "Membaca", "</p>"],
-          "distractors": ["<h1>"],
-          "clue": "Tutup heading dulu sebelum membuka paragraf.",
-          "explanation": "`<h2>Hobi</h2><p>Membaca</p>`."
+          "prompt": "Tag untuk membuat garis horizontal adalah...",
+          "options": [
+            "<line>",
+            "<hr>",
+            "<br>",
+            "<border>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <hr>."
         }
       ]
     },
     {
       "level_no": 3,
-      "title": "Format Teks & Komentar",
+      "title": "Dokumen dan Semantik",
       "cards": [
         {
           "title": "Teks tebal dan miring",
@@ -297,134 +369,174 @@
             "",
             "Ada juga `<b>` dan `<i>` yang hanya mengubah tampilan. Untuk makna \"penting\" dan \"ditekankan\", lebih baik pakai `<strong>` dan `<em>`."
           ],
-          "code": ["<p>Jangan lupa <strong>simpan file</strong> sebelum menutup.</p>", "<p>Aku <em>sangat</em> suka coding.</p>"]
+          "code": [
+            "<p>Jangan lupa <strong>simpan file</strong> sebelum menutup.</p>",
+            "<p>Aku <em>sangat</em> suka coding.</p>"
+          ]
         },
         {
           "title": "Format teks lainnya",
           "body": "`<mark>` seperti stabilo, `<small>` untuk teks kecil (misal catatan kaki), `<code>` untuk potongan kode, `<sub>` untuk teks di bawah (H₂O) dan `<sup>` untuk teks di atas (x²).",
-          "code": ["<p>Rumus air: H<sub>2</sub>O</p>", "<p>Luas persegi: s<sup>2</sup></p>", "<p>Ketik <code>ls</code> di terminal.</p>", "<p><mark>Diskon</mark> berakhir hari ini!</p>"]
+          "code": [
+            "<p>Rumus air: H<sub>2</sub>O</p>",
+            "<p>Luas persegi: s<sup>2</sup></p>",
+            "<p>Ketik <code>ls</code> di terminal.</p>",
+            "<p><mark>Diskon</mark> berakhir hari ini!</p>"
+          ]
         },
         {
           "title": "Komentar",
           "body": "Komentar ditulis di antara `<!--` dan `-->`. Komentar **tidak tampil** di halaman, gunanya untuk catatan bagi programmer.",
-          "code": ["<!-- Bagian menu, nanti ditambah link -->", "<p>Halo</p>"]
+          "code": [
+            "<!-- Bagian menu, nanti ditambah link -->",
+            "<p>Halo</p>"
+          ]
         }
       ],
       "questions": [
         {
           "type": "mcq",
-          "prompt": "Tag untuk menandai teks PENTING (tampil tebal) adalah...",
-          "options": ["<strong>", "<em>", "<mark>", "<small>"],
-          "answer": 0,
-          "clue": "Artinya \"kuat\" dalam bahasa Inggris.",
-          "explanation": "`<strong>` menandai teks penting dan tampil tebal."
+          "prompt": "Penulisan komentar yang benar dalam HTML adalah...",
+          "options": [
+            "// komentar",
+            "/* komentar */",
+            "<!-- komentar -->",
+            "# komentar"
+          ],
+          "answer": 2,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <!-- komentar -->."
         },
         {
           "type": "mcq",
-          "prompt": "Tag untuk memberi penekanan (tampil miring) adalah...",
-          "options": ["<em>", "<strong>", "<code>", "<sup>"],
-          "answer": 0,
-          "clue": "Singkatan dari emphasis.",
-          "explanation": "`<em>` (emphasis) memberi penekanan dan tampil miring."
+          "prompt": "<meta charset=\"UTF-8\"> berfungsi untuk...",
+          "options": [
+            "Menentukan bahasa halaman",
+            "Menentukan pengkodean karakter",
+            "Menentukan judul",
+            "Menentukan warna latar"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Menentukan pengkodean karakter."
         },
         {
           "type": "mcq",
-          "prompt": "Penulisan komentar HTML yang benar adalah...",
-          "options": ["<!-- catatan -->", "// catatan", "/* catatan */", "# catatan"],
-          "answer": 0,
-          "clue": "Diawali tanda seru dan dua strip.",
-          "explanation": "Komentar HTML: `<!-- catatan -->`. Bentuk lain adalah komentar di bahasa lain."
+          "prompt": "Heading dengan ukuran default paling besar adalah...",
+          "options": [
+            "<h6>",
+            "<h3>",
+            "<h1>",
+            "<head>"
+          ],
+          "answer": 2,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <h1>."
         },
         {
           "type": "mcq",
-          "prompt": "Apakah komentar HTML tampil di halaman?",
-          "options": ["Tidak, hanya terlihat di kode", "Ya, tampil dengan huruf kecil", "Ya, tampil miring", "Hanya tampil di HP"],
+          "prompt": "Tag untuk membuat teks miring dengan makna penekanan (semantik) adalah...",
+          "options": [
+            "<em>",
+            "<strong>",
+            "<mark>",
+            "<small>"
+          ],
           "answer": 0,
-          "clue": "Komentar adalah catatan untuk programmer.",
-          "explanation": "Komentar diabaikan saat halaman ditampilkan."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <em>."
         },
         {
           "type": "mcq",
-          "prompt": "Untuk menulis H₂O (angka 2 di bawah), dipakai tag...",
-          "options": ["<sub>", "<sup>", "<small>", "<low>"],
-          "answer": 0,
-          "clue": "sub = di bawah (subscript).",
-          "explanation": "`H<sub>2</sub>O` menghasilkan H₂O."
+          "prompt": "Tag <strong> digunakan untuk...",
+          "options": [
+            "Teks yang dicoret",
+            "Teks yang dianggap penting",
+            "Teks berukuran kecil",
+            "Teks bergaris bawah"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: Teks yang dianggap penting."
         },
         {
           "type": "mcq",
-          "prompt": "Untuk menulis x² (pangkat), dipakai tag...",
-          "options": ["<sup>", "<sub>", "<big>", "<pow>"],
-          "answer": 0,
-          "clue": "sup = di atas (superscript).",
-          "explanation": "`x<sup>2</sup>` menghasilkan x²."
+          "prompt": "Tag untuk membuat teks subscript (seperti H2O pada rumus air) adalah...",
+          "options": [
+            "<sup>",
+            "<sub>",
+            "<small>",
+            "<low>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <sub>."
         },
         {
           "type": "mcq",
-          "prompt": "Tag `<mark>` membuat teks tampil seperti...",
-          "options": ["Distabilo (latar kuning)", "Dicoret", "Bergaris bawah tebal", "Berkedip"],
+          "prompt": "Tag untuk membuat teks superscript (seperti pangkat pada x kuadrat) adalah...",
+          "options": [
+            "<sup>",
+            "<sub>",
+            "<top>",
+            "<up>"
+          ],
           "answer": 0,
-          "clue": "Seperti menandai buku dengan spidol warna.",
-          "explanation": "`<mark>` menyorot teks, defaultnya berlatar kuning."
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <sup>."
         },
         {
           "type": "mcq",
-          "prompt": "Untuk menampilkan potongan kode di dalam kalimat, gunakan...",
-          "options": ["<code>", "<script>", "<kode>", "<cmd>"],
-          "answer": 0,
-          "clue": "Nama tagnya bahasa Inggris dari \"kode\".",
-          "explanation": "`<code>` menampilkan teks dengan huruf monospace, cocok untuk kode."
+          "prompt": "Tag untuk membuat daftar tidak bernomor (bullet) adalah...",
+          "options": [
+            "<ol>",
+            "<dl>",
+            "<ul>",
+            "<list>"
+          ],
+          "answer": 2,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <ul>."
         },
         {
           "type": "mcq",
-          "prompt": "Apa beda `<strong>` dan `<b>`?",
-          "options": ["Sama-sama tebal, tapi <strong> juga bermakna \"penting\"", "<b> lebih baru daripada <strong>", "<strong> membuat teks miring", "Tidak ada bedanya sama sekali"],
-          "answer": 0,
-          "clue": "Satu hanya soal tampilan, satu lagi juga punya makna.",
-          "explanation": "`<b>` hanya menebalkan, sedangkan `<strong>` memberi makna penting yang dipahami pembaca layar."
+          "prompt": "Tag yang digunakan untuk setiap item dalam daftar adalah...",
+          "options": [
+            "<item>",
+            "<li>",
+            "<dt>",
+            "<td>"
+          ],
+          "answer": 1,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: <li>."
         },
         {
           "type": "mcq",
-          "prompt": "Tag yang cocok untuk catatan kaki kecil seperti \"*syarat berlaku\" adalah...",
-          "options": ["<small>", "<mark>", "<h6>", "<sup>"],
-          "answer": 0,
-          "clue": "Artinya \"kecil\".",
-          "explanation": "`<small>` dipakai untuk teks kecil seperti catatan kaki atau hak cipta."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun kalimat \"Saya suka coding\" dengan kata \"suka\" ditandai penting.",
-          "answer": ["Saya", "<strong>", "suka", "</strong>", "coding"],
-          "distractors": ["<em>"],
-          "clue": "Bungkus hanya kata \"suka\".",
-          "explanation": "`Saya <strong>suka</strong> coding`."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun komentar HTML yang berisi kata menu.",
-          "answer": ["<!--", "menu", "-->"],
-          "distractors": ["//"],
-          "clue": "Pembuka komentar memakai tanda seru.",
-          "explanation": "`<!-- menu -->`."
-        },
-        {
-          "type": "arrange",
-          "prompt": "Susun penulisan rumus air H₂O.",
-          "answer": ["H", "<sub>", "2", "</sub>", "O"],
-          "distractors": ["<sup>"],
-          "clue": "Angka 2 posisinya di bawah.",
-          "explanation": "`H<sub>2</sub>O`."
+          "prompt": "Atribut pada tag <a> yang berisi alamat tujuan tautan adalah...",
+          "options": [
+            "src",
+            "link",
+            "href",
+            "url"
+          ],
+          "answer": 2,
+          "clue": "Perhatikan konsep yang ditanyakan dan bandingkan fungsi tiap pilihan.",
+          "explanation": "Jawaban benar: href."
         }
       ]
     },
     {
       "level_no": 4,
-      "title": "Link & Gambar",
+      "title": "Susun Kode HTML",
       "cards": [
         {
           "title": "Atribut",
           "body": "**Atribut** memberi informasi tambahan pada sebuah tag. Atribut ditulis di dalam tag pembuka dengan format `nama=\"nilai\"`. Satu tag boleh punya beberapa atribut, dipisah spasi.",
-          "code": ["<a href=\"https://www.wikipedia.org\" target=\"_blank\">Wikipedia</a>", "<!-- href dan target adalah atribut -->"]
+          "code": [
+            "<a href=\"https://www.wikipedia.org\" target=\"_blank\">Wikipedia</a>",
+            "<!-- href dan target adalah atribut -->"
+          ]
         },
         {
           "title": "Membuat link",
@@ -433,7 +545,11 @@
             "",
             "`target=\"_blank\"` membuka link di tab baru. `href` bisa berisi alamat situs lain, nama file di situs yang sama (`kontak.html`), atau `#id` untuk melompat ke bagian di halaman yang sama."
           ],
-          "code": ["<a href=\"https://github.com\">GitHub</a>", "<a href=\"kontak.html\">Kontak</a>", "<a href=\"#harga\">Lihat harga</a>"]
+          "code": [
+            "<a href=\"https://github.com\">GitHub</a>",
+            "<a href=\"kontak.html\">Kontak</a>",
+            "<a href=\"#harga\">Lihat harga</a>"
+          ]
         },
         {
           "title": "Menampilkan gambar",
@@ -442,113 +558,146 @@
             "",
             "`alt` penting: dibacakan oleh pembaca layar untuk tunanetra dan tampil kalau gambar gagal dimuat. Ukuran bisa diatur dengan `width` dan `height`."
           ],
-          "code": ["<img src=\"kucing.jpg\" alt=\"Kucing oranye sedang tidur\" width=\"300\">"]
+          "code": [
+            "<img src=\"kucing.jpg\" alt=\"Kucing oranye sedang tidur\" width=\"300\">"
+          ]
         }
       ],
       "questions": [
         {
-          "type": "mcq",
-          "prompt": "Tag untuk membuat link adalah...",
-          "options": ["<a>", "<link>", "<href>", "<url>"],
-          "answer": 0,
-          "clue": "Singkatan dari anchor (jangkar).",
-          "explanation": "Link dibuat dengan `<a>`. Tag `<link>` dipakai untuk hal lain, misalnya memuat file CSS."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Atribut yang berisi alamat tujuan link adalah...",
-          "options": ["href", "src", "alt", "link"],
-          "answer": 0,
-          "clue": "Singkatan dari hypertext reference.",
-          "explanation": "`href` berisi alamat tujuan, misalnya `<a href=\"https://github.com\">`."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Atribut `target=\"_blank\"` pada link berfungsi untuk...",
-          "options": ["Membuka link di tab baru", "Membuat link berwarna biru", "Mematikan link", "Mengunduh file"],
-          "answer": 0,
-          "clue": "_blank = halaman kosong yang baru.",
-          "explanation": "`target=\"_blank\"` membuka tujuan link di tab atau jendela baru."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Tag untuk menampilkan gambar adalah...",
-          "options": ["<img>", "<image>", "<pic>", "<src>"],
-          "answer": 0,
-          "clue": "Singkatan tiga huruf dari image.",
-          "explanation": "Gambar ditampilkan dengan `<img>`."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Atribut yang berisi alamat file gambar adalah...",
-          "options": ["src", "href", "alt", "file"],
-          "answer": 0,
-          "clue": "Singkatan dari source (sumber).",
-          "explanation": "`src` menunjuk file gambar, misalnya `<img src=\"foto.jpg\">`."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Mengapa atribut `alt` pada gambar penting?",
-          "options": ["Dibacakan pembaca layar dan tampil jika gambar gagal dimuat", "Membuat gambar lebih tajam", "Mengatur ukuran gambar", "Membuat gambar bisa diklik"],
-          "answer": 0,
-          "clue": "Pikirkan pengguna tunanetra dan koneksi lambat.",
-          "explanation": "`alt` adalah teks pengganti untuk aksesibilitas dan saat gambar tidak tampil."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Apakah `<img>` punya tag penutup?",
-          "options": ["Tidak, <img> adalah tag kosong", "Ya, </img>", "Ya, </image>", "Hanya jika ada atribut alt"],
-          "answer": 0,
-          "clue": "Sama seperti `<br>`.",
-          "explanation": "`<img>` tidak punya isi, jadi tidak perlu tag penutup."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Penulisan atribut yang benar adalah...",
-          "options": ["href=\"profil.html\"", "href=>profil.html", "href:profil.html", "(href profil.html)"],
-          "answer": 0,
-          "clue": "Formatnya nama=\"nilai\".",
-          "explanation": "Atribut ditulis `nama=\"nilai\"` di dalam tag pembuka."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Link `<a href=\"#kontak\">` akan membawa pengguna ke...",
-          "options": ["Elemen dengan id=\"kontak\" di halaman yang sama", "Situs bernama kontak.com", "File bernama kontak.html", "Aplikasi email"],
-          "answer": 0,
-          "clue": "Tanda # menunjuk ke sebuah id.",
-          "explanation": "`href=\"#kontak\"` melompat ke elemen yang punya `id=\"kontak\"`."
-        },
-        {
-          "type": "mcq",
-          "prompt": "Bagaimana membuat gambar yang bisa diklik menuju halaman lain?",
-          "options": ["Letakkan <img> di dalam <a>", "Tambahkan href pada <img>", "Letakkan <a> di dalam atribut src", "Gambar tidak bisa dijadikan link"],
-          "answer": 0,
-          "clue": "Apa pun yang dibungkus `<a>` bisa diklik.",
-          "explanation": "`<a href=\"galeri.html\"><img src=\"foto.jpg\" alt=\"Foto\"></a>`."
+          "type": "arrange",
+          "prompt": "Susun menjadi tautan ke Google:",
+          "answer": [
+            "Google",
+            "</a>",
+            "<a",
+            "href=\"https://google.com\"",
+            ">"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
         },
         {
           "type": "arrange",
-          "prompt": "Susun link menuju google.com dengan teks Google.",
-          "answer": ["<a href=\"https://google.com\">", "Google", "</a>"],
-          "distractors": ["<link>"],
-          "clue": "Tag pembuka berisi href, lalu teks, lalu penutup.",
-          "explanation": "`<a href=\"https://google.com\">Google</a>`."
+          "prompt": "Susun menjadi tautan yang terbuka di tab baru:",
+          "answer": [
+            ">Buka</a>",
+            "target=\"_blank\"",
+            "<a",
+            "href=\"https://google.com\""
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
         },
         {
           "type": "arrange",
-          "prompt": "Susun gambar yang bisa diklik menuju galeri.html.",
-          "answer": ["<a href=\"galeri.html\">", "<img src=\"foto.jpg\" alt=\"Foto\">", "</a>"],
-          "distractors": ["</img>"],
-          "clue": "Gambar dibungkus oleh link.",
-          "explanation": "`<a href=\"galeri.html\"><img src=\"foto.jpg\" alt=\"Foto\"></a>`."
+          "prompt": "Susun menjadi tag gambar lengkap (urutan atribut: src, alt, lalu width):",
+          "answer": [
+            "alt=\"Kucing lucu\"",
+            "<img",
+            "width=\"300\">",
+            "src=\"kucing.jpg\""
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
         },
         {
           "type": "arrange",
-          "prompt": "Susun paragraf: Kunjungi [Blog] saya (kata Blog adalah link ke blog.html).",
-          "answer": ["<p>", "Kunjungi", "<a href=\"blog.html\">", "Blog", "</a>", "saya", "</p>"],
-          "distractors": ["<img>"],
-          "clue": "Link boleh berada di tengah paragraf.",
-          "explanation": "`<p>Kunjungi <a href=\"blog.html\">Blog</a> saya</p>`."
+          "prompt": "Susun menjadi paragraf dengan pindah baris (kata \"Halo\" di baris pertama, \"Dunia\" di baris kedua):",
+          "answer": [
+            "<p>",
+            "Halo",
+            "<br>",
+            "Dunia",
+            "</p>"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun menjadi judul, garis pemisah, lalu isi:",
+          "answer": [
+            "<h1>Judul</h1>",
+            "<hr>",
+            "<p>Isi</p>"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun menjadi komentar HTML:",
+          "answer": [
+            "-->",
+            "Ini komentar",
+            "<!--"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun menjadi rumus air H2O (angka 2 sebagai subscript):",
+          "answer": [
+            "H",
+            "<sub>",
+            "2",
+            "</sub>",
+            "O"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun menjadi pangkat x kuadrat (angka 2 sebagai superscript):",
+          "answer": [
+            "x",
+            "<sup>",
+            "2",
+            "</sup>"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun menjadi blok teks yang mempertahankan format (Baris 1 di atas, Baris 2 di bawahnya, masing-masing di baris terpisah):",
+          "answer": [
+            "</pre>",
+            "Baris 2",
+            "<pre>",
+            "Baris 1"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
+        },
+        {
+          "type": "arrange",
+          "prompt": "Susun menjadi kerangka dokumen HTML yang benar:",
+          "answer": [
+            "</head>",
+            "<body>",
+            "<html>",
+            "<!DOCTYPE html>",
+            "</body>",
+            "<head>",
+            "<title>Web</title>",
+            "</html>"
+          ],
+          "distractors": [],
+          "clue": "Susun potongan kode sesuai urutan sintaks yang benar.",
+          "explanation": "Susunan kode mengikuti urutan yang diminta pada soal."
         }
       ]
     },
@@ -563,12 +712,18 @@
             "",
             "Teks: heading `<h1>`-`<h6>`, paragraf `<p>`, ganti baris `<br>`, garis `<hr>`. Format: `<strong>` penting, `<em>` penekanan, komentar `<!-- -->`."
           ],
-          "code": ["<h1>Nama Saya</h1>", "<p>Saya suka <strong>coding</strong>.</p>"]
+          "code": [
+            "<h1>Nama Saya</h1>",
+            "<p>Saya suka <strong>coding</strong>.</p>"
+          ]
         },
         {
           "title": "Ringkasan: link dan gambar",
           "body": "Link: `<a href=\"alamat\">teks</a>`, tambahkan `target=\"_blank\"` untuk tab baru. Gambar: `<img src=\"file.jpg\" alt=\"deskripsi\">` tanpa tag penutup, dan `alt` jangan dikosongkan.",
-          "code": ["<a href=\"https://github.com\" target=\"_blank\">GitHub saya</a>", "<img src=\"foto.png\" alt=\"Foto profil\">"]
+          "code": [
+            "<a href=\"https://github.com\" target=\"_blank\">GitHub saya</a>",
+            "<img src=\"foto.png\" alt=\"Foto profil\">"
+          ]
         }
       ],
       "challenges": [
@@ -605,11 +760,26 @@
             "</html>"
           ],
           "tests": [
-            { "desc": "Ada judul <h1> yang tidak kosong", "check": "!!document.querySelector('h1') && document.querySelector('h1').textContent.trim().length > 0" },
-            { "desc": "Ada minimal 2 paragraf <p>", "check": "document.querySelectorAll('p').length >= 2" },
-            { "desc": "Ada teks <strong> di dalam paragraf", "check": "!!document.querySelector('p strong')" },
-            { "desc": "Gambar <img> punya alt yang tidak kosong", "check": "[...document.querySelectorAll('img')].some(i => (i.getAttribute('alt') || '').trim() !== '')" },
-            { "desc": "Ada link <a> menuju https://github.com", "check": "[...document.querySelectorAll('a')].some(a => (a.getAttribute('href') || '').includes('github.com'))" }
+            {
+              "desc": "Ada judul <h1> yang tidak kosong",
+              "check": "!!document.querySelector('h1') && document.querySelector('h1').textContent.trim().length > 0"
+            },
+            {
+              "desc": "Ada minimal 2 paragraf <p>",
+              "check": "document.querySelectorAll('p').length >= 2"
+            },
+            {
+              "desc": "Ada teks <strong> di dalam paragraf",
+              "check": "!!document.querySelector('p strong')"
+            },
+            {
+              "desc": "Gambar <img> punya alt yang tidak kosong",
+              "check": "[...document.querySelectorAll('img')].some(i => (i.getAttribute('alt') || '').trim() !== '')"
+            },
+            {
+              "desc": "Ada link <a> menuju https://github.com",
+              "check": "[...document.querySelectorAll('a')].some(a => (a.getAttribute('href') || '').includes('github.com'))"
+            }
           ],
           "solution": [
             "<!DOCTYPE html>",
@@ -658,11 +828,26 @@
             "</html>"
           ],
           "tests": [
-            { "desc": "Judul <h1> memuat kata Hobi", "check": "!!document.querySelector('h1') && document.querySelector('h1').textContent.includes('Hobi')" },
-            { "desc": "Ada minimal satu <h2>", "check": "document.querySelectorAll('h2').length >= 1" },
-            { "desc": "Ada <em> di dalam paragraf", "check": "!!document.querySelector('p em')" },
-            { "desc": "Gambar <img> punya alt yang tidak kosong", "check": "[...document.querySelectorAll('img')].some(i => (i.getAttribute('alt') || '').trim() !== '')" },
-            { "desc": "Ada link dengan href yang membuka tab baru", "check": "[...document.querySelectorAll('a')].some(a => a.getAttribute('target') === '_blank' && (a.getAttribute('href') || '').trim() !== '')" }
+            {
+              "desc": "Judul <h1> memuat kata Hobi",
+              "check": "!!document.querySelector('h1') && document.querySelector('h1').textContent.includes('Hobi')"
+            },
+            {
+              "desc": "Ada minimal satu <h2>",
+              "check": "document.querySelectorAll('h2').length >= 1"
+            },
+            {
+              "desc": "Ada <em> di dalam paragraf",
+              "check": "!!document.querySelector('p em')"
+            },
+            {
+              "desc": "Gambar <img> punya alt yang tidak kosong",
+              "check": "[...document.querySelectorAll('img')].some(i => (i.getAttribute('alt') || '').trim() !== '')"
+            },
+            {
+              "desc": "Ada link dengan href yang membuka tab baru",
+              "check": "[...document.querySelectorAll('a')].some(a => a.getAttribute('target') === '_blank' && (a.getAttribute('href') || '').trim() !== '')"
+            }
           ],
           "solution": [
             "<!DOCTYPE html>",
@@ -693,7 +878,17 @@
             "",
             "Setiap item ditulis dengan `<li>` (list item) di dalam `<ul>` atau `<ol>`."
           ],
-          "code": ["<ul>", "  <li>Apel</li>", "  <li>Jeruk</li>", "</ul>", "", "<ol>", "  <li>Rebus air</li>", "  <li>Masukkan mi</li>", "</ol>"]
+          "code": [
+            "<ul>",
+            "  <li>Apel</li>",
+            "  <li>Jeruk</li>",
+            "</ul>",
+            "",
+            "<ol>",
+            "  <li>Rebus air</li>",
+            "  <li>Masukkan mi</li>",
+            "</ol>"
+          ]
         },
         {
           "title": "Atribut dan daftar bersarang",
@@ -702,14 +897,29 @@
             "",
             "Daftar bisa bersarang: letakkan `<ul>` atau `<ol>` baru **di dalam** sebuah `<li>`."
           ],
-          "code": ["<ul>", "  <li>Buah", "    <ul>", "      <li>Mangga</li>", "      <li>Pisang</li>", "    </ul>", "  </li>", "  <li>Sayur</li>", "</ul>"]
+          "code": [
+            "<ul>",
+            "  <li>Buah",
+            "    <ul>",
+            "      <li>Mangga</li>",
+            "      <li>Pisang</li>",
+            "    </ul>",
+            "  </li>",
+            "  <li>Sayur</li>",
+            "</ul>"
+          ]
         }
       ],
       "questions": [
         {
           "type": "mcq",
           "prompt": "Tag untuk daftar berpoin (bullet) adalah...",
-          "options": ["<ul>", "<ol>", "<li>", "<dl>"],
+          "options": [
+            "<ul>",
+            "<ol>",
+            "<li>",
+            "<dl>"
+          ],
           "answer": 0,
           "clue": "u = unordered (tidak berurutan).",
           "explanation": "`<ul>` membuat daftar berpoin."
@@ -717,7 +927,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk daftar bernomor adalah...",
-          "options": ["<ol>", "<ul>", "<nl>", "<list>"],
+          "options": [
+            "<ol>",
+            "<ul>",
+            "<nl>",
+            "<list>"
+          ],
           "answer": 0,
           "clue": "o = ordered (berurutan).",
           "explanation": "`<ol>` membuat daftar bernomor."
@@ -725,7 +940,12 @@
         {
           "type": "mcq",
           "prompt": "Setiap item dalam daftar ditulis dengan tag...",
-          "options": ["<li>", "<item>", "<td>", "<dt>"],
+          "options": [
+            "<li>",
+            "<item>",
+            "<td>",
+            "<dt>"
+          ],
           "answer": 0,
           "clue": "Singkatan dari list item.",
           "explanation": "Item daftar ditulis dengan `<li>`, baik di `<ul>` maupun `<ol>`."
@@ -733,7 +953,12 @@
         {
           "type": "mcq",
           "prompt": "`ul` adalah singkatan dari...",
-          "options": ["unordered list", "underline", "upper list", "unique list"],
+          "options": [
+            "unordered list",
+            "underline",
+            "upper list",
+            "unique list"
+          ],
           "answer": 0,
           "clue": "Daftar yang urutannya tidak penting.",
           "explanation": "ul = unordered list."
@@ -741,7 +966,12 @@
         {
           "type": "mcq",
           "prompt": "Atribut untuk membuat daftar bernomor yang dimulai dari angka 5 adalah...",
-          "options": ["start=\"5\"", "begin=\"5\"", "from=\"5\"", "number=\"5\""],
+          "options": [
+            "start=\"5\"",
+            "begin=\"5\"",
+            "from=\"5\"",
+            "number=\"5\""
+          ],
           "answer": 0,
           "clue": "Kata bahasa Inggris untuk \"mulai\".",
           "explanation": "`<ol start=\"5\">` memulai penomoran dari 5."
@@ -749,7 +979,12 @@
         {
           "type": "mcq",
           "prompt": "Bagaimana cara membuat daftar di dalam daftar (bersarang)?",
-          "options": ["Letakkan <ul> atau <ol> baru di dalam sebuah <li>", "Tulis <ul><ul> tanpa <li>", "Pakai tag <sublist>", "Tidak bisa dilakukan di HTML"],
+          "options": [
+            "Letakkan <ul> atau <ol> baru di dalam sebuah <li>",
+            "Tulis <ul><ul> tanpa <li>",
+            "Pakai tag <sublist>",
+            "Tidak bisa dilakukan di HTML"
+          ],
           "answer": 0,
           "clue": "Daftar anak menjadi bagian dari satu item.",
           "explanation": "Daftar bersarang diletakkan di dalam `<li>` milik daftar induk."
@@ -757,7 +992,12 @@
         {
           "type": "mcq",
           "prompt": "Langkah-langkah membuat kopi (urutan penting) sebaiknya memakai...",
-          "options": ["<ol>", "<ul>", "<p>", "<table>"],
+          "options": [
+            "<ol>",
+            "<ul>",
+            "<p>",
+            "<table>"
+          ],
           "answer": 0,
           "clue": "Langkah perlu nomor urut.",
           "explanation": "Urutan penting = daftar bernomor `<ol>`."
@@ -765,7 +1005,12 @@
         {
           "type": "mcq",
           "prompt": "Daftar belanja (urutan tidak penting) sebaiknya memakai...",
-          "options": ["<ul>", "<ol>", "<h1>", "<br>"],
+          "options": [
+            "<ul>",
+            "<ol>",
+            "<h1>",
+            "<br>"
+          ],
           "answer": 0,
           "clue": "Tidak perlu nomor.",
           "explanation": "Urutan tidak penting = daftar berpoin `<ul>`."
@@ -773,7 +1018,12 @@
         {
           "type": "mcq",
           "prompt": "Tampilan default `<ul>` di browser adalah...",
-          "options": ["Setiap item diawali titik (bullet)", "Setiap item diawali angka", "Item tampil berjajar ke samping", "Item tampil dalam bentuk tabel"],
+          "options": [
+            "Setiap item diawali titik (bullet)",
+            "Setiap item diawali angka",
+            "Item tampil berjajar ke samping",
+            "Item tampil dalam bentuk tabel"
+          ],
           "answer": 0,
           "clue": "Bukan angka, karena urutannya tidak penting.",
           "explanation": "`<ul>` menampilkan bullet, `<ol>` menampilkan angka."
@@ -781,7 +1031,12 @@
         {
           "type": "mcq",
           "prompt": "Atribut untuk membuat penomoran `<ol>` memakai huruf a, b, c adalah...",
-          "options": ["type=\"a\"", "style=\"a\"", "letter=\"a\"", "start=\"a\""],
+          "options": [
+            "type=\"a\"",
+            "style=\"a\"",
+            "letter=\"a\"",
+            "start=\"a\""
+          ],
           "answer": 0,
           "clue": "Atribut yang menentukan \"jenis\" penomoran.",
           "explanation": "`<ol type=\"a\">` menghasilkan a, b, c."
@@ -789,24 +1044,51 @@
         {
           "type": "arrange",
           "prompt": "Susun daftar berpoin berisi Apel lalu Jeruk.",
-          "answer": ["<ul>", "<li>Apel</li>", "<li>Jeruk</li>", "</ul>"],
-          "distractors": ["<ol>"],
+          "answer": [
+            "<ul>",
+            "<li>Apel</li>",
+            "<li>Jeruk</li>",
+            "</ul>"
+          ],
+          "distractors": [
+            "<ol>"
+          ],
           "clue": "Berpoin = ul. Item berada di antara pembuka dan penutup.",
           "explanation": "`<ul><li>Apel</li><li>Jeruk</li></ul>`."
         },
         {
           "type": "arrange",
           "prompt": "Susun daftar bernomor berisi Bangun lalu Mandi.",
-          "answer": ["<ol>", "<li>", "Bangun", "</li>", "<li>", "Mandi", "</li>", "</ol>"],
-          "distractors": ["<ul>"],
+          "answer": [
+            "<ol>",
+            "<li>",
+            "Bangun",
+            "</li>",
+            "<li>",
+            "Mandi",
+            "</li>",
+            "</ol>"
+          ],
+          "distractors": [
+            "<ul>"
+          ],
           "clue": "Bernomor = ol. Setiap item dibungkus li.",
           "explanation": "`<ol><li>Bangun</li><li>Mandi</li></ol>`."
         },
         {
           "type": "arrange",
           "prompt": "Susun item \"Buah\" yang di dalamnya ada daftar berpoin berisi Mangga.",
-          "answer": ["<li>", "Buah", "<ul>", "<li>Mangga</li>", "</ul>", "</li>"],
-          "distractors": ["</ol>"],
+          "answer": [
+            "<li>",
+            "Buah",
+            "<ul>",
+            "<li>Mangga</li>",
+            "</ul>",
+            "</li>"
+          ],
+          "distractors": [
+            "</ol>"
+          ],
           "clue": "Daftar anak ditutup dulu, baru item induknya.",
           "explanation": "`<li>Buah<ul><li>Mangga</li></ul></li>`."
         }
@@ -823,7 +1105,18 @@
             "",
             "Jadi tabel disusun per baris, bukan per kolom."
           ],
-          "code": ["<table>", "  <tr>", "    <th>Nama</th>", "    <th>Nilai</th>", "  </tr>", "  <tr>", "    <td>Ani</td>", "    <td>90</td>", "  </tr>", "</table>"]
+          "code": [
+            "<table>",
+            "  <tr>",
+            "    <th>Nama</th>",
+            "    <th>Nilai</th>",
+            "  </tr>",
+            "  <tr>",
+            "    <td>Ani</td>",
+            "    <td>90</td>",
+            "  </tr>",
+            "</table>"
+          ]
         },
         {
           "title": "Bagian tabel dan sel gabungan",
@@ -832,14 +1125,28 @@
             "",
             "`colspan=\"2\"` membuat sel melebar 2 kolom, `rowspan=\"2\"` membuat sel memanjang 2 baris."
           ],
-          "code": ["<table>", "  <thead>", "    <tr><th colspan=\"2\">Jadwal</th></tr>", "  </thead>", "  <tbody>", "    <tr><td>Senin</td><td>HTML</td></tr>", "  </tbody>", "</table>"]
+          "code": [
+            "<table>",
+            "  <thead>",
+            "    <tr><th colspan=\"2\">Jadwal</th></tr>",
+            "  </thead>",
+            "  <tbody>",
+            "    <tr><td>Senin</td><td>HTML</td></tr>",
+            "  </tbody>",
+            "</table>"
+          ]
         }
       ],
       "questions": [
         {
           "type": "mcq",
           "prompt": "Tag pembungkus tabel adalah...",
-          "options": ["<table>", "<tab>", "<tr>", "<grid>"],
+          "options": [
+            "<table>",
+            "<tab>",
+            "<tr>",
+            "<grid>"
+          ],
           "answer": 0,
           "clue": "Kata bahasa Inggris untuk tabel.",
           "explanation": "Seluruh tabel dibungkus `<table>`."
@@ -847,7 +1154,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk satu BARIS tabel adalah...",
-          "options": ["<tr>", "<td>", "<th>", "<row>"],
+          "options": [
+            "<tr>",
+            "<td>",
+            "<th>",
+            "<row>"
+          ],
           "answer": 0,
           "clue": "Singkatan dari table row.",
           "explanation": "Baris tabel ditulis dengan `<tr>`."
@@ -855,7 +1167,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk satu SEL data adalah...",
-          "options": ["<td>", "<tr>", "<cell>", "<tc>"],
+          "options": [
+            "<td>",
+            "<tr>",
+            "<cell>",
+            "<tc>"
+          ],
           "answer": 0,
           "clue": "Singkatan dari table data.",
           "explanation": "Sel data ditulis dengan `<td>`."
@@ -863,7 +1180,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk sel judul kolom (tebal dan rata tengah) adalah...",
-          "options": ["<th>", "<td>", "<thead>", "<title>"],
+          "options": [
+            "<th>",
+            "<td>",
+            "<thead>",
+            "<title>"
+          ],
           "answer": 0,
           "clue": "Singkatan dari table header.",
           "explanation": "`<th>` adalah sel judul. `<thead>` adalah kelompok baris judul, bukan sel."
@@ -871,7 +1193,12 @@
         {
           "type": "mcq",
           "prompt": "Atribut agar sebuah sel melebar 2 kolom adalah...",
-          "options": ["colspan=\"2\"", "rowspan=\"2\"", "width=\"2\"", "merge=\"2\""],
+          "options": [
+            "colspan=\"2\"",
+            "rowspan=\"2\"",
+            "width=\"2\"",
+            "merge=\"2\""
+          ],
           "answer": 0,
           "clue": "col = kolom.",
           "explanation": "`colspan` menggabungkan sel ke samping (kolom)."
@@ -879,7 +1206,12 @@
         {
           "type": "mcq",
           "prompt": "Atribut agar sebuah sel memanjang 2 baris adalah...",
-          "options": ["rowspan=\"2\"", "colspan=\"2\"", "height=\"2\"", "span=\"row\""],
+          "options": [
+            "rowspan=\"2\"",
+            "colspan=\"2\"",
+            "height=\"2\"",
+            "span=\"row\""
+          ],
           "answer": 0,
           "clue": "row = baris.",
           "explanation": "`rowspan` menggabungkan sel ke bawah (baris)."
@@ -887,7 +1219,12 @@
         {
           "type": "mcq",
           "prompt": "`<thead>` digunakan untuk...",
-          "options": ["Mengelompokkan baris judul tabel", "Membuat judul halaman", "Membuat sel tebal", "Menyembunyikan tabel"],
+          "options": [
+            "Mengelompokkan baris judul tabel",
+            "Membuat judul halaman",
+            "Membuat sel tebal",
+            "Menyembunyikan tabel"
+          ],
           "answer": 0,
           "clue": "Pasangannya adalah `<tbody>`.",
           "explanation": "`<thead>` membungkus baris judul, `<tbody>` membungkus baris data."
@@ -895,7 +1232,12 @@
         {
           "type": "mcq",
           "prompt": "Di dalam `<tr>`, kita meletakkan...",
-          "options": ["<td> atau <th>", "<table>", "<tr> lain", "<li>"],
+          "options": [
+            "<td> atau <th>",
+            "<table>",
+            "<tr> lain",
+            "<li>"
+          ],
           "answer": 0,
           "clue": "Baris berisi sel-sel.",
           "explanation": "Setiap baris `<tr>` berisi sel `<td>` atau `<th>`."
@@ -903,7 +1245,12 @@
         {
           "type": "mcq",
           "prompt": "Tabel dengan 3 baris dan 2 kolom membutuhkan berapa `<tr>`?",
-          "options": ["3", "2", "6", "5"],
+          "options": [
+            "3",
+            "2",
+            "6",
+            "5"
+          ],
           "answer": 0,
           "clue": "Satu `<tr>` = satu baris.",
           "explanation": "3 baris = 3 `<tr>`, masing-masing berisi 2 sel."
@@ -911,7 +1258,12 @@
         {
           "type": "mcq",
           "prompt": "Tabel dengan 3 baris dan 2 kolom punya berapa sel?",
-          "options": ["6", "5", "3", "2"],
+          "options": [
+            "6",
+            "5",
+            "3",
+            "2"
+          ],
           "answer": 0,
           "clue": "Kalikan baris dengan kolom.",
           "explanation": "3 baris x 2 kolom = 6 sel."
@@ -919,24 +1271,48 @@
         {
           "type": "arrange",
           "prompt": "Susun satu baris tabel berisi sel Nama lalu Umur.",
-          "answer": ["<tr>", "<td>Nama</td>", "<td>Umur</td>", "</tr>"],
-          "distractors": ["<li>"],
+          "answer": [
+            "<tr>",
+            "<td>Nama</td>",
+            "<td>Umur</td>",
+            "</tr>"
+          ],
+          "distractors": [
+            "<li>"
+          ],
           "clue": "Sel-sel berada di dalam baris.",
           "explanation": "`<tr><td>Nama</td><td>Umur</td></tr>`."
         },
         {
           "type": "arrange",
           "prompt": "Susun baris judul tabel dengan kolom No lalu Buku.",
-          "answer": ["<tr>", "<th>No</th>", "<th>Buku</th>", "</tr>"],
-          "distractors": ["<td>"],
+          "answer": [
+            "<tr>",
+            "<th>No</th>",
+            "<th>Buku</th>",
+            "</tr>"
+          ],
+          "distractors": [
+            "<td>"
+          ],
           "clue": "Sel judul memakai th.",
           "explanation": "`<tr><th>No</th><th>Buku</th></tr>`."
         },
         {
           "type": "arrange",
           "prompt": "Susun tabel paling sederhana: 1 baris, 1 sel berisi Hai.",
-          "answer": ["<table>", "<tr>", "<td>", "Hai", "</td>", "</tr>", "</table>"],
-          "distractors": ["<th>"],
+          "answer": [
+            "<table>",
+            "<tr>",
+            "<td>",
+            "Hai",
+            "</td>",
+            "</tr>",
+            "</table>"
+          ],
+          "distractors": [
+            "<th>"
+          ],
           "clue": "table > tr > td.",
           "explanation": "`<table><tr><td>Hai</td></tr></table>`."
         }
@@ -953,7 +1329,14 @@
             "",
             "Tombol pengirim: `<button type=\"submit\">Kirim</button>`."
           ],
-          "code": ["<form>", "  <input type=\"text\" placeholder=\"Nama\">", "  <input type=\"email\" required>", "  <input type=\"password\">", "  <button type=\"submit\">Kirim</button>", "</form>"]
+          "code": [
+            "<form>",
+            "  <input type=\"text\" placeholder=\"Nama\">",
+            "  <input type=\"email\" required>",
+            "  <input type=\"password\">",
+            "  <button type=\"submit\">Kirim</button>",
+            "</form>"
+          ]
         },
         {
           "title": "Label dan atribut penting",
@@ -962,19 +1345,35 @@
             "",
             "`placeholder` = teks petunjuk samar, `required` = wajib diisi, `name` = nama data saat dikirim ke server."
           ],
-          "code": ["<label for=\"email\">Email</label>", "<input id=\"email\" name=\"email\" type=\"email\" required>"]
+          "code": [
+            "<label for=\"email\">Email</label>",
+            "<input id=\"email\" name=\"email\" type=\"email\" required>"
+          ]
         },
         {
           "title": "Pilihan dan teks panjang",
           "body": "`<textarea>` untuk teks beberapa baris. `<select>` berisi beberapa `<option>` untuk dropdown. `type=\"radio\"` untuk memilih satu dari beberapa, `type=\"checkbox\"` untuk boleh memilih banyak.",
-          "code": ["<textarea rows=\"3\"></textarea>", "<select>", "  <option>Pagi</option>", "  <option>Malam</option>", "</select>", "<input type=\"radio\" name=\"jk\" value=\"L\"> Laki-laki", "<input type=\"radio\" name=\"jk\" value=\"P\"> Perempuan"]
+          "code": [
+            "<textarea rows=\"3\"></textarea>",
+            "<select>",
+            "  <option>Pagi</option>",
+            "  <option>Malam</option>",
+            "</select>",
+            "<input type=\"radio\" name=\"jk\" value=\"L\"> Laki-laki",
+            "<input type=\"radio\" name=\"jk\" value=\"P\"> Perempuan"
+          ]
         }
       ],
       "questions": [
         {
           "type": "mcq",
           "prompt": "Tag pembungkus formulir adalah...",
-          "options": ["<form>", "<input>", "<field>", "<submit>"],
+          "options": [
+            "<form>",
+            "<input>",
+            "<field>",
+            "<submit>"
+          ],
           "answer": 0,
           "clue": "Kata bahasa Inggris untuk formulir.",
           "explanation": "Isian yang dikirim bersama dibungkus `<form>`."
@@ -982,7 +1381,12 @@
         {
           "type": "mcq",
           "prompt": "Input untuk kata sandi (karakter disamarkan) adalah...",
-          "options": ["<input type=\"password\">", "<input type=\"hidden\">", "<input type=\"secret\">", "<password>"],
+          "options": [
+            "<input type=\"password\">",
+            "<input type=\"hidden\">",
+            "<input type=\"secret\">",
+            "<password>"
+          ],
           "answer": 0,
           "clue": "Nilai type-nya sama dengan kata \"kata sandi\" dalam bahasa Inggris.",
           "explanation": "`type=\"password\"` menyamarkan karakter yang diketik."
@@ -990,7 +1394,12 @@
         {
           "type": "mcq",
           "prompt": "Atribut agar input wajib diisi adalah...",
-          "options": ["required", "placeholder", "value", "name"],
+          "options": [
+            "required",
+            "placeholder",
+            "value",
+            "name"
+          ],
           "answer": 0,
           "clue": "Artinya \"diperlukan\".",
           "explanation": "`required` membuat browser menolak form yang input-nya masih kosong."
@@ -998,7 +1407,12 @@
         {
           "type": "mcq",
           "prompt": "Atribut untuk teks petunjuk samar di dalam input adalah...",
-          "options": ["placeholder", "label", "title", "hint"],
+          "options": [
+            "placeholder",
+            "label",
+            "title",
+            "hint"
+          ],
           "answer": 0,
           "clue": "Teksnya hilang saat pengguna mulai mengetik.",
           "explanation": "`placeholder=\"Nama lengkap\"` menampilkan petunjuk di dalam input kosong."
@@ -1006,7 +1420,12 @@
         {
           "type": "mcq",
           "prompt": "Agar mengklik label memfokuskan input, nilai `for` pada label harus sama dengan atribut ... pada input.",
-          "options": ["id", "name", "type", "value"],
+          "options": [
+            "id",
+            "name",
+            "type",
+            "value"
+          ],
           "answer": 0,
           "clue": "Atribut penanda unik sebuah elemen.",
           "explanation": "`<label for=\"nama\">` terhubung ke `<input id=\"nama\">`."
@@ -1014,7 +1433,12 @@
         {
           "type": "mcq",
           "prompt": "Elemen untuk isian teks panjang beberapa baris adalah...",
-          "options": ["<textarea>", "<input type=\"text\">", "<p>", "<longtext>"],
+          "options": [
+            "<textarea>",
+            "<input type=\"text\">",
+            "<p>",
+            "<longtext>"
+          ],
           "answer": 0,
           "clue": "Area teks.",
           "explanation": "`<textarea>` menyediakan kotak teks multi-baris."
@@ -1022,7 +1446,12 @@
         {
           "type": "mcq",
           "prompt": "Elemen untuk pilihan dropdown adalah...",
-          "options": ["<select> berisi <option>", "<input type=\"dropdown\">", "<list>", "<ul> berisi <li>"],
+          "options": [
+            "<select> berisi <option>",
+            "<input type=\"dropdown\">",
+            "<list>",
+            "<ul> berisi <li>"
+          ],
           "answer": 0,
           "clue": "Artinya \"pilih\".",
           "explanation": "Dropdown dibuat dengan `<select>` dan beberapa `<option>`."
@@ -1030,7 +1459,12 @@
         {
           "type": "mcq",
           "prompt": "Input untuk memilih SATU dari beberapa pilihan (misalnya jenis kelamin) adalah...",
-          "options": ["type=\"radio\"", "type=\"checkbox\"", "type=\"text\"", "type=\"number\""],
+          "options": [
+            "type=\"radio\"",
+            "type=\"checkbox\"",
+            "type=\"text\"",
+            "type=\"number\""
+          ],
           "answer": 0,
           "clue": "Seperti tombol radio jadul: menekan satu melepas yang lain.",
           "explanation": "Radio button dengan `name` yang sama hanya bisa dipilih satu."
@@ -1038,7 +1472,12 @@
         {
           "type": "mcq",
           "prompt": "Mana tombol pengirim formulir yang benar?",
-          "options": ["<button type=\"submit\">Kirim</button>", "<a>Kirim</a>", "<p>Kirim</p>", "<send>Kirim</send>"],
+          "options": [
+            "<button type=\"submit\">Kirim</button>",
+            "<a>Kirim</a>",
+            "<p>Kirim</p>",
+            "<send>Kirim</send>"
+          ],
           "answer": 0,
           "clue": "Tombol dengan type yang artinya \"kirim\".",
           "explanation": "`<button type=\"submit\">` mengirim form tempat tombol itu berada."
@@ -1046,7 +1485,12 @@
         {
           "type": "mcq",
           "prompt": "Input yang otomatis memeriksa format alamat email adalah...",
-          "options": ["type=\"email\"", "type=\"text\"", "type=\"mail\"", "type=\"url\""],
+          "options": [
+            "type=\"email\"",
+            "type=\"text\"",
+            "type=\"mail\"",
+            "type=\"url\""
+          ],
           "answer": 0,
           "clue": "Nilai type-nya persis kata \"email\".",
           "explanation": "`type=\"email\"` membuat browser memeriksa ada tanda @ dan format yang benar."
@@ -1054,24 +1498,45 @@
         {
           "type": "arrange",
           "prompt": "Susun label \"Nama\" yang terhubung dengan input teks.",
-          "answer": ["<label for=\"nama\">", "Nama", "</label>", "<input id=\"nama\" type=\"text\">"],
-          "distractors": ["</input>"],
+          "answer": [
+            "<label for=\"nama\">",
+            "Nama",
+            "</label>",
+            "<input id=\"nama\" type=\"text\">"
+          ],
+          "distractors": [
+            "</input>"
+          ],
           "clue": "Label ditutup dulu, lalu input-nya. Input tidak punya penutup.",
           "explanation": "`<label for=\"nama\">Nama</label><input id=\"nama\" type=\"text\">`."
         },
         {
           "type": "arrange",
           "prompt": "Susun form sederhana: input email lalu tombol kirim.",
-          "answer": ["<form>", "<input type=\"email\" required>", "<button type=\"submit\">Kirim</button>", "</form>"],
-          "distractors": ["<table>"],
+          "answer": [
+            "<form>",
+            "<input type=\"email\" required>",
+            "<button type=\"submit\">Kirim</button>",
+            "</form>"
+          ],
+          "distractors": [
+            "<table>"
+          ],
           "clue": "Semua isian dan tombol berada di dalam form.",
           "explanation": "`<form><input type=\"email\" required><button type=\"submit\">Kirim</button></form>`."
         },
         {
           "type": "arrange",
           "prompt": "Susun dropdown berisi pilihan Pagi lalu Malam.",
-          "answer": ["<select>", "<option>Pagi</option>", "<option>Malam</option>", "</select>"],
-          "distractors": ["<li>Siang</li>"],
+          "answer": [
+            "<select>",
+            "<option>Pagi</option>",
+            "<option>Malam</option>",
+            "</select>"
+          ],
+          "distractors": [
+            "<li>Siang</li>"
+          ],
           "clue": "Pilihan dropdown memakai option.",
           "explanation": "`<select><option>Pagi</option><option>Malam</option></select>`."
         }
@@ -1088,7 +1553,14 @@
             "",
             "`<header>` bagian kepala (logo, judul situs), `<nav>` kumpulan link navigasi, `<main>` isi utama (satu per halaman), `<section>` bagian bertema, `<article>` konten yang bisa berdiri sendiri, `<aside>` konten sampingan, dan `<footer>` bagian kaki."
           ],
-          "code": ["<header><h1>Blog Ani</h1></header>", "<nav><a href=\"#\">Beranda</a></nav>", "<main>", "  <article><h2>Belajar HTML</h2></article>", "</main>", "<footer>&copy; 2026</footer>"]
+          "code": [
+            "<header><h1>Blog Ani</h1></header>",
+            "<nav><a href=\"#\">Beranda</a></nav>",
+            "<main>",
+            "  <article><h2>Belajar HTML</h2></article>",
+            "</main>",
+            "<footer>&copy; 2026</footer>"
+          ]
         },
         {
           "title": "div, span, dan alasan memakai semantik",
@@ -1097,14 +1569,23 @@
             "",
             "Tag semantik membantu mesin pencari dan pembaca layar memahami struktur halaman, dan membuat kode lebih mudah dibaca."
           ],
-          "code": ["<div class=\"kotak\">", "  <p>Harga: <span class=\"harga\">Rp10.000</span></p>", "</div>"]
+          "code": [
+            "<div class=\"kotak\">",
+            "  <p>Harga: <span class=\"harga\">Rp10.000</span></p>",
+            "</div>"
+          ]
         }
       ],
       "questions": [
         {
           "type": "mcq",
           "prompt": "Tag untuk bagian kepala halaman (logo, judul situs) adalah...",
-          "options": ["<header>", "<head>", "<h1>", "<top>"],
+          "options": [
+            "<header>",
+            "<head>",
+            "<h1>",
+            "<top>"
+          ],
           "answer": 0,
           "clue": "Mirip `<head>`, tapi bagian ini TAMPIL di layar.",
           "explanation": "`<header>` adalah bagian atas yang tampil. `<head>` berisi informasi yang tidak tampil."
@@ -1112,7 +1593,12 @@
         {
           "type": "mcq",
           "prompt": "Apa beda `<head>` dan `<header>`?",
-          "options": ["<head> berisi info halaman (tidak tampil), <header> bagian atas yang tampil", "Sama saja", "<header> tidak tampil di layar", "<head> hanya untuk gambar"],
+          "options": [
+            "<head> berisi info halaman (tidak tampil), <header> bagian atas yang tampil",
+            "Sama saja",
+            "<header> tidak tampil di layar",
+            "<head> hanya untuk gambar"
+          ],
           "answer": 0,
           "clue": "Satu ada di luar `<body>`, satu di dalam `<body>`.",
           "explanation": "`<head>` berisi title, meta, CSS. `<header>` ada di dalam body dan tampil."
@@ -1120,7 +1606,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk kumpulan link navigasi utama adalah...",
-          "options": ["<nav>", "<menu>", "<links>", "<a>"],
+          "options": [
+            "<nav>",
+            "<menu>",
+            "<links>",
+            "<a>"
+          ],
           "answer": 0,
           "clue": "Singkatan dari navigation.",
           "explanation": "`<nav>` membungkus menu navigasi."
@@ -1128,7 +1619,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk isi utama halaman (hanya satu per halaman) adalah...",
-          "options": ["<main>", "<body>", "<section>", "<content>"],
+          "options": [
+            "<main>",
+            "<body>",
+            "<section>",
+            "<content>"
+          ],
           "answer": 0,
           "clue": "Artinya \"utama\".",
           "explanation": "`<main>` berisi konten utama dan sebaiknya hanya ada satu."
@@ -1136,7 +1632,12 @@
         {
           "type": "mcq",
           "prompt": "Tag untuk bagian kaki halaman (hak cipta, kontak) adalah...",
-          "options": ["<footer>", "<bottom>", "<foot>", "<end>"],
+          "options": [
+            "<footer>",
+            "<bottom>",
+            "<foot>",
+            "<end>"
+          ],
           "answer": 0,
           "clue": "Pasangan dari header.",
           "explanation": "`<footer>` adalah bagian kaki."
@@ -1144,7 +1645,12 @@
         {
           "type": "mcq",
           "prompt": "Konten yang bisa berdiri sendiri, seperti satu postingan blog, cocok memakai...",
-          "options": ["<article>", "<aside>", "<nav>", "<span>"],
+          "options": [
+            "<article>",
+            "<aside>",
+            "<nav>",
+            "<span>"
+          ],
           "answer": 0,
           "clue": "Artinya \"artikel\".",
           "explanation": "`<article>` untuk konten mandiri seperti postingan, berita, atau komentar."
@@ -1152,7 +1658,12 @@
         {
           "type": "mcq",
           "prompt": "Konten sampingan seperti info tambahan atau iklan cocok memakai...",
-          "options": ["<aside>", "<main>", "<header>", "<article>"],
+          "options": [
+            "<aside>",
+            "<main>",
+            "<header>",
+            "<article>"
+          ],
           "answer": 0,
           "clue": "Artinya \"di samping\".",
           "explanation": "`<aside>` untuk konten pelengkap di luar isi utama."
@@ -1160,7 +1671,12 @@
         {
           "type": "mcq",
           "prompt": "`<div>` dan `<span>` disebut elemen...",
-          "options": ["generik (tanpa makna khusus)", "semantik", "kosong", "terlarang"],
+          "options": [
+            "generik (tanpa makna khusus)",
+            "semantik",
+            "kosong",
+            "terlarang"
+          ],
           "answer": 0,
           "clue": "Keduanya tidak menjelaskan isi apa pun.",
           "explanation": "`<div>` dan `<span>` hanya pembungkus, biasanya untuk keperluan CSS."
@@ -1168,7 +1684,12 @@
         {
           "type": "mcq",
           "prompt": "Apa beda `<div>` dan `<span>`?",
-          "options": ["<div> blok (mulai baris baru), <span> inline (sebaris)", "<span> lebih besar", "<div> hanya untuk teks", "Tidak ada bedanya"],
+          "options": [
+            "<div> blok (mulai baris baru), <span> inline (sebaris)",
+            "<span> lebih besar",
+            "<div> hanya untuk teks",
+            "Tidak ada bedanya"
+          ],
           "answer": 0,
           "clue": "Coba bayangkan `<span>` di tengah kalimat.",
           "explanation": "`<div>` mengambil satu baris penuh, `<span>` hanya selebar isinya."
@@ -1176,7 +1697,12 @@
         {
           "type": "mcq",
           "prompt": "Mengapa tag semantik dianjurkan?",
-          "options": ["Membantu mesin pencari dan pembaca layar memahami halaman", "Membuat halaman 10x lebih cepat", "Wajib supaya CSS bisa dipakai", "Supaya tidak perlu <body>"],
+          "options": [
+            "Membantu mesin pencari dan pembaca layar memahami halaman",
+            "Membuat halaman 10x lebih cepat",
+            "Wajib supaya CSS bisa dipakai",
+            "Supaya tidak perlu <body>"
+          ],
           "answer": 0,
           "clue": "Semantik = makna.",
           "explanation": "Makna yang jelas membantu SEO, aksesibilitas, dan keterbacaan kode."
@@ -1184,24 +1710,49 @@
         {
           "type": "arrange",
           "prompt": "Susun kerangka halaman semantik dari atas ke bawah.",
-          "answer": ["<header>", "</header>", "<main>", "</main>", "<footer>", "</footer>"],
-          "distractors": ["<head>"],
+          "answer": [
+            "<header>",
+            "</header>",
+            "<main>",
+            "</main>",
+            "<footer>",
+            "</footer>"
+          ],
+          "distractors": [
+            "<head>"
+          ],
           "clue": "Kepala, isi utama, lalu kaki.",
           "explanation": "header, main, lalu footer."
         },
         {
           "type": "arrange",
           "prompt": "Susun navigasi berisi link Beranda menuju index.html.",
-          "answer": ["<nav>", "<a href=\"index.html\">", "Beranda", "</a>", "</nav>"],
-          "distractors": ["<menu>"],
+          "answer": [
+            "<nav>",
+            "<a href=\"index.html\">",
+            "Beranda",
+            "</a>",
+            "</nav>"
+          ],
+          "distractors": [
+            "<menu>"
+          ],
           "clue": "Link berada di dalam nav.",
           "explanation": "`<nav><a href=\"index.html\">Beranda</a></nav>`."
         },
         {
           "type": "arrange",
           "prompt": "Susun artikel berjudul h2 \"Berita\" di dalam main.",
-          "answer": ["<main>", "<article>", "<h2>Berita</h2>", "</article>", "</main>"],
-          "distractors": ["<aside>"],
+          "answer": [
+            "<main>",
+            "<article>",
+            "<h2>Berita</h2>",
+            "</article>",
+            "</main>"
+          ],
+          "distractors": [
+            "<aside>"
+          ],
           "clue": "main membungkus article, article membungkus judul.",
           "explanation": "`<main><article><h2>Berita</h2></article></main>`."
         }
@@ -1214,7 +1765,12 @@
         {
           "title": "Ringkasan: struktur dan semantik",
           "body": "Kerangka halaman: `<header>` (judul situs), `<nav>` (link menu), `<main>` (isi utama, berisi `<section>`/`<article>`), dan `<footer>`. Teks: heading, paragraf, `<strong>`, `<em>`. Link `<a href>` dan gambar `<img src alt>`.",
-          "code": ["<header><h1>Nama Situs</h1></header>", "<nav><a href=\"#menu\">Menu</a></nav>", "<main>...</main>", "<footer>Kontak</footer>"]
+          "code": [
+            "<header><h1>Nama Situs</h1></header>",
+            "<nav><a href=\"#menu\">Menu</a></nav>",
+            "<main>...</main>",
+            "<footer>Kontak</footer>"
+          ]
         },
         {
           "title": "Ringkasan: daftar, tabel, form",
@@ -1223,7 +1779,16 @@
             "",
             "Form: `<form>` berisi `<label for>` + `<input id type>`, `<select>`/`<option>`, dan `<button type=\"submit\">`. Pakai `required` untuk isian wajib."
           ],
-          "code": ["<table>", "  <tr><th>Menu</th><th>Harga</th></tr>", "  <tr><td>Kopi</td><td>15.000</td></tr>", "</table>", "<form>", "  <input type=\"email\" required>", "  <button type=\"submit\">Pesan</button>", "</form>"]
+          "code": [
+            "<table>",
+            "  <tr><th>Menu</th><th>Harga</th></tr>",
+            "  <tr><td>Kopi</td><td>15.000</td></tr>",
+            "</table>",
+            "<form>",
+            "  <input type=\"email\" required>",
+            "  <button type=\"submit\">Pesan</button>",
+            "</form>"
+          ]
         }
       ],
       "challenges": [
@@ -1273,13 +1838,34 @@
             "</html>"
           ],
           "tests": [
-            { "desc": "<header> berisi <h1>", "check": "!!document.querySelector('header h1') && document.querySelector('header h1').textContent.trim() !== ''" },
-            { "desc": "<nav> berisi minimal 3 link", "check": "document.querySelectorAll('nav a').length >= 3" },
-            { "desc": "Daftar <ul> di dalam <main> berisi minimal 3 <li>", "check": "document.querySelectorAll('main ul li').length >= 3" },
-            { "desc": "Tabel punya <th> dan minimal 3 baris <tr>", "check": "!!document.querySelector('table th') && document.querySelectorAll('table tr').length >= 3 && document.querySelectorAll('table td').length >= 2" },
-            { "desc": "Form berisi input email yang required", "check": "(() => { const i = document.querySelector('form input[type=email]'); return !!i && i.required; })()" },
-            { "desc": "Form punya tombol <button>", "check": "!!document.querySelector('form button')" },
-            { "desc": "Ada <footer>", "check": "!!document.querySelector('footer')" }
+            {
+              "desc": "<header> berisi <h1>",
+              "check": "!!document.querySelector('header h1') && document.querySelector('header h1').textContent.trim() !== ''"
+            },
+            {
+              "desc": "<nav> berisi minimal 3 link",
+              "check": "document.querySelectorAll('nav a').length >= 3"
+            },
+            {
+              "desc": "Daftar <ul> di dalam <main> berisi minimal 3 <li>",
+              "check": "document.querySelectorAll('main ul li').length >= 3"
+            },
+            {
+              "desc": "Tabel punya <th> dan minimal 3 baris <tr>",
+              "check": "!!document.querySelector('table th') && document.querySelectorAll('table tr').length >= 3 && document.querySelectorAll('table td').length >= 2"
+            },
+            {
+              "desc": "Form berisi input email yang required",
+              "check": "(() => { const i = document.querySelector('form input[type=email]'); return !!i && i.required; })()"
+            },
+            {
+              "desc": "Form punya tombol <button>",
+              "check": "!!document.querySelector('form button')"
+            },
+            {
+              "desc": "Ada <footer>",
+              "check": "!!document.querySelector('footer')"
+            }
           ],
           "solution": [
             "<!DOCTYPE html>",
@@ -1359,14 +1945,38 @@
             "</html>"
           ],
           "tests": [
-            { "desc": "<h1> di dalam <header> memuat kata Workshop", "check": "!!document.querySelector('header h1') && document.querySelector('header h1').textContent.includes('Workshop')" },
-            { "desc": "<nav> berisi minimal 2 link", "check": "document.querySelectorAll('nav a').length >= 2" },
-            { "desc": "Minimal 2 <section> di <main>, masing-masing punya <h2>", "check": "(() => { const s = [...document.querySelectorAll('main section')]; return s.length >= 2 && s.every(x => !!x.querySelector('h2')); })()" },
-            { "desc": "Daftar bernomor <ol> berisi minimal 3 <li>", "check": "[...document.querySelectorAll('ol')].some(o => o.querySelectorAll('li').length >= 3)" },
-            { "desc": "<label for> terhubung ke input dengan id yang sama", "check": "[...document.querySelectorAll('form label[for]')].some(l => { const t = document.getElementById(l.getAttribute('for')); return !!t && ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName); })" },
-            { "desc": "<select> dengan minimal 2 <option>", "check": "[...document.querySelectorAll('form select')].some(s => s.querySelectorAll('option').length >= 2)" },
-            { "desc": "Tombol <button type=\"submit\"> di dalam form", "check": "!!document.querySelector('form button[type=submit]')" },
-            { "desc": "Ada <footer>", "check": "!!document.querySelector('footer')" }
+            {
+              "desc": "<h1> di dalam <header> memuat kata Workshop",
+              "check": "!!document.querySelector('header h1') && document.querySelector('header h1').textContent.includes('Workshop')"
+            },
+            {
+              "desc": "<nav> berisi minimal 2 link",
+              "check": "document.querySelectorAll('nav a').length >= 2"
+            },
+            {
+              "desc": "Minimal 2 <section> di <main>, masing-masing punya <h2>",
+              "check": "(() => { const s = [...document.querySelectorAll('main section')]; return s.length >= 2 && s.every(x => !!x.querySelector('h2')); })()"
+            },
+            {
+              "desc": "Daftar bernomor <ol> berisi minimal 3 <li>",
+              "check": "[...document.querySelectorAll('ol')].some(o => o.querySelectorAll('li').length >= 3)"
+            },
+            {
+              "desc": "<label for> terhubung ke input dengan id yang sama",
+              "check": "[...document.querySelectorAll('form label[for]')].some(l => { const t = document.getElementById(l.getAttribute('for')); return !!t && ['INPUT', 'SELECT', 'TEXTAREA'].includes(t.tagName); })"
+            },
+            {
+              "desc": "<select> dengan minimal 2 <option>",
+              "check": "[...document.querySelectorAll('form select')].some(s => s.querySelectorAll('option').length >= 2)"
+            },
+            {
+              "desc": "Tombol <button type=\"submit\"> di dalam form",
+              "check": "!!document.querySelector('form button[type=submit]')"
+            },
+            {
+              "desc": "Ada <footer>",
+              "check": "!!document.querySelector('footer')"
+            }
           ],
           "solution": [
             "<!DOCTYPE html>",
